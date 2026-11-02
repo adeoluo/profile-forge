@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.2.1] 2026-11-02
+
+### Bug fixes
+
+- Path chart: one repository per line; keep names unwrapped (#6)
+
+### Documentation
+
+- Regenerate the example profile from live data
+- Remove authorship statements from docs and scripts
+- Recorded demos of more commands, with their vhs tapes (#4)
+- Recorded demos of the HTTP service and more commands (#5)
+
 ## [0.2.0] 2026-11-02
 
 ### Features
