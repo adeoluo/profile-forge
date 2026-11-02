@@ -45,8 +45,8 @@
       "flagship": true,
       "summary": "An integrated AI platform composed from eight of these libraries",
       "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-      "latest_release": "v0.3.0",
-      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0"
+      "latest_release": "v0.4.0",
+      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
     },
     {
       "name": "transformer-from-scratch",
@@ -191,8 +191,8 @@
       "flagship": true,
       "summary": "An LLM gateway: safety, caching, reliability",
       "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0"
+      "latest_release": "v0.2.0",
+      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
     },
     {
       "name": "hybrid-rag",
@@ -763,8 +763,8 @@
           "flagship": true,
           "summary": "An LLM gateway: safety, caching, reliability",
           "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0"
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
         },
         {
           "name": "constrained-generation-library",
@@ -875,8 +875,8 @@
           "flagship": true,
           "summary": "An integrated AI platform composed from eight of these libraries",
           "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-          "latest_release": "v0.3.0",
-          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0"
+          "latest_release": "v0.4.0",
+          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
         },
         {
           "name": "agent-memory",
@@ -1222,8 +1222,8 @@
           "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.1.0"
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.2.0"
         },
         {
           "name": "homebrew-tap",
@@ -1251,41 +1251,41 @@
       {
         "name": "Python",
         "bytes": 2563884,
-        "share": 68.72303658059012,
+        "share": 68.27587363918083,
         "repos": 35
       },
       {
         "name": "Rust",
         "bytes": 374068,
-        "share": 10.026619319605794,
+        "share": 9.961378713101332,
         "repos": 4
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 9.177754922671024,
+        "share": 9.118037656220748,
         "repos": 4
       },
       {
         "name": "Go",
-        "bytes": 258975,
-        "share": 6.941635580415622,
-        "repos": 2
+        "bytes": 283138,
+        "share": 7.539925484323933,
+        "repos": 3
       },
       {
         "name": "Shell",
         "bytes": 77398,
-        "share": 2.074596816885832,
+        "share": 2.061097954480514,
         "repos": 20
       },
       {
         "name": "Other",
-        "bytes": 114025,
-        "share": 3.05635677983161,
+        "bytes": 114296,
+        "share": 3.0436865526926384,
         "repos": 0
       }
     ],
-    "total_bytes": 3730749,
+    "total_bytes": 3755183,
     "repo_count": 39
   },
   "stack": [

@@ -20,7 +20,7 @@ are checked against widely used reference libraries where it matters.
 ![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
 ![flagships: 12](https://img.shields.io/badge/flagships-12-1f6feb?style=flat-square)
 ![releases: 20](https://img.shields.io/badge/releases-20-1f6feb?style=flat-square)
-![top language: Python 69%](https://img.shields.io/badge/top%20language-Python%2069%25-1f6feb?style=flat-square)
+![top language: Python 68%](https://img.shields.io/badge/top%20language-Python%2068%25-1f6feb?style=flat-square)
 
 [GitHub](https://github.com/adeoluo) | [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
 
@@ -173,13 +173,13 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 
 | Project | What it is | Validation and results |
 |---|---|---|
-| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.3.0](https://img.shields.io/badge/release-v0.3.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0) | An integrated AI platform composed from eight of these libraries | Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
+| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | An integrated AI platform composed from eight of these libraries | Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
 | [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d |
 | [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | HNSW approximate nearest neighbor search | **Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Reward modeling with PPO and DPO | PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study** |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Schema-constrained decoding via compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases |
-| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0) | An LLM gateway: safety, caching, reliability | Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested |
+| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | An LLM gateway: safety, caching, reliability | Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested |
 | [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | Hybrid retrieval with a neural dense retriever | Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale |
 | [react-agent](https://github.com/adeoluo/react-agent)<br/>[![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | A ReAct reasoning-and-acting agent | **Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline |
 | [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Content-addressed ML reproducibility and lineage | End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix** |
@@ -272,12 +272,12 @@ Bytes of code per language, summed across my public repositories with the GitHub
 
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
-| Python | 2.4 MiB | 68.7% | 35 |
+| Python | 2.4 MiB | 68.3% | 35 |
 | Rust | 365.3 KiB | 10.0% | 4 |
-| TypeScript | 334.4 KiB | 9.2% | 4 |
-| Go | 252.9 KiB | 6.9% | 2 |
+| TypeScript | 334.4 KiB | 9.1% | 4 |
+| Go | 276.5 KiB | 7.5% | 3 |
 | Shell | 75.6 KiB | 2.1% | 20 |
-| Other | 111.4 KiB | 3.1% |  |
+| Other | 111.6 KiB | 3.0% |  |
 
 ```mermaid
 pie
@@ -285,9 +285,9 @@ pie
   "Python" : 2563884
   "Rust" : 374068
   "TypeScript" : 342399
-  "Go" : 258975
+  "Go" : 283138
   "Shell" : 77398
-  "Other" : 114025
+  "Other" : 114296
 ```
 
 <sub>Counted 3.6 MiB across 39 repositories.</sub>
@@ -301,7 +301,7 @@ Repositories with a tagged release. Badges link to the release page.
 | Project | Latest release | Language |
 |---|---|---|
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
-| [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.3.0](https://img.shields.io/badge/release-v0.3.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0) | Python |
+| [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | Python |
 | [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
 | [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | Python |
 | [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0) | Rust |
@@ -310,11 +310,11 @@ Repositories with a tagged release. Badges link to the release page.
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness) | [![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | Python |
 | [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | Python |
 | [llm-eval-action](https://github.com/adeoluo/llm-eval-action) | [![llm-eval-action v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0) | TypeScript |
-| [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0) | Python |
+| [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | Python |
 | [llm-observability](https://github.com/adeoluo/llm-observability) | [![llm-observability v0.2.0](https://img.shields.io/badge/release-v0.2.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0) | Python |
 | [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools) | [![mcp-ml-tools v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0) | TypeScript |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator) | [![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Python |
-| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.1.0) | Go |
+| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.2.0](https://img.shields.io/badge/release-v0.2.0-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.2.0) | Go |
 | [react-agent](https://github.com/adeoluo/react-agent) | [![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | Python |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model) | [![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Python |
 | [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Python |
