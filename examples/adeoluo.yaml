@@ -9,12 +9,10 @@ bio: |
 
   Transformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,
   and the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language
-  that fits each problem. Projects ship with green CI, versioned releases, and measured benchmarks, and
-  are checked against widely used reference libraries where it matters.
+  that fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and
+  recorded demos, and are checked against widely used reference libraries where it matters.
 
 links:
-  - label: GitHub
-    url: https://github.com/adeoluo
   - label: Homebrew tap
     url: https://github.com/adeoluo/homebrew-tap
   - label: profile-forge (generates this page)
@@ -26,10 +24,10 @@ badges:
     color: "3776AB"
     logo: python
   - label: typed
-    message: mypy strict | go vet | clippy | tsc strict
+    message: mypy strict | go vet | Clippy | tsc strict
     color: "2A6DB0"
   - label: validated vs
-    message: PyTorch | scipy | FAISS | hnswlib
+    message: PyTorch | SciPy | FAISS | hnswlib
     color: "8957e5"
 
 stack:
@@ -202,49 +200,44 @@ categories:
 
 flagships:
   - repo: agent-platform
-    summary: An integrated AI platform composed from eight of these libraries
-    result: "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)"
+    summary: An integrated AI platform composed from nine of these libraries
+    result: "OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)"
   - repo: transformer-from-scratch
     summary: A decoder-only transformer and a reverse-mode autodiff engine
     result: "Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**"
   - repo: evaluation-harness
     summary: A model and agent evaluation framework
-    result: "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d"
+    result: "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d"
   - repo: ann-vector-search-library
-    summary: HNSW approximate nearest neighbor search
-    result: "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured"
+    summary: An HNSW approximate nearest neighbor library with a Rust core
+    result: "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**"
   - repo: rlhf-reward-model
-    summary: Reward modeling with PPO and DPO
-    result: PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**
+    summary: A reward model with PPO and DPO policy optimization
+    result: "A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study**"
   - repo: constrained-generation-library
-    summary: Schema-constrained decoding via compiled automata
-    result: "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases"
+    summary: A schema-constrained decoder built on compiled automata
+    result: "**240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases"
   - repo: llm-gateway
-    summary: "An LLM gateway: safety, caching, reliability"
-    result: Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested
+    summary: A safety gateway for LLM APIs, with a Go reverse proxy
+    result: "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case"
   - repo: hybrid-rag
-    summary: Hybrid retrieval with a neural dense retriever
-    result: "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale"
+    summary: A hybrid retrieval system with a neural dense retriever
+    result: "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale"
   - repo: react-agent
     summary: A ReAct reasoning-and-acting agent
     result: "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline"
   - repo: training-provenance
-    summary: Content-addressed ML reproducibility and lineage
-    result: End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix**
+    summary: A content-addressed reproducibility and lineage system for ML
+    result: "End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix**"
   - repo: multi-agent-orchestrator
-    summary: Planner, worker, and critic over a shared blackboard
+    summary: A planner, workers, and a critic over a shared blackboard
     result: "**Durable execution** with resume, and a single-agent vs orchestrator comparison"
   - repo: vectordb-go
     summary: A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)
-    result: Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS
+    result: "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS"
 
 ecosystem:
   direction: LR
-  aliases:
-    bpe-tokenizer-library: bpe-tokenizer
-    corpus-dedup-library: corpus-dedup
-    ann-vector-search-library: ann-vector-search
-    constrained-generation-library: constrained-generation
   edges:
     - {from: bpe-tokenizer-library, to: transformer-from-scratch}
     - {from: corpus-dedup-library, to: transformer-from-scratch}
@@ -266,12 +259,13 @@ ecosystem:
     - {from: training-provenance, to: transformer-from-scratch, label: reproduces, style: dotted}
     - {from: agent-memory, to: agent-platform}
     - {from: agent-sandbox, to: react-agent, label: guards tools, style: dotted}
+    - {from: evaluation-harness, to: llm-eval-action, label: gates PRs, style: dotted}
 
 languages:
   top: 6
 
 path:
   prompt: What do you want to explore?
-  max_others: 3
+  max_others: 20
 
 ignore: [adeoluo]
