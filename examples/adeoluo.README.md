@@ -6,12 +6,12 @@
 
 ### AI and Machine Learning Engineer
 
-**I build AI tools, products, and agents, and evaluate them for correctness, reliability, and safety.**
+**I build AI agents and products that are rigorously tested for correctness and safety.**
 
-Transformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,
-and the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language
-that fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and
-recorded demos, and are checked against widely used reference libraries where it matters.
+My work covers the full stack of modern AI, from model internals and retrieval to agents and
+evaluation. I use whichever language fits the problem best, including Python, Go, Rust and
+TypeScript. Every project ships with passing CI, versioned releases, measured benchmarks and
+recorded demos, with results checked against established reference libraries.
 
 ![languages: Python | Go | Rust | TypeScript](https://img.shields.io/badge/languages-Python%20%7C%20Go%20%7C%20Rust%20%7C%20TypeScript-3776AB?logo=python&logoColor=white&style=for-the-badge)
 ![typed: mypy strict | go vet | Clippy | tsc strict](https://img.shields.io/badge/typed-mypy%20strict%20%7C%20go%20vet%20%7C%20Clippy%20%7C%20tsc%20strict-2A6DB0?style=for-the-badge)
