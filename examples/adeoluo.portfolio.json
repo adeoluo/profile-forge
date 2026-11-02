@@ -1,0 +1,1111 @@
+{
+  "user": "adeoluo",
+  "name": "Adeolu Ogunnoiki",
+  "headline": "AI and Machine Learning Engineer",
+  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them. Each project runs deterministically and offline, ships with green CI\nand measured benchmarks, and is checked against widely used reference libraries where it matters.",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/adeoluo"
+    },
+    {
+      "label": "profile-forge (generates this page)",
+      "url": "https://github.com/adeoluo/profile-forge"
+    }
+  ],
+  "flagships": [
+    {
+      "name": "transformer-from-scratch",
+      "url": "https://github.com/adeoluo/transformer-from-scratch",
+      "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and attention demonstrated on a copy task.",
+      "language": "Python",
+      "topics": [
+        "attention",
+        "autodiff",
+        "backpropagation",
+        "deep-learning",
+        "from-scratch",
+        "language-model",
+        "python",
+        "transformer"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "model",
+      "flagship": true,
+      "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
+      "result": "Gradients match **PyTorch to \u003c 1e-9**; learns real text to **3.64 bits/char** vs a 4.30 baseline; checkpointing",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
+    },
+    {
+      "name": "evaluation-harness",
+      "url": "https://github.com/adeoluo/evaluation-harness",
+      "description": "A from-scratch evaluation and benchmarking framework for language models and agents: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
+      "language": "Python",
+      "topics": [
+        "benchmarking",
+        "evaluation",
+        "from-scratch",
+        "llm-evaluation",
+        "llmops",
+        "machine-learning",
+        "python",
+        "statistics"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "trust",
+      "flagship": true,
+      "summary": "A model and agent evaluation framework",
+      "result": "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
+    },
+    {
+      "name": "ann-vector-search-library",
+      "url": "https://github.com/adeoluo/ann-vector-search-library",
+      "description": "An approximate nearest neighbor vector search library built from scratch in pure Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+      "language": "Python",
+      "topics": [
+        "approximate-nearest-neighbors",
+        "from-scratch",
+        "hnsw",
+        "python",
+        "retrieval",
+        "similarity-search",
+        "vector-database",
+        "vector-search"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "retr",
+      "flagship": true,
+      "summary": "HNSW approximate nearest neighbor search",
+      "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0"
+    },
+    {
+      "name": "rlhf-reward-model",
+      "url": "https://github.com/adeoluo/rlhf-reward-model",
+      "description": "Classical RLHF from scratch: a Bradley-Terry reward model and a clipped PPO policy optimizer, with an explicit reward over-optimization study.",
+      "language": "Python",
+      "topics": [
+        "alignment",
+        "bradley-terry",
+        "from-scratch",
+        "post-training",
+        "ppo",
+        "reward-hacking",
+        "reward-model",
+        "rlhf"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "align",
+      "flagship": true,
+      "summary": "Reward modeling with PPO",
+      "result": "A Bradley-Terry reward model, clipped PPO, and a **reward over-optimization (Goodhart) study**",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
+    },
+    {
+      "name": "constrained-generation-library",
+      "url": "https://github.com/adeoluo/constrained-generation-library",
+      "description": "A structured-generation library built from scratch in pure Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+      "language": "Python",
+      "topics": [
+        "constrained-decoding",
+        "finite-automata",
+        "from-scratch",
+        "json-schema",
+        "llm",
+        "python",
+        "regex",
+        "structured-generation"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "serve",
+      "flagship": true,
+      "summary": "Schema-constrained decoding via compiled automata",
+      "result": "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0"
+    },
+    {
+      "name": "llm-gateway",
+      "url": "https://github.com/adeoluo/llm-gateway",
+      "description": "A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall.",
+      "language": "Python",
+      "topics": [
+        "ai-safety",
+        "anthropic",
+        "gateway",
+        "llm",
+        "pii-redaction",
+        "prompt-injection",
+        "python",
+        "security"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "serve",
+      "flagship": true,
+      "summary": "An LLM gateway: safety, caching, reliability",
+      "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0"
+    },
+    {
+      "name": "hybrid-rag",
+      "url": "https://github.com/adeoluo/hybrid-rag",
+      "description": "Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+      "language": "Python",
+      "topics": [
+        "bm25",
+        "from-scratch",
+        "information-retrieval",
+        "machine-learning",
+        "python",
+        "rag",
+        "retrieval-augmented-generation",
+        "search"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "retr",
+      "flagship": true,
+      "summary": "Hybrid retrieval with a trained dense retriever",
+      "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
+    },
+    {
+      "name": "react-agent",
+      "url": "https://github.com/adeoluo/react-agent",
+      "description": "A ReAct reasoning-and-acting agent built from scratch: tool use, a transparent control loop, and full step tracing.",
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai-agents",
+        "from-scratch",
+        "llm",
+        "python",
+        "react-agent",
+        "reasoning",
+        "tool-use"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "agent",
+      "flagship": true,
+      "summary": "A ReAct reasoning-and-acting agent",
+      "result": "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.0"
+    },
+    {
+      "name": "training-provenance",
+      "url": "https://github.com/adeoluo/training-provenance",
+      "description": "Content-addressed provenance tracking for machine learning pipelines: a deduplicating artifact store, a content-addressed lineage DAG, and bit-for-bit reproducibility and integrity verification.",
+      "language": "Python",
+      "topics": [
+        "content-addressable",
+        "data-integrity",
+        "from-scratch",
+        "lineage",
+        "mlops",
+        "provenance",
+        "python",
+        "reproducibility"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "trust",
+      "flagship": true,
+      "summary": "Content-addressed ML reproducibility and lineage",
+      "result": "End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix**",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
+    },
+    {
+      "name": "multi-agent-orchestrator",
+      "url": "https://github.com/adeoluo/multi-agent-orchestrator",
+      "description": "A multi-agent orchestrator from scratch: a planner decomposes a task, workers execute subtasks, and a critic verifies, over a shared blackboard.",
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai",
+        "blackboard",
+        "from-scratch",
+        "llm",
+        "multi-agent",
+        "orchestration",
+        "python"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "agent",
+      "flagship": true,
+      "summary": "Planner, worker, and critic over a shared blackboard",
+      "result": "**Durable execution** with resume, and a single-agent vs orchestrator comparison",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0"
+    },
+    {
+      "name": "vectordb-go",
+      "url": "https://github.com/adeoluo/vectordb-go",
+      "description": "A concurrent, persistent HNSW vector database server in Go: write-ahead log with checksums, snapshot and replay crash recovery, HTTP API, and benchmarks against hnswlib and FAISS.",
+      "language": "Go",
+      "topics": [
+        "ann",
+        "crash-recovery",
+        "go",
+        "hnsw",
+        "performance",
+        "vector-database",
+        "write-ahead-log"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "sys",
+      "flagship": true,
+      "summary": "A persistent HNSW vector database server in Go",
+      "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS"
+    }
+  ],
+  "categories": [
+    {
+      "id": "model",
+      "title": "Modeling and training",
+      "color_name": "blue",
+      "color": "#dbeafe",
+      "stroke": "#1d4ed8",
+      "description": "Model internals, training loops, tokenization, data preparation, and classical NLP models.",
+      "repos": [
+        {
+          "name": "transformer-from-scratch",
+          "url": "https://github.com/adeoluo/transformer-from-scratch",
+          "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and attention demonstrated on a copy task.",
+          "language": "Python",
+          "topics": [
+            "attention",
+            "autodiff",
+            "backpropagation",
+            "deep-learning",
+            "from-scratch",
+            "language-model",
+            "python",
+            "transformer"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "model",
+          "flagship": true,
+          "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
+          "result": "Gradients match **PyTorch to \u003c 1e-9**; learns real text to **3.64 bits/char** vs a 4.30 baseline; checkpointing",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
+        },
+        {
+          "name": "cnn-from-scratch",
+          "url": "https://github.com/adeoluo/cnn-from-scratch",
+          "description": "A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and translation invariance demonstrated against a linear baseline.",
+          "language": "Python",
+          "topics": [
+            "autograd",
+            "backpropagation",
+            "cnn",
+            "computer-vision",
+            "convolutional-neural-network",
+            "deep-learning",
+            "from-scratch",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "neural-word-embeddings",
+          "url": "https://github.com/adeoluo/neural-word-embeddings",
+          "description": "Skip-gram word embeddings with negative sampling from scratch: hand-derived gradients, a unigram negative-sampling table, and category-retrieval evaluation.",
+          "language": "Python",
+          "topics": [
+            "from-scratch",
+            "negative-sampling",
+            "nlp",
+            "python",
+            "representation-learning",
+            "skip-gram",
+            "word-embeddings",
+            "word2vec"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "bpe-tokenizer-library",
+          "url": "https://github.com/adeoluo/bpe-tokenizer-library",
+          "description": "A byte-level byte-pair-encoding tokenizer built from scratch in pure Python, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput.",
+          "language": "Python",
+          "topics": [
+            "bpe",
+            "byte-pair-encoding",
+            "from-scratch",
+            "gpt-2",
+            "language-model",
+            "nlp",
+            "python",
+            "tokenizer"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "corpus-dedup-library",
+          "url": "https://github.com/adeoluo/corpus-dedup-library",
+          "description": "A corpus near-deduplication and quality-filtering library built from scratch in pure Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
+          "language": "Python",
+          "topics": [
+            "data-cleaning",
+            "dataset",
+            "deduplication",
+            "from-scratch",
+            "lsh",
+            "minhash",
+            "nlp",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "crf-sequence-labeler",
+          "url": "https://github.com/adeoluo/crf-sequence-labeler",
+          "description": "A linear-chain conditional random field for sequence labeling from scratch: Viterbi decoding, forward-backward training with log-likelihood gradients, and span-level evaluation.",
+          "language": "Python",
+          "topics": [
+            "conditional-random-field",
+            "from-scratch",
+            "named-entity-recognition",
+            "nlp",
+            "python",
+            "sequence-labeling",
+            "structured-prediction",
+            "viterbi"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "dependency-parser",
+          "url": "https://github.com/adeoluo/dependency-parser",
+          "description": "An arc-standard transition-based dependency parser from scratch: a static oracle, an averaged structured perceptron policy, greedy decoding, and attachment-score evaluation.",
+          "language": "Python",
+          "topics": [
+            "arc-standard",
+            "averaged-perceptron",
+            "dependency-parsing",
+            "from-scratch",
+            "nlp",
+            "python",
+            "structured-prediction",
+            "transition-based"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "statistical-translation",
+          "url": "https://github.com/adeoluo/statistical-translation",
+          "description": "Statistical machine translation alignment from scratch: IBM Model 1 and Model 2 word alignment trained by expectation-maximization, with alignment-error-rate evaluation.",
+          "language": "Python",
+          "topics": [
+            "expectation-maximization",
+            "from-scratch",
+            "ibm-models",
+            "machine-translation",
+            "nlp",
+            "python",
+            "statistical-mt",
+            "word-alignment"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        },
+        {
+          "name": "topic-model-lda",
+          "url": "https://github.com/adeoluo/topic-model-lda",
+          "description": "Latent Dirichlet allocation from scratch: collapsed Gibbs sampling for topic discovery with UMass topic-coherence evaluation.",
+          "language": "Python",
+          "topics": [
+            "bayesian",
+            "from-scratch",
+            "gibbs-sampling",
+            "latent-dirichlet-allocation",
+            "nlp",
+            "python",
+            "topic-modeling",
+            "unsupervised-learning"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "model",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "retr",
+      "title": "Retrieval and search",
+      "color_name": "green",
+      "color": "#dcfce7",
+      "stroke": "#15803d",
+      "description": "Approximate nearest neighbor search, hybrid and graph retrieval, and grounded generation.",
+      "repos": [
+        {
+          "name": "ann-vector-search-library",
+          "url": "https://github.com/adeoluo/ann-vector-search-library",
+          "description": "An approximate nearest neighbor vector search library built from scratch in pure Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+          "language": "Python",
+          "topics": [
+            "approximate-nearest-neighbors",
+            "from-scratch",
+            "hnsw",
+            "python",
+            "retrieval",
+            "similarity-search",
+            "vector-database",
+            "vector-search"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "retr",
+          "flagship": true,
+          "summary": "HNSW approximate nearest neighbor search",
+          "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0"
+        },
+        {
+          "name": "hybrid-rag",
+          "url": "https://github.com/adeoluo/hybrid-rag",
+          "description": "Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+          "language": "Python",
+          "topics": [
+            "bm25",
+            "from-scratch",
+            "information-retrieval",
+            "machine-learning",
+            "python",
+            "rag",
+            "retrieval-augmented-generation",
+            "search"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "retr",
+          "flagship": true,
+          "summary": "Hybrid retrieval with a trained dense retriever",
+          "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
+        },
+        {
+          "name": "graphrag",
+          "url": "https://github.com/adeoluo/graphrag",
+          "description": "GraphRAG from scratch: entity and relation extraction, knowledge-graph construction, and traversal-based multi-hop retrieval.",
+          "language": "Python",
+          "topics": [
+            "from-scratch",
+            "graphrag",
+            "knowledge-graph",
+            "llm",
+            "multi-hop",
+            "python",
+            "rag",
+            "retrieval"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "retr",
+          "flagship": false
+        },
+        {
+          "name": "agentic-rag",
+          "url": "https://github.com/adeoluo/agentic-rag",
+          "description": "Agentic retrieval from scratch: query decomposition, a self-querying retriever-agent, and iterative multi-hop retrieve-reason-retrieve.",
+          "language": "Python",
+          "topics": [
+            "agentic-rag",
+            "agents",
+            "from-scratch",
+            "llm",
+            "multi-hop",
+            "python",
+            "rag",
+            "retrieval"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "retr",
+          "flagship": false
+        },
+        {
+          "name": "grounded-copilot",
+          "url": "https://github.com/adeoluo/grounded-copilot",
+          "description": "A retrieval-augmented copilot built from scratch: TF-IDF retrieval, inline citations, an abstention guardrail when retrieval is weak, and a sentence-level faithfulness check that verifies every claim traces to a cited source.",
+          "language": "Python",
+          "topics": [
+            "anthropic",
+            "citations",
+            "faithfulness",
+            "hallucination",
+            "llm",
+            "python",
+            "rag",
+            "retrieval-augmented-generation"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "retr",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "align",
+      "title": "Alignment and post-training",
+      "color_name": "purple",
+      "color": "#ede9fe",
+      "stroke": "#6d28d9",
+      "description": "Reward modeling, RLHF, preference optimization, self-training, and prompt optimization.",
+      "repos": [
+        {
+          "name": "rlhf-reward-model",
+          "url": "https://github.com/adeoluo/rlhf-reward-model",
+          "description": "Classical RLHF from scratch: a Bradley-Terry reward model and a clipped PPO policy optimizer, with an explicit reward over-optimization study.",
+          "language": "Python",
+          "topics": [
+            "alignment",
+            "bradley-terry",
+            "from-scratch",
+            "post-training",
+            "ppo",
+            "reward-hacking",
+            "reward-model",
+            "rlhf"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "align",
+          "flagship": true,
+          "summary": "Reward modeling with PPO",
+          "result": "A Bradley-Terry reward model, clipped PPO, and a **reward over-optimization (Goodhart) study**",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
+        },
+        {
+          "name": "preference-optimization",
+          "url": "https://github.com/adeoluo/preference-optimization",
+          "description": "Direct Preference Optimization from scratch: a behavior-cloned reference, a Bradley-Terry preference dataset, and an exact DPO gradient that aligns a policy to a hidden reward.",
+          "language": "Python",
+          "topics": [
+            "alignment",
+            "bradley-terry",
+            "dpo",
+            "from-scratch",
+            "post-training",
+            "preference-optimization",
+            "python",
+            "rlhf"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "align",
+          "flagship": false
+        },
+        {
+          "name": "self-improvement-loop",
+          "url": "https://github.com/adeoluo/self-improvement-loop",
+          "description": "Recursive self-improvement by rejection-sampling self-training with a verifier (STaR-style) from scratch: generate, verify, filter, rationalize, and behavior-clone a policy on a fully checkable reasoning task.",
+          "language": "Python",
+          "topics": [
+            "from-scratch",
+            "post-training",
+            "python",
+            "reinforcement-learning",
+            "rejection-sampling",
+            "rlhf",
+            "self-improvement",
+            "star"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "align",
+          "flagship": false
+        },
+        {
+          "name": "prompt-optimizer",
+          "url": "https://github.com/adeoluo/prompt-optimizer",
+          "description": "Automated prompt optimization from scratch: instruction search and bootstrapped few-shot selection compiled against a metric, with a four-way ablation and an HTTP service.",
+          "language": "Python",
+          "topics": [
+            "dspy",
+            "few-shot",
+            "from-scratch",
+            "in-context-learning",
+            "llm",
+            "prompt-engineering",
+            "prompt-optimization",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "align",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "serve",
+      "title": "Serving and reliability",
+      "color_name": "amber",
+      "color": "#fef3c7",
+      "stroke": "#b45309",
+      "description": "The layer between models and users, covering safety, caching, failover, and structured output.",
+      "repos": [
+        {
+          "name": "llm-gateway",
+          "url": "https://github.com/adeoluo/llm-gateway",
+          "description": "A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall.",
+          "language": "Python",
+          "topics": [
+            "ai-safety",
+            "anthropic",
+            "gateway",
+            "llm",
+            "pii-redaction",
+            "prompt-injection",
+            "python",
+            "security"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "serve",
+          "flagship": true,
+          "summary": "An LLM gateway: safety, caching, reliability",
+          "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0"
+        },
+        {
+          "name": "constrained-generation-library",
+          "url": "https://github.com/adeoluo/constrained-generation-library",
+          "description": "A structured-generation library built from scratch in pure Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+          "language": "Python",
+          "topics": [
+            "constrained-decoding",
+            "finite-automata",
+            "from-scratch",
+            "json-schema",
+            "llm",
+            "python",
+            "regex",
+            "structured-generation"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "serve",
+          "flagship": true,
+          "summary": "Schema-constrained decoding via compiled automata",
+          "result": "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0"
+        }
+      ]
+    },
+    {
+      "id": "agent",
+      "title": "Agents",
+      "color_name": "magenta",
+      "color": "#fae8ff",
+      "stroke": "#a21caf",
+      "description": "Tool-using agents, multi-agent orchestration, and language-model products built on them.",
+      "repos": [
+        {
+          "name": "react-agent",
+          "url": "https://github.com/adeoluo/react-agent",
+          "description": "A ReAct reasoning-and-acting agent built from scratch: tool use, a transparent control loop, and full step tracing.",
+          "language": "Python",
+          "topics": [
+            "agents",
+            "ai-agents",
+            "from-scratch",
+            "llm",
+            "python",
+            "react-agent",
+            "reasoning",
+            "tool-use"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "agent",
+          "flagship": true,
+          "summary": "A ReAct reasoning-and-acting agent",
+          "result": "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.0"
+        },
+        {
+          "name": "multi-agent-orchestrator",
+          "url": "https://github.com/adeoluo/multi-agent-orchestrator",
+          "description": "A multi-agent orchestrator from scratch: a planner decomposes a task, workers execute subtasks, and a critic verifies, over a shared blackboard.",
+          "language": "Python",
+          "topics": [
+            "agents",
+            "ai",
+            "blackboard",
+            "from-scratch",
+            "llm",
+            "multi-agent",
+            "orchestration",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "agent",
+          "flagship": true,
+          "summary": "Planner, worker, and critic over a shared blackboard",
+          "result": "**Durable execution** with resume, and a single-agent vs orchestrator comparison",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0"
+        },
+        {
+          "name": "agent-platform",
+          "url": "https://github.com/adeoluo/agent-platform",
+          "description": "An integrated AI platform: authenticated API, LLM gateway, tool-using agents, multi-agent jobs with durable crash recovery, tenant-isolated retrieval, tracing, and evaluation, composed from from-scratch libraries.",
+          "language": "Python",
+          "topics": [
+            "agents",
+            "ai-platform",
+            "durable-execution",
+            "evaluation",
+            "llm",
+            "observability",
+            "python",
+            "rag"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "agent",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0"
+        },
+        {
+          "name": "nl-sql-analyst",
+          "url": "https://github.com/adeoluo/nl-sql-analyst",
+          "description": "A natural-language-to-SQL analyst powered by a plugged-in language model, with read-only guardrails and result verification; validated SQL runs against a real SQLite database and is evaluated for answer accuracy and guardrail coverage.",
+          "language": "Python",
+          "topics": [
+            "anthropic",
+            "data-analysis",
+            "guardrails",
+            "llm",
+            "nl2sql",
+            "python",
+            "sql",
+            "text-to-sql"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "agent",
+          "flagship": false
+        },
+        {
+          "name": "ai-code-reviewer",
+          "url": "https://github.com/adeoluo/ai-code-reviewer",
+          "description": "An automated code reviewer powered by a plugged-in language model (Claude in production, an offline provider in CI), evaluated on a labeled benchmark of bug-introducing diffs for real bug-catching precision and recall.",
+          "language": "Python",
+          "topics": [
+            "anthropic",
+            "code-review",
+            "developer-tools",
+            "evaluation",
+            "llm",
+            "python",
+            "static-analysis"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "agent",
+          "flagship": false
+        },
+        {
+          "name": "agent-sandbox",
+          "url": "https://github.com/adeoluo/agent-sandbox",
+          "description": "A policy-based sandbox for running AI agent tool calls with declarative rules, resource limits, and a tamper-evident audit log.",
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "agent",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "title": "Evaluation and trust",
+      "color_name": "red",
+      "color": "#fee2e2",
+      "stroke": "#b91c1c",
+      "description": "Evaluation statistics, tracing, factuality, red-teaming, and reproducible provenance.",
+      "repos": [
+        {
+          "name": "evaluation-harness",
+          "url": "https://github.com/adeoluo/evaluation-harness",
+          "description": "A from-scratch evaluation and benchmarking framework for language models and agents: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
+          "language": "Python",
+          "topics": [
+            "benchmarking",
+            "evaluation",
+            "from-scratch",
+            "llm-evaluation",
+            "llmops",
+            "machine-learning",
+            "python",
+            "statistics"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "trust",
+          "flagship": true,
+          "summary": "A model and agent evaluation framework",
+          "result": "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
+        },
+        {
+          "name": "llm-observability",
+          "url": "https://github.com/adeoluo/llm-observability",
+          "description": "An LLM observability and tracing platform from scratch: hierarchical spans, token, cost, and latency metrics, and trace analysis.",
+          "language": "Python",
+          "topics": [
+            "from-scratch",
+            "llm",
+            "llmops",
+            "monitoring",
+            "observability",
+            "opentelemetry",
+            "python",
+            "tracing"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "trust",
+          "flagship": false
+        },
+        {
+          "name": "training-provenance",
+          "url": "https://github.com/adeoluo/training-provenance",
+          "description": "Content-addressed provenance tracking for machine learning pipelines: a deduplicating artifact store, a content-addressed lineage DAG, and bit-for-bit reproducibility and integrity verification.",
+          "language": "Python",
+          "topics": [
+            "content-addressable",
+            "data-integrity",
+            "from-scratch",
+            "lineage",
+            "mlops",
+            "provenance",
+            "python",
+            "reproducibility"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "trust",
+          "flagship": true,
+          "summary": "Content-addressed ML reproducibility and lineage",
+          "result": "End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix**",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
+        },
+        {
+          "name": "factuality-auditor",
+          "url": "https://github.com/adeoluo/factuality-auditor",
+          "description": "A hallucination and factuality auditor from scratch: claim extraction, knowledge-base verification, and calibrated confidence with honest abstention.",
+          "language": "Python",
+          "topics": [
+            "ai-safety",
+            "calibration",
+            "fact-checking",
+            "factuality",
+            "from-scratch",
+            "hallucination-detection",
+            "llm",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "trust",
+          "flagship": false
+        },
+        {
+          "name": "red-teaming",
+          "url": "https://github.com/adeoluo/red-teaming",
+          "description": "An automated red-teaming engine from scratch: an evolutionary search for guardrail-evading prompts, attack-success measurement, and a hardened defense, over fully fictional restricted terms.",
+          "language": "Python",
+          "topics": [
+            "adversarial",
+            "ai-safety",
+            "from-scratch",
+            "guardrails",
+            "jailbreak",
+            "llm-security",
+            "python",
+            "red-teaming"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "trust",
+          "flagship": false
+        },
+        {
+          "name": "llm-eval-action",
+          "url": "https://github.com/adeoluo/llm-eval-action",
+          "description": "A GitHub Action that gates pull requests on statistically tested LLM evaluation regressions.",
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "trust",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "sys",
+      "title": "Systems and tooling",
+      "color_name": "teal",
+      "color": "#ccfbf1",
+      "stroke": "#0f766e",
+      "description": "Storage engines, experiment orchestration, hyperparameter search, and developer tools.",
+      "repos": [
+        {
+          "name": "vectordb-go",
+          "url": "https://github.com/adeoluo/vectordb-go",
+          "description": "A concurrent, persistent HNSW vector database server in Go: write-ahead log with checksums, snapshot and replay crash recovery, HTTP API, and benchmarks against hnswlib and FAISS.",
+          "language": "Go",
+          "topics": [
+            "ann",
+            "crash-recovery",
+            "go",
+            "hnsw",
+            "performance",
+            "vector-database",
+            "write-ahead-log"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "sys",
+          "flagship": true,
+          "summary": "A persistent HNSW vector database server in Go",
+          "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS"
+        },
+        {
+          "name": "sweep-orchestrator",
+          "url": "https://github.com/adeoluo/sweep-orchestrator",
+          "description": "A hyperparameter sweep orchestrator from scratch: successive halving and Hyperband, parallel early stopping, multi-objective Pareto optimization, and hyperparameter importance.",
+          "language": "Python",
+          "topics": [
+            "automl",
+            "early-stopping",
+            "from-scratch",
+            "hyperband",
+            "hyperparameter-optimization",
+            "multi-objective-optimization",
+            "pareto",
+            "python"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "sys",
+          "flagship": false
+        },
+        {
+          "name": "hyperparameter-optimizer",
+          "url": "https://github.com/adeoluo/hyperparameter-optimizer",
+          "description": "Black-box hyperparameter optimization from scratch: random and quasi-random search, a Tree-structured Parzen Estimator, and Gaussian-process Bayesian optimization with Expected Improvement.",
+          "language": "Python",
+          "topics": [
+            "automl",
+            "bayesian-optimization",
+            "black-box-optimization",
+            "from-scratch",
+            "gaussian-processes",
+            "hyperparameter-optimization",
+            "python",
+            "tpe"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-01",
+          "category": "sys",
+          "flagship": false
+        },
+        {
+          "name": "profile-forge",
+          "url": "https://github.com/adeoluo/profile-forge",
+          "description": "A Go CLI that generates a GitHub profile README and portfolio JSON from live repository metadata and a small YAML config.",
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "sys",
+          "flagship": false
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "rows": [
+      {
+        "name": "Python",
+        "bytes": 2270511,
+        "share": 90.76198927890438,
+        "repos": 33
+      },
+      {
+        "name": "Go",
+        "bytes": 152196,
+        "share": 6.083921954261456,
+        "repos": 1
+      },
+      {
+        "name": "Makefile",
+        "bytes": 48069,
+        "share": 1.9215225394845719,
+        "repos": 33
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 30834,
+        "share": 1.2325662273495868,
+        "repos": 33
+      }
+    ],
+    "total_bytes": 2501610,
+    "repo_count": 33
+  },
+  "public_repos": 37
+}

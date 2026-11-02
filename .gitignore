@@ -1,0 +1,7 @@
+/bin/
+/dist/
+/.cache/
+/scratch/
+coverage.out
+*.test
+.DS_Store

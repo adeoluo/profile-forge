@@ -1,0 +1,118 @@
+{{- /* Each section is a named template. The config "sections" list picks the order. */ -}}
+
+{{define "header" -}}
+<div align="center">
+
+# {{.Name}}
+{{if .Headline}}
+### {{.Headline}}
+{{end}}
+{{- if .Bio}}
+{{.Bio}}
+{{end}}
+{{- if .Badges}}
+{{badges .Badges}}
+{{end}}
+{{badges .StatBadges}}
+{{if .Links}}
+{{links .Links}}
+{{end}}
+</div>
+{{- end}}
+
+{{define "path" -}}
+## Find your path
+
+{{orDefault "Pick an area to explore. Colors group repositories by category, and the same colors are used in every diagram on this page." .Intro.Path}}
+
+```mermaid
+{{.PathChart}}
+```
+
+**Legend**
+
+| Color | Category | What it covers | Repos |
+|---|---|---|---|
+{{- range .Categories}}
+| {{.Swatch.Markdown}} | {{cell .Title}} | {{cell .Description}} | {{len .Repos}} |
+{{- end}}
+{{- end}}
+
+{{define "ecosystem" -}}
+{{if .EcosystemChart -}}
+## How the projects connect
+
+{{orDefault "Arrows show how the projects build on each other. Node colors match the legend above." .Intro.Ecosystem}}
+
+```mermaid
+{{.EcosystemChart}}
+```
+{{- end}}
+{{- end}}
+
+{{define "flagships" -}}
+{{if .Flagships -}}
+## Flagship projects
+{{with .Intro.Flagships}}
+{{.}}
+{{end}}
+| Project | What it is | Validation and results |
+|---|---|---|
+{{- range .Flagships}}
+| [{{.Name}}]({{.URL}}){{if .ReleaseBadge}}<br/>{{.ReleaseBadge.Markdown}}{{end}} | {{cell (orDefault .Description .Summary)}} | {{cell .Result}} |
+{{- end}}
+{{- end}}
+{{- end}}
+
+{{define "categories" -}}
+## Everything, by category
+{{- with .Intro.Categories}}
+
+{{.}}
+{{- end}}
+{{- range .Categories}}
+
+### {{.Title}} {{.Swatch.Markdown}}
+{{- with .Description}}
+
+{{.}}
+{{- end}}
+{{range .Repos}}
+- {{if .Flagship}}**[{{.Name}}]({{.URL}})**{{else}}[{{.Name}}]({{.URL}}){{end}}{{with .Description}}: {{.}}{{end}}{{with .Language}} <sub>{{.}}</sub>{{end}}
+{{- end}}
+{{- end}}
+{{- end}}
+
+{{define "languages" -}}
+{{if .Languages.Rows -}}
+## Languages
+
+{{orDefault "Bytes of code per language, summed across public repositories with the GitHub languages API. Forks are excluded." .Intro.Languages}}
+
+| Language | Bytes | Share | Repos |
+|---|--:|--:|--:|
+{{- range .Languages.Rows}}
+| {{.Name}} | {{human .Bytes}} | {{pct .Share}} | {{if .Repos}}{{.Repos}}{{end}} |
+{{- end}}
+
+```mermaid
+{{.LanguagePie}}
+```
+
+<sub>Counted {{human .Languages.TotalBytes}} across {{.Languages.RepoCount}} repositories.</sub>
+{{- end}}
+{{- end}}
+
+{{define "releases" -}}
+{{if .Releases -}}
+## Releases
+{{with .Intro.Releases}}
+{{.}}
+{{end}}
+| Project | Latest release | Language |
+|---|---|---|
+{{- range .Releases}}
+| [{{.Name}}]({{.URL}}) | {{.ReleaseBadge.Markdown}} | {{.Language}} |
+{{- end}}
+{{- end}}
+{{- end}}

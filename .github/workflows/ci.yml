@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Format, vet, lint, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+
+      - name: go vet
+        run: go vet ./...
+
+      - name: staticcheck
+        run: go run honnef.co/go/tools/cmd/staticcheck@v0.8.2 ./...
+
+      - name: go test -race with coverage
+        run: |
+          go test -race -count=1 -coverprofile=coverage.out ./...
+          go tool cover -func=coverage.out | tail -1
+
+      - name: Build
+        run: make build
+
+      - name: Smoke test (init, then generate offline must fail cleanly)
+        run: |
+          ./bin/profile-forge version
+          ./bin/profile-forge init --out ci-profile.yaml
+          if ./bin/profile-forge generate --config ci-profile.yaml --offline --cache-dir empty-cache --out -; then
+            echo "offline generate with an empty cache should fail"; exit 1
+          fi
+
+      - name: Cross-compile release archives
+        run: |
+          make release VERSION=v0.0.0-ci
+          make verify-release

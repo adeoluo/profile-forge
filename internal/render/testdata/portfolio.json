@@ -1,0 +1,133 @@
+{
+  "user": "tester",
+  "name": "Test Person",
+  "headline": "Engineer",
+  "bio": "Builds \"careful\" systems.",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/tester"
+    }
+  ],
+  "flagships": [
+    {
+      "name": "alpha",
+      "url": "https://github.com/tester/alpha",
+      "description": "Alpha model trainer.",
+      "language": "Python",
+      "stars": 3,
+      "pushed_at": "2026-10-01",
+      "category": "model",
+      "flagship": true,
+      "result": "Matches the reference to 1e-9.",
+      "latest_release": "v1.2.0",
+      "release_url": "https://github.com/tester/alpha/releases/tag/v1.2.0"
+    },
+    {
+      "name": "beta",
+      "url": "https://github.com/tester/beta",
+      "description": "Beta retrieval engine, fast and small.",
+      "language": "Go",
+      "stars": 0,
+      "pushed_at": "2026-10-01",
+      "category": "retr",
+      "flagship": true,
+      "summary": "A small search engine",
+      "result": "Recall 0.98 at k=10 | measured."
+    }
+  ],
+  "categories": [
+    {
+      "id": "model",
+      "title": "Modeling",
+      "color_name": "blue",
+      "color": "#dbeafe",
+      "stroke": "#1d4ed8",
+      "description": "Training things.",
+      "repos": [
+        {
+          "name": "alpha",
+          "url": "https://github.com/tester/alpha",
+          "description": "Alpha model trainer.",
+          "language": "Python",
+          "stars": 3,
+          "pushed_at": "2026-10-01",
+          "category": "model",
+          "flagship": true,
+          "result": "Matches the reference to 1e-9.",
+          "latest_release": "v1.2.0",
+          "release_url": "https://github.com/tester/alpha/releases/tag/v1.2.0"
+        },
+        {
+          "name": "delta",
+          "url": "https://github.com/tester/delta",
+          "description": "",
+          "language": "Rust",
+          "stars": 0,
+          "pushed_at": "2026-10-01",
+          "category": "model",
+          "flagship": false
+        }
+      ]
+    },
+    {
+      "id": "retr",
+      "title": "Retrieval",
+      "color_name": "green",
+      "color": "#dcfce7",
+      "stroke": "#dcfce7",
+      "description": "Finding things.",
+      "repos": [
+        {
+          "name": "beta",
+          "url": "https://github.com/tester/beta",
+          "description": "Beta retrieval engine, fast and small.",
+          "language": "Go",
+          "stars": 0,
+          "pushed_at": "2026-10-01",
+          "category": "retr",
+          "flagship": true,
+          "summary": "A small search engine",
+          "result": "Recall 0.98 at k=10 | measured."
+        },
+        {
+          "name": "gamma",
+          "url": "https://github.com/tester/gamma",
+          "description": "Gamma agent.",
+          "language": "Python",
+          "stars": 0,
+          "pushed_at": "2026-10-01",
+          "category": "retr",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/tester/gamma/releases/tag/v0.1.0"
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "rows": [
+      {
+        "name": "Python",
+        "bytes": 10100,
+        "share": 61.96319018404908,
+        "repos": 3
+      },
+      {
+        "name": "Go",
+        "bytes": 5000,
+        "share": 30.67484662576687,
+        "repos": 1
+      },
+      {
+        "name": "Other",
+        "bytes": 1200,
+        "share": 7.361963190184049,
+        "repos": 0
+      }
+    ],
+    "total_bytes": 16300,
+    "repo_count": 5
+  },
+  "public_repos": 6
+}
