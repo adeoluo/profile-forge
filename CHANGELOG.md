@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.3.2] 2026-11-02
+
+### Performance
+
+- Map lookups and shared replacers in rendering (#9)
+
+### Documentation
+
+- Regenerate the example profile after the v0.3.1 release
+
 ## [0.3.1] 2026-11-02
 
 ### Features
