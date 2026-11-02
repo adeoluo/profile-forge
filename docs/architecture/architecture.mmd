@@ -5,53 +5,43 @@ flowchart LR
     classDef control  fill:#0EA5E9,stroke:#1E293B,color:#ffffff,stroke-width:1px;
     classDef obs      fill:#CBD5E1,stroke:#1E293B,color:#1E293B,stroke-width:1px;
 
-    User(["CLI user<br/>generate, check, init"]):::edge
-    Api(["GitHub REST API"]):::edge
-    Token(["Token source<br/>GITHUB_TOKEN, GH_TOKEN, gh auth token"]):::edge
-
-    subgraph Io["Interfaces and config (internal/cli, internal/config)"]
+    subgraph Interfaces["CLI and config"]
         direction TB
-        Cli["cli.Run<br/>commands, flags, exit codes"]:::core
-        Config["config.Load<br/>strict YAML, defaults, Validate"]:::control
-        Dashes["Dash scan<br/>U+2014, U+2013, HTML entities"]:::control
+        User(["CLI user<br/>generate, check, init"]):::edge
+        Cli["cli.Run<br/>commands, exit codes"]:::core
+        Dashes["Dash scan<br/>U+2014, U+2013"]:::control
+        Config["config.Load<br/>strict YAML, defaults"]:::control
+        User --> Cli --> Dashes --> Config
     end
 
-    subgraph Core["Core logic (internal/github, internal/render)"]
+    subgraph Core["Fetch and render"]
         direction TB
-        Client["github.Client<br/>Link pagination, 8 workers, retries"]:::core
-        Build["render.Build<br/>view model, language summary"]:::core
-        Charts["Mermaid builders<br/>path, ecosystem, language pie"]:::core
-        Tmpl["Section templates<br/>Markdown in config order"]:::core
+        Token(["Token source<br/>env or gh auth token"]):::edge
+        Api(["GitHub REST API"]):::edge
+        Client["github.Client<br/>pagination, 8 workers"]:::core
+        Build["render.Build<br/>view model, languages"]:::core
+        Tmpl["Templates, charts<br/>sections, mermaid"]:::core
+        Token ~~~ Api --> Client --> Build --> Tmpl
     end
 
     subgraph State["Data and state"]
         direction TB
         Yaml[("profile.yaml")]:::data
-        Cache[("Disk cache<br/>SHA-256 names, TTL, atomic writes")]:::data
+        Cache[("Disk cache<br/>SHA-256 keys, TTL")]:::data
+        Yaml ~~~ Cache
     end
 
-    subgraph Out["Validation and outputs (internal/validate)"]
+    subgraph Obs["Validation and outputs"]
         direction TB
-        Validate["validate.Output<br/>dash scan, mermaid checks"]:::control
-        Links["CheckLinks<br/>optional image URL check"]:::control
-        Coverage["Coverage warnings<br/>uncategorized repositories"]:::obs
-        Readme["README.md<br/>written, or compared by check"]:::obs
+        Validate["validate.Output<br/>dashes, mermaid"]:::control
+        Readme["README.md<br/>written or compared"]:::obs
         Json["portfolio.json<br/>optional"]:::obs
+        Links["CheckLinks<br/>optional image check"]:::control
+        Coverage["Coverage warnings<br/>uncategorized repos"]:::obs
+        Validate --> Readme ~~~ Json ~~~ Links ~~~ Coverage
     end
 
-    User -->|flags| Cli
-    Cli -->|Load| Config
-    Config -.->|reads| Yaml
-    Config -.-> Dashes
-    Cli -->|FetchAll| Client
-    Client -.->|resolves| Token
-    Client -->|HTTPS GET| Api
-    Client -.->|get, put| Cache
-    Cli -->|config, repos| Build
-    Build --> Charts
-    Build -->|View| Tmpl
-    Build -->|View| Json
-    Tmpl -->|Markdown| Validate
-    Validate --> Readme
-    Validate -.-> Links
-    Cli -.-> Coverage
+    Interfaces -->|config| Core
+    Core -.->|reads, caches| State
+    State ~~~ Obs
+    Core -->|Markdown, View| Obs
