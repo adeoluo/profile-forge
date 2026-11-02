@@ -2,7 +2,7 @@
   "user": "adeoluo",
   "name": "Adeolu Ogunnoiki",
   "headline": "AI and Machine Learning Engineer",
-  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language\nthat fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and\nrecorded demos, and are checked against widely used reference libraries where it matters.",
+  "bio": "**I build AI tools, products, and agents, and evaluate them for correctness, reliability, and safety.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language\nthat fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and\nrecorded demos, and are checked against widely used reference libraries where it matters.",
   "links": [
     {
       "label": "Homebrew tap",

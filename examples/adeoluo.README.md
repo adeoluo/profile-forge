@@ -6,7 +6,7 @@
 
 ### AI and Machine Learning Engineer
 
-**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**
+**I build AI tools, products, and agents, and evaluate them for correctness, reliability, and safety.**
 
 Transformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,
 and the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language
