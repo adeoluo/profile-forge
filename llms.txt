@@ -1,0 +1,28 @@
+# Profile Forge
+
+> A Go command-line tool that generates a GitHub profile README and a portfolio JSON document from live repository metadata and a small YAML config.
+
+Languages: Go. License: MIT. Source: https://github.com/adeoluo/profile-forge
+
+## Docs
+
+- [README](https://github.com/adeoluo/profile-forge/blob/main/README.md): motivation, architecture, results, quickstart, usage, design decisions, testing, limitations, roadmap
+- [AGENTS.md](https://github.com/adeoluo/profile-forge/blob/main/AGENTS.md): layout, commands and conventions for changing the code
+- [Architecture diagram](https://github.com/adeoluo/profile-forge/blob/main/docs/architecture/architecture.mmd): Mermaid source of the component diagram
+- [Architecture](https://github.com/adeoluo/profile-forge/blob/main/docs/ARCHITECTURE.md)
+- [Releasing](https://github.com/adeoluo/profile-forge/blob/main/docs/RELEASING.md)
+- [ADR 0001: YAML config with strict decoding](https://github.com/adeoluo/profile-forge/blob/main/docs/adr/0001-yaml-config-with-strict-decoding.md)
+- [ADR 0002: Cache raw API responses keyed by URL](https://github.com/adeoluo/profile-forge/blob/main/docs/adr/0002-url-keyed-response-cache.md)
+- [ADR 0003: Static badges and a legend generated from category colors](https://github.com/adeoluo/profile-forge/blob/main/docs/adr/0003-static-badges-and-generated-legend.md)
+- [ADR 0004: Reject dashes in config text, normalize them in fetched text](https://github.com/adeoluo/profile-forge/blob/main/docs/adr/0004-dash-policy.md)
+- [Changelog](https://github.com/adeoluo/profile-forge/blob/main/CHANGELOG.md): release history
+
+## Source
+
+- [cmd/profile-forge](https://github.com/adeoluo/profile-forge/tree/main/cmd/profile-forge): Command profile-forge generates a GitHub profile README from live repository metadata and a small YAML config.
+- [internal/cli](https://github.com/adeoluo/profile-forge/tree/main/internal/cli): Package cli implements the profile-forge command line.
+- [internal/config](https://github.com/adeoluo/profile-forge/tree/main/internal/config): Package config loads and validates the profile-forge configuration file.
+- [internal/fakegh](https://github.com/adeoluo/profile-forge/tree/main/internal/fakegh): Package fakegh serves a minimal fake of the GitHub REST endpoints that profile-forge uses.
+- [internal/github](https://github.com/adeoluo/profile-forge/tree/main/internal/github): Package github is a small GitHub REST API client with an on-disk cache.
+- [internal/render](https://github.com/adeoluo/profile-forge/tree/main/internal/render): Package render turns config plus repository metadata into Markdown and JSON.
+- [internal/validate](https://github.com/adeoluo/profile-forge/tree/main/internal/validate): Package validate checks generated Markdown before it is written.

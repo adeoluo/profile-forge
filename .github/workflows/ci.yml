@@ -48,3 +48,13 @@ jobs:
         run: |
           make release VERSION=v0.0.0-ci
           make verify-release
+
+  docker:
+    name: Container image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build
+        run: docker build --build-arg VERSION=ci -t profile-forge:ci .
+      - name: Smoke test
+        run: docker run --rm profile-forge:ci --version | grep -q 'profile-forge ci'

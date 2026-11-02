@@ -5,7 +5,7 @@ LDFLAGS  := -s -w -buildid= -X $(PKG)/internal/cli.Version=$(VERSION)
 PLATFORMS := darwin/arm64 darwin/amd64 linux/amd64 linux/arm64
 DIST     := dist
 
-.PHONY: all build test race cover vet fmt fmt-check lint bench example check-example release verify-release clean
+.PHONY: all build test race cover vet fmt fmt-check lint bench example check-example release verify-release clean changelog cut-release
 
 all: fmt-check vet race build
 
@@ -68,3 +68,9 @@ verify-release:
 
 clean:
 	rm -rf bin $(DIST) coverage.out
+
+changelog: ## Regenerate CHANGELOG.md from Conventional Commits (git-cliff)
+	git cliff --output CHANGELOG.md && perl -0pi -e 's/\n+\z/\n/' CHANGELOG.md
+
+cut-release: ## Cut a release locally: version bump, changelog, tag, GitHub release (RELEASE_VERSION=vX.Y.Z optional)
+	scripts/release.sh $(RELEASE_VERSION)
