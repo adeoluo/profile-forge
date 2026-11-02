@@ -10,19 +10,19 @@
 
 Transformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,
 and the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language
-that fits each problem. Projects ship with green CI, versioned releases, and measured benchmarks, and
-are checked against widely used reference libraries where it matters.
+that fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and
+recorded demos, and are checked against widely used reference libraries where it matters.
 
 ![languages: Python | Go | Rust | TypeScript](https://img.shields.io/badge/languages-Python%20%7C%20Go%20%7C%20Rust%20%7C%20TypeScript-3776AB?logo=python&logoColor=white&style=for-the-badge)
-![typed: mypy strict | go vet | clippy | tsc strict](https://img.shields.io/badge/typed-mypy%20strict%20%7C%20go%20vet%20%7C%20clippy%20%7C%20tsc%20strict-2A6DB0?style=for-the-badge)
-![validated vs: PyTorch | scipy | FAISS | hnswlib](https://img.shields.io/badge/validated%20vs-PyTorch%20%7C%20scipy%20%7C%20FAISS%20%7C%20hnswlib-8957e5?style=for-the-badge)
+![typed: mypy strict | go vet | Clippy | tsc strict](https://img.shields.io/badge/typed-mypy%20strict%20%7C%20go%20vet%20%7C%20Clippy%20%7C%20tsc%20strict-2A6DB0?style=for-the-badge)
+![validated vs: PyTorch | SciPy | FAISS | hnswlib](https://img.shields.io/badge/validated%20vs-PyTorch%20%7C%20SciPy%20%7C%20FAISS%20%7C%20hnswlib-8957e5?style=for-the-badge)
 
 ![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
 ![flagships: 12](https://img.shields.io/badge/flagships-12-1f6feb?style=flat-square)
 ![releases: 20](https://img.shields.io/badge/releases-20-1f6feb?style=flat-square)
 ![top language: Python 68%](https://img.shields.io/badge/top%20language-Python%2068%25-1f6feb?style=flat-square)
 
-[GitHub](https://github.com/adeoluo) | [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
+[Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
 
 </div>
 
@@ -59,15 +59,16 @@ Languages and tools used in these repositories. Libraries marked reference are w
 Pick what you want to see. Colors group projects by the stage of the stack they live in, and the same colors are used in every diagram on this page. Flagships are in bold.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
-  n_root --> n_model["Modeling and training<br/><b>transformer-from-scratch</b><br/>cnn-from-scratch, neural-word-embeddings<br/>bpe-tokenizer-library<br/>+5 more"]
-  n_root --> n_retr["Retrieval and search<br/><b>ann-vector-search-library</b><br/><b>hybrid-rag</b><br/>graphrag, agentic-rag<br/>grounded-copilot"]
-  n_root --> n_align["Alignment and post-training<br/><b>rlhf-reward-model</b><br/>preference-optimization, self-improvement-loop<br/>prompt-optimizer"]
+  n_root --> n_model["Modeling and training<br/><b>transformer-from-scratch</b><br/>cnn-from-scratch<br/>neural-word-embeddings<br/>bpe-tokenizer-library<br/>corpus-dedup-library<br/>crf-sequence-labeler<br/>dependency-parser<br/>statistical-translation<br/>topic-model-lda"]
+  n_root --> n_retr["Retrieval and search<br/><b>ann-vector-search-library</b><br/><b>hybrid-rag</b><br/>graphrag<br/>agentic-rag<br/>grounded-copilot"]
+  n_root --> n_align["Alignment and post-training<br/><b>rlhf-reward-model</b><br/>preference-optimization<br/>self-improvement-loop<br/>prompt-optimizer"]
   n_root --> n_serve["Serving and reliability<br/><b>llm-gateway</b><br/><b>constrained-generation-library</b>"]
-  n_root --> n_agent["Agents<br/><b>react-agent</b><br/><b>multi-agent-orchestrator</b><br/><b>agent-platform</b><br/>agent-memory, nl-sql-analyst<br/>ai-code-reviewer<br/>+1 more"]
-  n_root --> n_trust["Evaluation and trust<br/><b>evaluation-harness</b><br/><b>training-provenance</b><br/>llm-observability, factuality-auditor<br/>red-teaming<br/>+1 more"]
-  n_root --> n_sys["Systems and tooling<br/><b>vectordb-go</b><br/>mcp-ml-tools, sweep-orchestrator<br/>hyperparameter-optimizer<br/>+2 more"]
+  n_root --> n_agent["Agents<br/><b>react-agent</b><br/><b>multi-agent-orchestrator</b><br/><b>agent-platform</b><br/>agent-memory<br/>nl-sql-analyst<br/>ai-code-reviewer<br/>agent-sandbox"]
+  n_root --> n_trust["Evaluation and trust<br/><b>evaluation-harness</b><br/><b>training-provenance</b><br/>llm-observability<br/>factuality-auditor<br/>red-teaming<br/>llm-eval-action"]
+  n_root --> n_sys["Systems and tooling<br/><b>vectordb-go</b><br/>mcp-ml-tools<br/>sweep-orchestrator<br/>hyperparameter-optimizer<br/>profile-forge<br/>homebrew-tap"]
 
   classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;
   classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
@@ -107,17 +108,18 @@ flowchart TD
 The flagships compose into one pipeline: data is tokenized and deduplicated, models are trained and aligned, results are retrieved and served, agents act on them, and everything is evaluated, traced, and reproducible. Dotted arrows are cross-cutting relationships. Colors match the legend.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart LR
-  r_bpe_tokenizer_library["bpe-tokenizer"]
+  r_bpe_tokenizer_library["bpe-tokenizer-library"]
   r_transformer_from_scratch["transformer-from-scratch"]
-  r_corpus_dedup_library["corpus-dedup"]
+  r_corpus_dedup_library["corpus-dedup-library"]
   r_rlhf_reward_model["rlhf-reward-model"]
   r_preference_optimization["preference-optimization"]
-  r_ann_vector_search_library["ann-vector-search"]
+  r_ann_vector_search_library["ann-vector-search-library"]
   r_hybrid_rag["hybrid-rag"]
   r_vectordb_go["vectordb-go"]
   r_llm_gateway["llm-gateway"]
-  r_constrained_generation_library["constrained-generation"]
+  r_constrained_generation_library["constrained-generation-library"]
   r_react_agent["react-agent"]
   r_multi_agent_orchestrator["multi-agent-orchestrator"]
   r_agent_platform["agent-platform"]
@@ -126,6 +128,7 @@ flowchart LR
   r_training_provenance["training-provenance"]
   r_agent_memory["agent-memory"]
   r_agent_sandbox["agent-sandbox"]
+  r_llm_eval_action["llm-eval-action"]
 
   r_bpe_tokenizer_library --> r_transformer_from_scratch
   r_corpus_dedup_library --> r_transformer_from_scratch
@@ -147,6 +150,7 @@ flowchart LR
   r_training_provenance -.->|reproduces| r_transformer_from_scratch
   r_agent_memory --> r_agent_platform
   r_agent_sandbox -.->|guards tools| r_react_agent
+  r_evaluation_harness -.->|gates PRs| r_llm_eval_action
 
   classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
   classDef c_retr fill:#dcfce7,stroke:#15803d,color:#052e16;
@@ -161,7 +165,7 @@ flowchart LR
   class r_rlhf_reward_model,r_preference_optimization c_align;
   class r_llm_gateway,r_constrained_generation_library c_serve;
   class r_react_agent,r_multi_agent_orchestrator,r_agent_platform,r_agent_memory,r_agent_sandbox c_agent;
-  class r_evaluation_harness,r_llm_observability,r_training_provenance c_trust;
+  class r_evaluation_harness,r_llm_observability,r_training_provenance,r_llm_eval_action c_trust;
   class r_vectordb_go c_sys;
 ```
 
@@ -173,18 +177,18 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 
 | Project | What it is | Validation and results |
 |---|---|---|
-| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | An integrated AI platform composed from eight of these libraries | Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
+| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | An integrated AI platform composed from nine of these libraries | OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
 | [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
-| [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | HNSW approximate nearest neighbor search | **Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured |
-| [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Reward modeling with PPO and DPO | PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study** |
-| [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Schema-constrained decoding via compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases |
-| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | An LLM gateway: safety, caching, reliability | Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested |
-| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | Hybrid retrieval with a neural dense retriever | Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale |
+| [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | An HNSW approximate nearest neighbor library with a Rust core | **Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster** |
+| [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | A reward model with PPO and DPO policy optimization | A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study** |
+| [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | A schema-constrained decoder built on compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases |
+| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | A safety gateway for LLM APIs, with a Go reverse proxy | Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case |
+| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | A hybrid retrieval system with a neural dense retriever | A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale |
 | [react-agent](https://github.com/adeoluo/react-agent)<br/>[![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | A ReAct reasoning-and-acting agent | **Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline |
-| [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Content-addressed ML reproducibility and lineage | End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix** |
-| [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)<br/>[![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Planner, worker, and critic over a shared blackboard | **Durable execution** with resume, and a single-agent vs orchestrator comparison |
-| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS |
+| [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | A content-addressed reproducibility and lineage system for ML | End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix** |
+| [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)<br/>[![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | A planner, workers, and a critic over a shared blackboard | **Durable execution** with resume, and a single-agent vs orchestrator comparison |
+| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS |
 
 ---
 
@@ -198,7 +202,7 @@ Model internals, training loops, tokenization, data preparation, and classical N
 - [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch): A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in Python; gradients verified against finite differences and translation invariance demonstrated against a linear baseline. <sub>Python</sub>
 - [neural-word-embeddings](https://github.com/adeoluo/neural-word-embeddings): Skip-gram word embeddings with negative sampling from scratch: hand-derived gradients, a unigram negative-sampling table, and category-retrieval evaluation. <sub>Python</sub>
 - [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library): A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a reference Python implementation and an optional Rust core (PyO3) that produces identical token ids; lossless for any input. <sub>Rust</sub>
-- [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library): A corpus near-deduplication and quality-filtering library built from scratch in Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs. <sub>Python</sub>
+- [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library): A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a Python reference, a bit-exact Rust core, and a JSONL CLI; perfect precision and recall on a labeled corpus while comparing a tiny fraction of document pairs. <sub>Python</sub>
 - [crf-sequence-labeler](https://github.com/adeoluo/crf-sequence-labeler): A linear-chain conditional random field for sequence labeling from scratch: Viterbi decoding, forward-backward training with log-likelihood gradients, and span-level evaluation. <sub>Python</sub>
 - [dependency-parser](https://github.com/adeoluo/dependency-parser): An arc-standard transition-based dependency parser from scratch: a static oracle, an averaged structured perceptron policy, greedy decoding, and attachment-score evaluation. <sub>Python</sub>
 - [statistical-translation](https://github.com/adeoluo/statistical-translation): Statistical machine translation alignment from scratch: IBM Model 1 and Model 2 word alignment trained by expectation-maximization, with alignment-error-rate evaluation. <sub>Python</sub>
@@ -208,8 +212,8 @@ Model internals, training loops, tokenization, data preparation, and classical N
 
 Approximate nearest neighbor search, hybrid and graph retrieval, and grounded generation.
 
-- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor vector search library built from scratch in Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost. <sub>Python</sub>
-- **[hybrid-rag](https://github.com/adeoluo/hybrid-rag)**: Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite. <sub>Python</sub>
+- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib. <sub>Python</sub>
+- **[hybrid-rag](https://github.com/adeoluo/hybrid-rag)**: Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite. <sub>Python</sub>
 - [graphrag](https://github.com/adeoluo/graphrag): GraphRAG from scratch: entity and relation extraction, knowledge-graph construction, and traversal-based multi-hop retrieval. <sub>Python</sub>
 - [agentic-rag](https://github.com/adeoluo/agentic-rag): Agentic retrieval from scratch: query decomposition, a self-querying retriever-agent, and iterative multi-hop retrieve-reason-retrieve. <sub>Python</sub>
 - [grounded-copilot](https://github.com/adeoluo/grounded-copilot): A retrieval-augmented copilot built from scratch: TF-IDF retrieval, inline citations, an abstention guardrail when retrieval is weak, and a sentence-level faithfulness check that verifies every claim traces to a cited source. <sub>Python</sub>
@@ -218,7 +222,7 @@ Approximate nearest neighbor search, hybrid and graph retrieval, and grounded ge
 
 Reward modeling, RLHF, preference optimization, self-training, and prompt optimization.
 
-- **[rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)**: Classical RLHF from scratch: a Bradley-Terry reward model and a clipped PPO policy optimizer, with an explicit reward over-optimization study. <sub>Python</sub>
+- **[rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)**: Classical RLHF from scratch: a Bradley-Terry reward model with PPO, a DPO implementation with a head-to-head PPO versus DPO comparison, and an explicit reward over-optimization study. <sub>Python</sub>
 - [preference-optimization](https://github.com/adeoluo/preference-optimization): Direct Preference Optimization from scratch: a behavior-cloned reference, a Bradley-Terry preference dataset, and an exact DPO gradient that aligns a policy to a hidden reward. <sub>Python</sub>
 - [self-improvement-loop](https://github.com/adeoluo/self-improvement-loop): Recursive self-improvement by rejection-sampling self-training with a verifier (STaR-style) from scratch: generate, verify, filter, rationalize, and behavior-clone a policy on a fully checkable reasoning task. <sub>Python</sub>
 - [prompt-optimizer](https://github.com/adeoluo/prompt-optimizer): Automated prompt optimization from scratch: instruction search and bootstrapped few-shot selection compiled against a metric, with a four-way ablation and an HTTP service. <sub>Python</sub>
@@ -227,7 +231,7 @@ Reward modeling, RLHF, preference optimization, self-training, and prompt optimi
 
 The layer between models and users, covering safety, caching, failover, and structured output.
 
-- **[llm-gateway](https://github.com/adeoluo/llm-gateway)**: A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall. <sub>Python</sub>
+- **[llm-gateway](https://github.com/adeoluo/llm-gateway)**: A safety gateway for language-model APIs: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, plus a Go reverse proxy with the same rules, measured on an adversarial suite. <sub>Python</sub>
 - **[constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)**: A structured-generation library built from scratch in Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained). <sub>Python</sub>
 
 ### Agents ![magenta](https://img.shields.io/badge/magenta-fae8ff?style=flat-square)
@@ -236,8 +240,8 @@ Tool-using agents, multi-agent orchestration, and language-model products built 
 
 - **[react-agent](https://github.com/adeoluo/react-agent)**: A ReAct reasoning-and-acting agent built from scratch: tool use, a transparent control loop, and full step tracing. <sub>Python</sub>
 - **[multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)**: A multi-agent orchestrator from scratch: a planner decomposes a task, workers execute subtasks, and a critic verifies, over a shared blackboard. <sub>Python</sub>
-- **[agent-platform](https://github.com/adeoluo/agent-platform)**: An integrated AI platform: authenticated API, LLM gateway, tool-using agents, multi-agent jobs with durable crash recovery, tenant-isolated retrieval, tracing, and evaluation, composed from from-scratch libraries. <sub>Python</sub>
-- [agent-memory](https://github.com/adeoluo/agent-memory): Long-term memory for AI agents: episodic, semantic, and procedural memory in SQLite with hybrid retrieval, fact versioning, consolidation, and an MCP server <sub>Python</sub>
+- **[agent-platform](https://github.com/adeoluo/agent-platform)**: An integrated AI platform composed from nine of these libraries: an authenticated multi-tenant API, OpenAI and Anthropic failover, streamed agent steps, an MCP server, per-tenant memory, durable multi-agent jobs with crash recovery, tracing, and evaluation. <sub>Python</sub>
+- [agent-memory](https://github.com/adeoluo/agent-memory): Long-term memory for AI agents: episodic, semantic, and procedural memory in SQLite with hybrid retrieval, fact versioning, consolidation, and an MCP server. <sub>Python</sub>
 - [nl-sql-analyst](https://github.com/adeoluo/nl-sql-analyst): A natural-language-to-SQL analyst powered by a plugged-in language model, with read-only guardrails and result verification; validated SQL runs against a real SQLite database and is evaluated for answer accuracy and guardrail coverage. <sub>Python</sub>
 - [ai-code-reviewer](https://github.com/adeoluo/ai-code-reviewer): An automated code reviewer powered by a plugged-in language model (Claude in production, an offline provider in CI), evaluated on a labeled benchmark of bug-introducing diffs for real bug-catching precision and recall. <sub>Python</sub>
 - [agent-sandbox](https://github.com/adeoluo/agent-sandbox): A policy-based sandbox for running AI agent tool calls with declarative rules, resource limits, and a tamper-evident audit log. <sub>Rust</sub>
@@ -246,8 +250,8 @@ Tool-using agents, multi-agent orchestration, and language-model products built 
 
 Evaluation statistics, tracing, factuality, red-teaming, and reproducible provenance.
 
-- **[evaluation-harness](https://github.com/adeoluo/evaluation-harness)**: A from-scratch evaluation and benchmarking framework for language models and agents: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks. <sub>Python</sub>
-- [llm-observability](https://github.com/adeoluo/llm-observability): LLM observability and tracing: a Python tracing library, collector, and JSON API with a TypeScript dashboard for traces, latency, tokens, and cost. <sub>Python</sub>
+- **[evaluation-harness](https://github.com/adeoluo/evaluation-harness)**: An evaluation and benchmarking framework for language models and agents, built from scratch: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks. <sub>Python</sub>
+- [llm-observability](https://github.com/adeoluo/llm-observability): An LLM observability stack: a Python tracing library, a collector with a JSON API, and a TypeScript dashboard for traces, latency, tokens, and cost. <sub>Python</sub>
 - **[training-provenance](https://github.com/adeoluo/training-provenance)**: Content-addressed provenance tracking for machine learning pipelines: a deduplicating artifact store, a content-addressed lineage DAG, and bit-for-bit reproducibility and integrity verification. <sub>Python</sub>
 - [factuality-auditor](https://github.com/adeoluo/factuality-auditor): A hallucination and factuality auditor from scratch: claim extraction, knowledge-base verification, and calibrated confidence with honest abstention. <sub>Python</sub>
 - [red-teaming](https://github.com/adeoluo/red-teaming): An automated red-teaming engine from scratch: an evolutionary search for guardrail-evading prompts, attack-success measurement, and a hardened defense, over fully fictional restricted terms. <sub>Python</sub>
@@ -257,12 +261,12 @@ Evaluation statistics, tracing, factuality, red-teaming, and reproducible proven
 
 Storage engines, experiment orchestration, hyperparameter search, and developer tools.
 
-- **[vectordb-go](https://github.com/adeoluo/vectordb-go)**: A concurrent, persistent HNSW vector database server in Go: write-ahead log with checksums, snapshot and replay crash recovery, HTTP API, and benchmarks against hnswlib and FAISS. <sub>Go</sub>
-- [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools): Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning. <sub>TypeScript</sub>
+- **[vectordb-go](https://github.com/adeoluo/vectordb-go)**: A concurrent, persistent HNSW vector database server in Go: a checksummed write-ahead log, snapshot and replay crash recovery, an HTTP API, and benchmarks against hnswlib and FAISS. <sub>Go</sub>
+- [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools): A Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning. <sub>TypeScript</sub>
 - [sweep-orchestrator](https://github.com/adeoluo/sweep-orchestrator): A hyperparameter sweep orchestrator from scratch: successive halving and Hyperband, parallel early stopping, multi-objective Pareto optimization, and hyperparameter importance. <sub>Python</sub>
 - [hyperparameter-optimizer](https://github.com/adeoluo/hyperparameter-optimizer): Black-box hyperparameter optimization from scratch: random and quasi-random search, a Tree-structured Parzen Estimator, and Gaussian-process Bayesian optimization with Expected Improvement. <sub>Python</sub>
 - [profile-forge](https://github.com/adeoluo/profile-forge): A Go CLI that generates a GitHub profile README and portfolio JSON from live repository metadata and a small YAML config. <sub>Go</sub>
-- [homebrew-tap](https://github.com/adeoluo/homebrew-tap): Homebrew formulas for vectordb, agent-sandbox, and profile-forge. <sub>Ruby</sub>
+- [homebrew-tap](https://github.com/adeoluo/homebrew-tap): Homebrew formulas for vectordb, agent-sandbox, corpus-dedup, and profile-forge. <sub>Ruby</sub>
 
 ---
 
@@ -276,7 +280,7 @@ Bytes of code per language, summed across my public repositories with the GitHub
 | Rust | 365.3 KiB | 10.0% | 4 |
 | TypeScript | 334.4 KiB | 9.1% | 4 |
 | Go | 276.5 KiB | 7.5% | 3 |
-| Shell | 75.6 KiB | 2.1% | 20 |
+| Shell | 73.7 KiB | 2.0% | 20 |
 | Other | 111.6 KiB | 3.0% |  |
 
 ```mermaid
@@ -286,7 +290,7 @@ pie
   "Rust" : 374068
   "TypeScript" : 342399
   "Go" : 283138
-  "Shell" : 77398
+  "Shell" : 75482
   "Other" : 114296
 ```
 

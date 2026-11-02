@@ -26,6 +26,7 @@ Builds "careful" systems.
 Pick an area to explore. Colors group repositories by category, and the same colors are used in every diagram on this page.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
   n_root --> n_model["Modeling<br/><b>alpha</b><br/>delta"]
@@ -54,6 +55,7 @@ flowchart TD
 Arrows show how the projects build on each other. Node colors match the legend above.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart LR
   r_alpha["alpha-model"]
   r_beta["beta"]

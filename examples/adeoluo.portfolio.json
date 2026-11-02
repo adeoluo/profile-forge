@@ -2,12 +2,8 @@
   "user": "adeoluo",
   "name": "Adeolu Ogunnoiki",
   "headline": "AI and Machine Learning Engineer",
-  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language\nthat fits each problem. Projects ship with green CI, versioned releases, and measured benchmarks, and\nare checked against widely used reference libraries where it matters.",
+  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language\nthat fits each problem. Projects ship with green CI, versioned releases, measured benchmarks, and\nrecorded demos, and are checked against widely used reference libraries where it matters.",
   "links": [
-    {
-      "label": "GitHub",
-      "url": "https://github.com/adeoluo"
-    },
     {
       "label": "Homebrew tap",
       "url": "https://github.com/adeoluo/homebrew-tap"
@@ -21,7 +17,7 @@
     {
       "name": "agent-platform",
       "url": "https://github.com/adeoluo/agent-platform",
-      "description": "An integrated AI platform: authenticated API, LLM gateway, tool-using agents, multi-agent jobs with durable crash recovery, tenant-isolated retrieval, tracing, and evaluation, composed from from-scratch libraries.",
+      "description": "An integrated AI platform composed from nine of these libraries: an authenticated multi-tenant API, OpenAI and Anthropic failover, streamed agent steps, an MCP server, per-tenant memory, durable multi-agent jobs with crash recovery, tracing, and evaluation.",
       "language": "Python",
       "topics": [
         "agents",
@@ -43,8 +39,8 @@
       "pushed_at": "2026-11-02",
       "category": "agent",
       "flagship": true,
-      "summary": "An integrated AI platform composed from eight of these libraries",
-      "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
+      "summary": "An integrated AI platform composed from nine of these libraries",
+      "result": "OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
       "latest_release": "v0.4.0",
       "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
     },
@@ -75,7 +71,7 @@
     {
       "name": "evaluation-harness",
       "url": "https://github.com/adeoluo/evaluation-harness",
-      "description": "A from-scratch evaluation and benchmarking framework for language models and agents: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
+      "description": "An evaluation and benchmarking framework for language models and agents, built from scratch: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
       "language": "Python",
       "topics": [
         "benchmarking",
@@ -92,14 +88,14 @@
       "category": "trust",
       "flagship": true,
       "summary": "A model and agent evaluation framework",
-      "result": "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d",
+      "result": "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
     },
     {
       "name": "ann-vector-search-library",
       "url": "https://github.com/adeoluo/ann-vector-search-library",
-      "description": "An approximate nearest neighbor vector search library built from scratch in Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+      "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib.",
       "language": "Python",
       "topics": [
         "approximate-nearest-neighbors",
@@ -117,15 +113,15 @@
       "pushed_at": "2026-11-02",
       "category": "retr",
       "flagship": true,
-      "summary": "HNSW approximate nearest neighbor search",
-      "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
+      "summary": "An HNSW approximate nearest neighbor library with a Rust core",
+      "result": "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**",
       "latest_release": "v0.2.0",
       "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
     },
     {
       "name": "rlhf-reward-model",
       "url": "https://github.com/adeoluo/rlhf-reward-model",
-      "description": "Classical RLHF from scratch: a Bradley-Terry reward model and a clipped PPO policy optimizer, with an explicit reward over-optimization study.",
+      "description": "Classical RLHF from scratch: a Bradley-Terry reward model with PPO, a DPO implementation with a head-to-head PPO versus DPO comparison, and an explicit reward over-optimization study.",
       "language": "Python",
       "topics": [
         "alignment",
@@ -141,8 +137,8 @@
       "pushed_at": "2026-11-02",
       "category": "align",
       "flagship": true,
-      "summary": "Reward modeling with PPO and DPO",
-      "result": "PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**",
+      "summary": "A reward model with PPO and DPO policy optimization",
+      "result": "A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study**",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
     },
@@ -165,15 +161,15 @@
       "pushed_at": "2026-11-02",
       "category": "serve",
       "flagship": true,
-      "summary": "Schema-constrained decoding via compiled automata",
-      "result": "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases",
+      "summary": "A schema-constrained decoder built on compiled automata",
+      "result": "**240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0"
     },
     {
       "name": "llm-gateway",
       "url": "https://github.com/adeoluo/llm-gateway",
-      "description": "A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall.",
+      "description": "A safety gateway for language-model APIs: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, plus a Go reverse proxy with the same rules, measured on an adversarial suite.",
       "language": "Python",
       "topics": [
         "ai-safety",
@@ -189,15 +185,15 @@
       "pushed_at": "2026-11-02",
       "category": "serve",
       "flagship": true,
-      "summary": "An LLM gateway: safety, caching, reliability",
-      "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
+      "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
+      "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
       "latest_release": "v0.2.0",
       "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
     },
     {
       "name": "hybrid-rag",
       "url": "https://github.com/adeoluo/hybrid-rag",
-      "description": "Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+      "description": "Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
       "language": "Python",
       "topics": [
         "bm25",
@@ -213,8 +209,8 @@
       "pushed_at": "2026-11-02",
       "category": "retr",
       "flagship": true,
-      "summary": "Hybrid retrieval with a neural dense retriever",
-      "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
+      "summary": "A hybrid retrieval system with a neural dense retriever",
+      "result": "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
     },
@@ -261,8 +257,8 @@
       "pushed_at": "2026-11-02",
       "category": "trust",
       "flagship": true,
-      "summary": "Content-addressed ML reproducibility and lineage",
-      "result": "End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix**",
+      "summary": "A content-addressed reproducibility and lineage system for ML",
+      "result": "End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix**",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
     },
@@ -285,7 +281,7 @@
       "pushed_at": "2026-11-02",
       "category": "agent",
       "flagship": true,
-      "summary": "Planner, worker, and critic over a shared blackboard",
+      "summary": "A planner, workers, and a critic over a shared blackboard",
       "result": "**Durable execution** with resume, and a single-agent vs orchestrator comparison",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0"
@@ -293,7 +289,7 @@
     {
       "name": "vectordb-go",
       "url": "https://github.com/adeoluo/vectordb-go",
-      "description": "A concurrent, persistent HNSW vector database server in Go: write-ahead log with checksums, snapshot and replay crash recovery, HTTP API, and benchmarks against hnswlib and FAISS.",
+      "description": "A concurrent, persistent HNSW vector database server in Go: a checksummed write-ahead log, snapshot and replay crash recovery, an HTTP API, and benchmarks against hnswlib and FAISS.",
       "language": "Go",
       "topics": [
         "ann",
@@ -310,7 +306,7 @@
       "category": "sys",
       "flagship": true,
       "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
-      "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
+      "result": "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS",
       "latest_release": "v0.1.1",
       "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
     }
@@ -415,7 +411,7 @@
         {
           "name": "corpus-dedup-library",
           "url": "https://github.com/adeoluo/corpus-dedup-library",
-          "description": "A corpus near-deduplication and quality-filtering library built from scratch in Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
+          "description": "A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a Python reference, a bit-exact Rust core, and a JSONL CLI; perfect precision and recall on a labeled corpus while comparing a tiny fraction of document pairs.",
           "language": "Python",
           "topics": [
             "data-cleaning",
@@ -531,7 +527,7 @@
         {
           "name": "ann-vector-search-library",
           "url": "https://github.com/adeoluo/ann-vector-search-library",
-          "description": "An approximate nearest neighbor vector search library built from scratch in Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+          "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib.",
           "language": "Python",
           "topics": [
             "approximate-nearest-neighbors",
@@ -549,15 +545,15 @@
           "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": true,
-          "summary": "HNSW approximate nearest neighbor search",
-          "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
+          "summary": "An HNSW approximate nearest neighbor library with a Rust core",
+          "result": "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**",
           "latest_release": "v0.2.0",
           "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
         },
         {
           "name": "hybrid-rag",
           "url": "https://github.com/adeoluo/hybrid-rag",
-          "description": "Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+          "description": "Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
           "language": "Python",
           "topics": [
             "bm25",
@@ -573,8 +569,8 @@
           "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": true,
-          "summary": "Hybrid retrieval with a neural dense retriever",
-          "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
+          "summary": "A hybrid retrieval system with a neural dense retriever",
+          "result": "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
         },
@@ -651,7 +647,7 @@
         {
           "name": "rlhf-reward-model",
           "url": "https://github.com/adeoluo/rlhf-reward-model",
-          "description": "Classical RLHF from scratch: a Bradley-Terry reward model and a clipped PPO policy optimizer, with an explicit reward over-optimization study.",
+          "description": "Classical RLHF from scratch: a Bradley-Terry reward model with PPO, a DPO implementation with a head-to-head PPO versus DPO comparison, and an explicit reward over-optimization study.",
           "language": "Python",
           "topics": [
             "alignment",
@@ -667,8 +663,8 @@
           "pushed_at": "2026-11-02",
           "category": "align",
           "flagship": true,
-          "summary": "Reward modeling with PPO and DPO",
-          "result": "PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**",
+          "summary": "A reward model with PPO and DPO policy optimization",
+          "result": "A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study**",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
         },
@@ -745,7 +741,7 @@
         {
           "name": "llm-gateway",
           "url": "https://github.com/adeoluo/llm-gateway",
-          "description": "A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall.",
+          "description": "A safety gateway for language-model APIs: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, plus a Go reverse proxy with the same rules, measured on an adversarial suite.",
           "language": "Python",
           "topics": [
             "ai-safety",
@@ -761,8 +757,8 @@
           "pushed_at": "2026-11-02",
           "category": "serve",
           "flagship": true,
-          "summary": "An LLM gateway: safety, caching, reliability",
-          "result": "Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested",
+          "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
+          "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
           "latest_release": "v0.2.0",
           "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
         },
@@ -785,8 +781,8 @@
           "pushed_at": "2026-11-02",
           "category": "serve",
           "flagship": true,
-          "summary": "Schema-constrained decoding via compiled automata",
-          "result": "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases",
+          "summary": "A schema-constrained decoder built on compiled automata",
+          "result": "**240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0"
         }
@@ -843,7 +839,7 @@
           "pushed_at": "2026-11-02",
           "category": "agent",
           "flagship": true,
-          "summary": "Planner, worker, and critic over a shared blackboard",
+          "summary": "A planner, workers, and a critic over a shared blackboard",
           "result": "**Durable execution** with resume, and a single-agent vs orchestrator comparison",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0"
@@ -851,7 +847,7 @@
         {
           "name": "agent-platform",
           "url": "https://github.com/adeoluo/agent-platform",
-          "description": "An integrated AI platform: authenticated API, LLM gateway, tool-using agents, multi-agent jobs with durable crash recovery, tenant-isolated retrieval, tracing, and evaluation, composed from from-scratch libraries.",
+          "description": "An integrated AI platform composed from nine of these libraries: an authenticated multi-tenant API, OpenAI and Anthropic failover, streamed agent steps, an MCP server, per-tenant memory, durable multi-agent jobs with crash recovery, tracing, and evaluation.",
           "language": "Python",
           "topics": [
             "agents",
@@ -873,15 +869,15 @@
           "pushed_at": "2026-11-02",
           "category": "agent",
           "flagship": true,
-          "summary": "An integrated AI platform composed from eight of these libraries",
-          "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
+          "summary": "An integrated AI platform composed from nine of these libraries",
+          "result": "OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
           "latest_release": "v0.4.0",
           "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
         },
         {
           "name": "agent-memory",
           "url": "https://github.com/adeoluo/agent-memory",
-          "description": "Long-term memory for AI agents: episodic, semantic, and procedural memory in SQLite with hybrid retrieval, fact versioning, consolidation, and an MCP server",
+          "description": "Long-term memory for AI agents: episodic, semantic, and procedural memory in SQLite with hybrid retrieval, fact versioning, consolidation, and an MCP server.",
           "language": "Python",
           "topics": [
             "agents",
@@ -975,7 +971,7 @@
         {
           "name": "evaluation-harness",
           "url": "https://github.com/adeoluo/evaluation-harness",
-          "description": "A from-scratch evaluation and benchmarking framework for language models and agents: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
+          "description": "An evaluation and benchmarking framework for language models and agents, built from scratch: pluggable tasks and graders, bootstrap confidence intervals, significance testing, and contamination checks.",
           "language": "Python",
           "topics": [
             "benchmarking",
@@ -992,14 +988,14 @@
           "category": "trust",
           "flagship": true,
           "summary": "A model and agent evaluation framework",
-          "result": "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d",
+          "result": "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
         },
         {
           "name": "llm-observability",
           "url": "https://github.com/adeoluo/llm-observability",
-          "description": "LLM observability and tracing: a Python tracing library, collector, and JSON API with a TypeScript dashboard for traces, latency, tokens, and cost.",
+          "description": "An LLM observability stack: a Python tracing library, a collector with a JSON API, and a TypeScript dashboard for traces, latency, tokens, and cost.",
           "language": "Python",
           "topics": [
             "dashboard",
@@ -1039,8 +1035,8 @@
           "pushed_at": "2026-11-02",
           "category": "trust",
           "flagship": true,
-          "summary": "Content-addressed ML reproducibility and lineage",
-          "result": "End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix**",
+          "summary": "A content-addressed reproducibility and lineage system for ML",
+          "result": "End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix**",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
         },
@@ -1119,7 +1115,7 @@
         {
           "name": "vectordb-go",
           "url": "https://github.com/adeoluo/vectordb-go",
-          "description": "A concurrent, persistent HNSW vector database server in Go: write-ahead log with checksums, snapshot and replay crash recovery, HTTP API, and benchmarks against hnswlib and FAISS.",
+          "description": "A concurrent, persistent HNSW vector database server in Go: a checksummed write-ahead log, snapshot and replay crash recovery, an HTTP API, and benchmarks against hnswlib and FAISS.",
           "language": "Go",
           "topics": [
             "ann",
@@ -1136,14 +1132,14 @@
           "category": "sys",
           "flagship": true,
           "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
-          "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
+          "result": "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS",
           "latest_release": "v0.1.1",
           "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
         },
         {
           "name": "mcp-ml-tools",
           "url": "https://github.com/adeoluo/mcp-ml-tools",
-          "description": "Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning.",
+          "description": "A Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning.",
           "language": "TypeScript",
           "topics": [
             "ai-agents",
@@ -1228,7 +1224,7 @@
         {
           "name": "homebrew-tap",
           "url": "https://github.com/adeoluo/homebrew-tap",
-          "description": "Homebrew formulas for vectordb, agent-sandbox, and profile-forge.",
+          "description": "Homebrew formulas for vectordb, agent-sandbox, corpus-dedup, and profile-forge.",
           "language": "Ruby",
           "topics": [
             "ai-agents",
@@ -1251,41 +1247,41 @@
       {
         "name": "Python",
         "bytes": 2563884,
-        "share": 68.27587363918083,
+        "share": 68.31072769403296,
         "repos": 35
       },
       {
         "name": "Rust",
         "bytes": 374068,
-        "share": 9.961378713101332,
+        "share": 9.966463883331508,
         "repos": 4
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 9.118037656220748,
+        "share": 9.122692310459128,
         "repos": 4
       },
       {
         "name": "Go",
         "bytes": 283138,
-        "share": 7.539925484323933,
+        "share": 7.543774530295873,
         "repos": 3
       },
       {
         "name": "Shell",
-        "bytes": 77398,
-        "share": 2.061097954480514,
+        "bytes": 75482,
+        "share": 2.011101261913954,
         "repos": 20
       },
       {
         "name": "Other",
         "bytes": 114296,
-        "share": 3.0436865526926384,
+        "share": 3.0452403199665783,
         "repos": 0
       }
     ],
-    "total_bytes": 3755183,
+    "total_bytes": 3753267,
     "repo_count": 39
   },
   "stack": [

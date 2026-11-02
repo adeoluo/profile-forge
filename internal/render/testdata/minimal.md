@@ -18,6 +18,7 @@
 Pick an area to explore. Colors group repositories by category, and the same colors are used in every diagram on this page.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
   n_root --> n_model["Modeling<br/>alpha<br/>+1 more"]

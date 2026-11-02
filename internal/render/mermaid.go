@@ -27,10 +27,15 @@ func classDef(c config.Category) string {
 
 const rootClass = "  classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;"
 
+// flowInit widens Mermaid's label wrapping so hyphenated repository names stay on one
+// line instead of breaking at a hyphen (the default wraps at 200px).
+const flowInit = `%%{init: {"flowchart": {"wrappingWidth": 320}}}%%`
+
 // PathChart builds the "find your path" flowchart: one node per category,
 // listing its flagships in bold and a few other repositories.
 func PathChart(c *config.Config) string {
 	var b strings.Builder
+	b.WriteString(flowInit + "\n")
 	b.WriteString("flowchart TD\n")
 	fmt.Fprintf(&b, "  n_root([\"%s\"])\n", mermaidText(c.Path.Prompt))
 	for _, cat := range c.Category {
@@ -52,13 +57,8 @@ func PathChart(c *config.Config) string {
 			more = len(shown) - c.Path.MaxOthers
 			shown = shown[:c.Path.MaxOthers]
 		}
-		for i := 0; i < len(shown); i += 2 {
-			end := i + 2
-			if end > len(shown) {
-				end = len(shown)
-			}
-			lines = append(lines, strings.Join(shown[i:end], ", "))
-		}
+		// One repository per line, so every name reads the same way regardless of count.
+		lines = append(lines, shown...)
 		if more > 0 {
 			lines = append(lines, fmt.Sprintf("+%d more", more))
 		}
@@ -93,6 +93,7 @@ func EcosystemChart(c *config.Config) string {
 		}
 	}
 	var b strings.Builder
+	b.WriteString(flowInit + "\n")
 	fmt.Fprintf(&b, "flowchart %s\n", c.Ecosystem.Direction)
 	for _, r := range order {
 		label := r
