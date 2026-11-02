@@ -4,6 +4,18 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.3.1] 2026-11-02
+
+### Features
+
+- Bullets under category titles (GitHub strips <u>) (#8)
+
+### Documentation
+
+- Regenerate the example profile after the v0.3.0 release
+- Broaden the example profile headline
+- Rewrite the example profile introduction as plain sentences
+
 ## [0.3.0] 2026-11-02
 
 ### Features
