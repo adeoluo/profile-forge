@@ -39,8 +39,8 @@
       "flagship": true,
       "summary": "An integrated AI platform composed from eight of these libraries",
       "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0"
+      "latest_release": "v0.3.0",
+      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0"
     },
     {
       "name": "transformer-from-scratch",
@@ -111,8 +111,8 @@
       "flagship": true,
       "summary": "HNSW approximate nearest neighbor search",
       "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0"
+      "latest_release": "v0.2.0",
+      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
     },
     {
       "name": "rlhf-reward-model",
@@ -302,8 +302,8 @@
       "flagship": true,
       "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
       "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0"
+      "latest_release": "v0.1.1",
+      "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
     }
   ],
   "categories": [
@@ -421,7 +421,9 @@
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.1.0"
         },
         {
           "name": "crf-sequence-labeler",
@@ -534,8 +536,8 @@
           "flagship": true,
           "summary": "HNSW approximate nearest neighbor search",
           "result": "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0"
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
         },
         {
           "name": "hybrid-rag",
@@ -852,8 +854,8 @@
           "flagship": true,
           "summary": "An integrated AI platform composed from eight of these libraries",
           "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0"
+          "latest_release": "v0.3.0",
+          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0"
         },
         {
           "name": "agent-memory",
@@ -920,6 +922,15 @@
           "url": "https://github.com/adeoluo/agent-sandbox",
           "description": "A policy-based sandbox for running AI agent tool calls with declarative rules, resource limits, and a tamper-evident audit log.",
           "language": "Rust",
+          "topics": [
+            "ai-agents",
+            "cli",
+            "llm",
+            "process-isolation",
+            "rust",
+            "sandbox",
+            "security"
+          ],
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "agent",
@@ -1099,8 +1110,8 @@
           "flagship": true,
           "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
           "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
         },
         {
           "name": "mcp-ml-tools",
@@ -1205,42 +1216,42 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 2481738,
-        "share": 70.77542059782171,
-        "repos": 34
+        "bytes": 2551076,
+        "share": 68.71103976556525,
+        "repos": 35
       },
       {
         "name": "Rust",
-        "bytes": 339694,
-        "share": 9.687559977949503,
-        "repos": 2
+        "bytes": 374068,
+        "share": 10.07520012066495,
+        "repos": 4
       },
       {
         "name": "TypeScript",
-        "bytes": 323565,
-        "share": 9.227585251035435,
-        "repos": 3
+        "bytes": 342399,
+        "share": 9.222222820758681,
+        "repos": 4
       },
       {
         "name": "Go",
         "bytes": 258975,
-        "share": 7.385575975111343,
+        "share": 6.975269072064987,
         "repos": 2
       },
       {
-        "name": "Makefile",
-        "bytes": 55284,
-        "share": 1.57661620700089,
-        "repos": 37
+        "name": "Shell",
+        "bytes": 73015,
+        "share": 1.9665962787791293,
+        "repos": 20
       },
       {
         "name": "Other",
-        "bytes": 47241,
-        "share": 1.3472419910811273,
+        "bytes": 113227,
+        "share": 3.0496719421670133,
         "repos": 0
       }
     ],
-    "total_bytes": 3506497,
+    "total_bytes": 3712760,
     "repo_count": 39
   },
   "public_repos": 40

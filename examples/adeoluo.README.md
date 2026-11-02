@@ -19,8 +19,8 @@ are checked against widely used reference libraries where it matters.
 
 ![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
 ![flagships: 12](https://img.shields.io/badge/flagships-12-1f6feb?style=flat-square)
-![releases: 19](https://img.shields.io/badge/releases-19-1f6feb?style=flat-square)
-![top language: Python 71%](https://img.shields.io/badge/top%20language-Python%2071%25-1f6feb?style=flat-square)
+![releases: 20](https://img.shields.io/badge/releases-20-1f6feb?style=flat-square)
+![top language: Python 69%](https://img.shields.io/badge/top%20language-Python%2069%25-1f6feb?style=flat-square)
 
 [GitHub](https://github.com/adeoluo) | [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
 
@@ -147,10 +147,10 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 
 | Project | What it is | Validation and results |
 |---|---|---|
-| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0) | An integrated AI platform composed from eight of these libraries | Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
+| [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.3.0](https://img.shields.io/badge/release-v0.3.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0) | An integrated AI platform composed from eight of these libraries | Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
 | [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0) | HNSW approximate nearest neighbor search | **Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | HNSW approximate nearest neighbor search | **Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Reward modeling with PPO and DPO | PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study** |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Schema-constrained decoding via compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases |
 | [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.1.0) | An LLM gateway: safety, caching, reliability | Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested |
@@ -158,7 +158,7 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 | [react-agent](https://github.com/adeoluo/react-agent)<br/>[![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | A ReAct reasoning-and-acting agent | **Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline |
 | [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Content-addressed ML reproducibility and lineage | End-to-end reproduce, crash recovery, and an exhaustive **tamper-detection matrix** |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)<br/>[![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Planner, worker, and critic over a shared blackboard | **Durable execution** with resume, and a single-agent vs orchestrator comparison |
-| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS |
+| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS |
 
 ---
 
@@ -246,25 +246,25 @@ Bytes of code per language, summed across my public repositories with the GitHub
 
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
-| Python | 2.4 MiB | 70.8% | 34 |
-| Rust | 331.7 KiB | 9.7% | 2 |
-| TypeScript | 316.0 KiB | 9.2% | 3 |
-| Go | 252.9 KiB | 7.4% | 2 |
-| Makefile | 54.0 KiB | 1.6% | 37 |
-| Other | 46.1 KiB | 1.3% |  |
+| Python | 2.4 MiB | 68.7% | 35 |
+| Rust | 365.3 KiB | 10.1% | 4 |
+| TypeScript | 334.4 KiB | 9.2% | 4 |
+| Go | 252.9 KiB | 7.0% | 2 |
+| Shell | 71.3 KiB | 2.0% | 20 |
+| Other | 110.6 KiB | 3.0% |  |
 
 ```mermaid
 pie
   title Code by language (bytes)
-  "Python" : 2481738
-  "Rust" : 339694
-  "TypeScript" : 323565
+  "Python" : 2551076
+  "Rust" : 374068
+  "TypeScript" : 342399
   "Go" : 258975
-  "Makefile" : 55284
-  "Other" : 47241
+  "Shell" : 73015
+  "Other" : 113227
 ```
 
-<sub>Counted 3.3 MiB across 39 repositories.</sub>
+<sub>Counted 3.5 MiB across 39 repositories.</sub>
 
 ---
 
@@ -275,11 +275,12 @@ Repositories with a tagged release. Badges link to the release page.
 | Project | Latest release | Language |
 |---|---|---|
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
-| [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0) | Python |
+| [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.3.0](https://img.shields.io/badge/release-v0.3.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.3.0) | Python |
 | [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0) | Python |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | Python |
 | [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0) | Rust |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library) | [![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Python |
+| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.1.0) | Python |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness) | [![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | Python |
 | [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | Python |
 | [llm-eval-action](https://github.com/adeoluo/llm-eval-action) | [![llm-eval-action v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0) | TypeScript |
@@ -292,7 +293,7 @@ Repositories with a tagged release. Badges link to the release page.
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model) | [![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Python |
 | [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Python |
 | [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | Python |
-| [vectordb-go](https://github.com/adeoluo/vectordb-go) | [![vectordb-go v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0) | Go |
+| [vectordb-go](https://github.com/adeoluo/vectordb-go) | [![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | Go |
 
 ---
 
