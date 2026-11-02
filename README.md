@@ -165,6 +165,12 @@ so a token is recommended for anything beyond a small account.
 
 ## Usage
 
+A real run against the GitHub API, generating this account's profile README and checking every image link. Regenerate with `vhs docs/demo/generate.tape`.
+
+<p align="center">
+  <img src="docs/demo/generate.gif" alt="profile-forge generating a profile README from live repository data" width="860">
+</p>
+
 ### Command reference
 
 ```
