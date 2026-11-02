@@ -291,7 +291,7 @@ func TestPathChartListsOneRepositoryPerLine(t *testing.T) {
 		Flagships: []config.Flagship{{Repo: "alpha", Result: "ok"}},
 	}
 	got := PathChart(c)
-	want := `n_model["<u>Models</u><br/><b>alpha</b><br/>beta<br/>gamma<br/>delta<br/>+1 more"]`
+	want := `n_model["Models<br/>• <b>alpha</b><br/>• beta<br/>• gamma<br/>• delta<br/>+1 more"]`
 	if !strings.Contains(got, want) {
 		t.Fatalf("path chart node:\n%s\nwant it to contain:\n%s", got, want)
 	}

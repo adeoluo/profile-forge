@@ -62,13 +62,13 @@ Pick what you want to see. Colors group projects by the stage of the stack they 
 %%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
-  n_root --> n_model["<u>Modeling and training</u><br/><b>transformer-from-scratch</b><br/>cnn-from-scratch<br/>neural-word-embeddings<br/>bpe-tokenizer-library<br/>corpus-dedup-library<br/>crf-sequence-labeler<br/>dependency-parser<br/>statistical-translation<br/>topic-model-lda"]
-  n_root --> n_retr["<u>Retrieval and search</u><br/><b>ann-vector-search-library</b><br/><b>hybrid-rag</b><br/>graphrag<br/>agentic-rag<br/>grounded-copilot"]
-  n_root --> n_align["<u>Alignment and post-training</u><br/><b>rlhf-reward-model</b><br/>preference-optimization<br/>self-improvement-loop<br/>prompt-optimizer"]
-  n_root --> n_serve["<u>Serving and reliability</u><br/><b>llm-gateway</b><br/><b>constrained-generation-library</b>"]
-  n_root --> n_agent["<u>Agents</u><br/><b>react-agent</b><br/><b>multi-agent-orchestrator</b><br/><b>agent-platform</b><br/>agent-memory<br/>nl-sql-analyst<br/>ai-code-reviewer<br/>agent-sandbox"]
-  n_root --> n_trust["<u>Evaluation and trust</u><br/><b>evaluation-harness</b><br/><b>training-provenance</b><br/>llm-observability<br/>factuality-auditor<br/>red-teaming<br/>llm-eval-action"]
-  n_root --> n_sys["<u>Systems and tooling</u><br/><b>vectordb-go</b><br/>mcp-ml-tools<br/>sweep-orchestrator<br/>hyperparameter-optimizer<br/>profile-forge<br/>homebrew-tap"]
+  n_root --> n_model["Modeling and training<br/>• <b>transformer-from-scratch</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• bpe-tokenizer-library<br/>• corpus-dedup-library<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
+  n_root --> n_retr["Retrieval and search<br/>• <b>ann-vector-search-library</b><br/>• <b>hybrid-rag</b><br/>• graphrag<br/>• agentic-rag<br/>• grounded-copilot"]
+  n_root --> n_align["Alignment and post-training<br/>• <b>rlhf-reward-model</b><br/>• preference-optimization<br/>• self-improvement-loop<br/>• prompt-optimizer"]
+  n_root --> n_serve["Serving and reliability<br/>• <b>llm-gateway</b><br/>• <b>constrained-generation-library</b>"]
+  n_root --> n_agent["Agents<br/>• <b>react-agent</b><br/>• <b>multi-agent-orchestrator</b><br/>• <b>agent-platform</b><br/>• agent-memory<br/>• nl-sql-analyst<br/>• ai-code-reviewer<br/>• agent-sandbox"]
+  n_root --> n_trust["Evaluation and trust<br/>• <b>evaluation-harness</b><br/>• <b>training-provenance</b><br/>• llm-observability<br/>• factuality-auditor<br/>• red-teaming<br/>• llm-eval-action"]
+  n_root --> n_sys["Systems and tooling<br/>• <b>vectordb-go</b><br/>• mcp-ml-tools<br/>• sweep-orchestrator<br/>• hyperparameter-optimizer<br/>• profile-forge<br/>• homebrew-tap"]
 
   classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;
   classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;

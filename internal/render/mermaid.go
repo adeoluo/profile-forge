@@ -31,8 +31,11 @@ const rootClass = "  classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;"
 // line instead of breaking at a hyphen (the default wraps at 200px).
 const flowInit = `%%{init: {"flowchart": {"wrappingWidth": 320}}}%%`
 
+// bullet prefixes each repository in a path chart node.
+const bullet = "\u2022 "
+
 // PathChart builds the "find your path" flowchart: one node per category,
-// listing its flagships in bold and a few other repositories.
+// with the title on top and each repository as a bullet, flagships in bold.
 func PathChart(c *config.Config) string {
 	var b strings.Builder
 	b.WriteString(flowInit + "\n")
@@ -47,10 +50,13 @@ func PathChart(c *config.Config) string {
 				others = append(others, r)
 			}
 		}
-		// Underlined so the category title reads as a heading above its repositories.
-		lines := []string{"<u>" + mermaidText(cat.Title) + "</u>"}
+		// The title stands alone on the first line and every repository is a bullet
+		// below it. GitHub's Mermaid sanitizer strips <u>, so bullets mark the list.
+		lines := []string{mermaidText(cat.Title)}
 		if len(flags) > 0 {
-			lines = append(lines, "<b>"+strings.Join(flags, "</b><br/><b>")+"</b>")
+			for _, f := range flags {
+				lines = append(lines, bullet+"<b>"+f+"</b>")
+			}
 		}
 		shown := others
 		more := 0
@@ -58,8 +64,9 @@ func PathChart(c *config.Config) string {
 			more = len(shown) - c.Path.MaxOthers
 			shown = shown[:c.Path.MaxOthers]
 		}
-		// One repository per line, so every name reads the same way regardless of count.
-		lines = append(lines, shown...)
+		for _, r := range shown {
+			lines = append(lines, bullet+r)
+		}
 		if more > 0 {
 			lines = append(lines, fmt.Sprintf("+%d more", more))
 		}

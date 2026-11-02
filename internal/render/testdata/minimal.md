@@ -21,8 +21,8 @@ Pick an area to explore. Colors group repositories by category, and the same col
 %%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
-  n_root --> n_model["<u>Modeling</u><br/>alpha<br/>+1 more"]
-  n_root --> n_retr["<u>Retrieval</u><br/>beta<br/>+1 more"]
+  n_root --> n_model["Modeling<br/>• alpha<br/>+1 more"]
+  n_root --> n_retr["Retrieval<br/>• beta<br/>+1 more"]
 
   classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;
   classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
