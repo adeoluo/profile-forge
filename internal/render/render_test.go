@@ -291,9 +291,16 @@ func TestPathChartListsOneRepositoryPerLine(t *testing.T) {
 		Flagships: []config.Flagship{{Repo: "alpha", Result: "ok"}},
 	}
 	got := PathChart(c)
-	want := `n_model["Models<br/>• <b>alpha</b><br/>• beta<br/>• gamma<br/>• delta<br/>+1 more"]`
-	if !strings.Contains(got, want) {
-		t.Fatalf("path chart node:\n%s\nwant it to contain:\n%s", got, want)
+	for _, want := range []string{
+		`subgraph s_model["Models"]`,
+		`n_model["• <b>alpha</b><br/>• beta<br/>• gamma<br/>• delta<br/>+1 more"]`,
+		"n_root --> s_model",
+		"text-align:left",
+		"style s_model fill:#dbeafe",
+	} {
+		if !strings.Contains(got, want) {
+			t.Fatalf("path chart:\n%s\nwant it to contain:\n%s", got, want)
+		}
 	}
 	if strings.Contains(got, ", ") {
 		t.Fatalf("repository names must not be comma-joined:\n%s", got)

@@ -62,31 +62,59 @@ Pick what you want to see. Colors group projects by the stage of the stack they 
 %%{init: {"flowchart": {"wrappingWidth": 320}}}%%
 flowchart TD
   n_root(["What do you want to explore?"])
-  n_root --> n_model["Modeling and training<br/>• <b>transformer-from-scratch</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• bpe-tokenizer-library<br/>• corpus-dedup-library<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
-  n_root --> n_retr["Retrieval and search<br/>• <b>ann-vector-search-library</b><br/>• <b>hybrid-rag</b><br/>• graphrag<br/>• agentic-rag<br/>• grounded-copilot"]
-  n_root --> n_align["Alignment and post-training<br/>• <b>rlhf-reward-model</b><br/>• preference-optimization<br/>• self-improvement-loop<br/>• prompt-optimizer"]
-  n_root --> n_serve["Serving and reliability<br/>• <b>llm-gateway</b><br/>• <b>constrained-generation-library</b>"]
-  n_root --> n_agent["Agents<br/>• <b>react-agent</b><br/>• <b>multi-agent-orchestrator</b><br/>• <b>agent-platform</b><br/>• agent-memory<br/>• nl-sql-analyst<br/>• ai-code-reviewer<br/>• agent-sandbox"]
-  n_root --> n_trust["Evaluation and trust<br/>• <b>evaluation-harness</b><br/>• <b>training-provenance</b><br/>• llm-observability<br/>• factuality-auditor<br/>• red-teaming<br/>• llm-eval-action"]
-  n_root --> n_sys["Systems and tooling<br/>• <b>vectordb-go</b><br/>• mcp-ml-tools<br/>• sweep-orchestrator<br/>• hyperparameter-optimizer<br/>• profile-forge<br/>• homebrew-tap"]
+  subgraph s_model["Modeling and training"]
+    n_model["• <b>transformer-from-scratch</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• bpe-tokenizer-library<br/>• corpus-dedup-library<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
+  end
+  n_root --> s_model
+  subgraph s_retr["Retrieval and search"]
+    n_retr["• <b>ann-vector-search-library</b><br/>• <b>hybrid-rag</b><br/>• graphrag<br/>• agentic-rag<br/>• grounded-copilot"]
+  end
+  n_root --> s_retr
+  subgraph s_align["Alignment and post-training"]
+    n_align["• <b>rlhf-reward-model</b><br/>• preference-optimization<br/>• self-improvement-loop<br/>• prompt-optimizer"]
+  end
+  n_root --> s_align
+  subgraph s_serve["Serving and reliability"]
+    n_serve["• <b>llm-gateway</b><br/>• <b>constrained-generation-library</b>"]
+  end
+  n_root --> s_serve
+  subgraph s_agent["Agents"]
+    n_agent["• <b>react-agent</b><br/>• <b>multi-agent-orchestrator</b><br/>• <b>agent-platform</b><br/>• agent-memory<br/>• nl-sql-analyst<br/>• ai-code-reviewer<br/>• agent-sandbox"]
+  end
+  n_root --> s_agent
+  subgraph s_trust["Evaluation and trust"]
+    n_trust["• <b>evaluation-harness</b><br/>• <b>training-provenance</b><br/>• llm-observability<br/>• factuality-auditor<br/>• red-teaming<br/>• llm-eval-action"]
+  end
+  n_root --> s_trust
+  subgraph s_sys["Systems and tooling"]
+    n_sys["• <b>vectordb-go</b><br/>• mcp-ml-tools<br/>• sweep-orchestrator<br/>• hyperparameter-optimizer<br/>• profile-forge<br/>• homebrew-tap"]
+  end
+  n_root --> s_sys
 
   classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;
-  classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
-  classDef c_retr fill:#dcfce7,stroke:#15803d,color:#052e16;
-  classDef c_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b;
-  classDef c_serve fill:#fef3c7,stroke:#b45309,color:#451a03;
-  classDef c_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e;
-  classDef c_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a;
-  classDef c_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e;
+  classDef c_model fill:#dbeafe,stroke-width:0px,color:#0b1b3a,text-align:left;
+  classDef c_retr fill:#dcfce7,stroke-width:0px,color:#052e16,text-align:left;
+  classDef c_align fill:#ede9fe,stroke-width:0px,color:#1e1b4b,text-align:left;
+  classDef c_serve fill:#fef3c7,stroke-width:0px,color:#451a03,text-align:left;
+  classDef c_agent fill:#fae8ff,stroke-width:0px,color:#4a044e,text-align:left;
+  classDef c_trust fill:#fee2e2,stroke-width:0px,color:#450a0a,text-align:left;
+  classDef c_sys fill:#ccfbf1,stroke-width:0px,color:#042f2e,text-align:left;
 
   class n_root c_root;
   class n_model c_model;
+  style s_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a
   class n_retr c_retr;
+  style s_retr fill:#dcfce7,stroke:#15803d,color:#052e16
   class n_align c_align;
+  style s_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b
   class n_serve c_serve;
+  style s_serve fill:#fef3c7,stroke:#b45309,color:#451a03
   class n_agent c_agent;
+  style s_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e
   class n_trust c_trust;
+  style s_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a
   class n_sys c_sys;
+  style s_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e
 ```
 
 **Legend**

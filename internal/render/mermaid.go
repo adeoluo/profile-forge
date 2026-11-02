@@ -31,11 +31,14 @@ const rootClass = "  classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;"
 // line instead of breaking at a hyphen (the default wraps at 200px).
 const flowInit = `%%{init: {"flowchart": {"wrappingWidth": 320}}}%%`
 
-// bullet prefixes each repository in a path chart node.
+// bullet prefixes each repository in a path chart list.
 const bullet = "\u2022 "
 
-// PathChart builds the "find your path" flowchart: one node per category,
-// with the title on top and each repository as a bullet, flagships in bold.
+// PathChart builds the "find your path" flowchart. Each category is a box whose
+// centered title is the box heading; inside it, the repositories are a
+// left-aligned bulleted list with flagships in bold. GitHub's Mermaid sanitizer
+// strips <u> and inline styles, so the title is set apart by being the subgraph
+// heading and the list alignment comes from a classDef.
 func PathChart(c *config.Config) string {
 	var b strings.Builder
 	b.WriteString(flowInit + "\n")
@@ -50,13 +53,9 @@ func PathChart(c *config.Config) string {
 				others = append(others, r)
 			}
 		}
-		// The title stands alone on the first line and every repository is a bullet
-		// below it. GitHub's Mermaid sanitizer strips <u>, so bullets mark the list.
-		lines := []string{mermaidText(cat.Title)}
-		if len(flags) > 0 {
-			for _, f := range flags {
-				lines = append(lines, bullet+"<b>"+f+"</b>")
-			}
+		var lines []string
+		for _, f := range flags {
+			lines = append(lines, bullet+"<b>"+f+"</b>")
 		}
 		shown := others
 		more := 0
@@ -70,16 +69,21 @@ func PathChart(c *config.Config) string {
 		if more > 0 {
 			lines = append(lines, fmt.Sprintf("+%d more", more))
 		}
-		fmt.Fprintf(&b, "  n_root --> %s[\"%s\"]\n", nodeID("n", cat.ID), strings.Join(lines, "<br/>"))
+		fmt.Fprintf(&b, "  subgraph %s[\"%s\"]\n", nodeID("s", cat.ID), mermaidText(cat.Title))
+		fmt.Fprintf(&b, "    %s[\"%s\"]\n", nodeID("n", cat.ID), strings.Join(lines, "<br/>"))
+		b.WriteString("  end\n")
+		fmt.Fprintf(&b, "  n_root --> %s\n", nodeID("s", cat.ID))
 	}
 	b.WriteString("\n")
 	b.WriteString(rootClass + "\n")
 	for _, cat := range c.Category {
-		b.WriteString(classDef(cat) + "\n")
+		fmt.Fprintf(&b, "  classDef %s fill:%s,stroke-width:0px,color:%s,text-align:left;\n",
+			nodeID("c", cat.ID), cat.Color, cat.Text)
 	}
 	b.WriteString("\n  class n_root c_root;\n")
 	for _, cat := range c.Category {
 		fmt.Fprintf(&b, "  class %s %s;\n", nodeID("n", cat.ID), nodeID("c", cat.ID))
+		fmt.Fprintf(&b, "  style %s fill:%s,stroke:%s,color:%s\n", nodeID("s", cat.ID), cat.Color, cat.Stroke, cat.Text)
 	}
 	return strings.TrimRight(b.String(), "\n")
 }
