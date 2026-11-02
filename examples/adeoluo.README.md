@@ -247,7 +247,7 @@ Bytes of code per language, summed across my public repositories with the GitHub
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
 | Python | 2.4 MiB | 70.8% | 34 |
-| Rust | 329.3 KiB | 9.6% | 2 |
+| Rust | 331.7 KiB | 9.7% | 2 |
 | TypeScript | 316.0 KiB | 9.2% | 3 |
 | Go | 252.9 KiB | 7.4% | 2 |
 | Makefile | 54.0 KiB | 1.6% | 37 |
@@ -257,7 +257,7 @@ Bytes of code per language, summed across my public repositories with the GitHub
 pie
   title Code by language (bytes)
   "Python" : 2481738
-  "Rust" : 337200
+  "Rust" : 339694
   "TypeScript" : 323565
   "Go" : 258975
   "Makefile" : 55284
@@ -276,7 +276,7 @@ Repositories with a tagged release. Badges link to the release page.
 |---|---|---|
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
 | [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0) | Python |
-| [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.0) | Rust |
+| [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
 | [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.1.0) | Python |
 | [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0) | Rust |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library) | [![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Python |

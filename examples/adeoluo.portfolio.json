@@ -924,8 +924,8 @@
           "pushed_at": "2026-11-02",
           "category": "agent",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1"
         }
       ]
     },
@@ -1206,41 +1206,41 @@
       {
         "name": "Python",
         "bytes": 2481738,
-        "share": 70.82579552586,
+        "share": 70.77542059782171,
         "repos": 34
       },
       {
         "name": "Rust",
-        "bytes": 337200,
-        "share": 9.623279432123773,
+        "bytes": 339694,
+        "share": 9.687559977949503,
         "repos": 2
       },
       {
         "name": "TypeScript",
         "bytes": 323565,
-        "share": 9.234153052951154,
+        "share": 9.227585251035435,
         "repos": 3
       },
       {
         "name": "Go",
         "bytes": 258975,
-        "share": 7.390832713328156,
+        "share": 7.385575975111343,
         "repos": 2
       },
       {
         "name": "Makefile",
         "bytes": 55284,
-        "share": 1.5777383752239937,
+        "share": 1.57661620700089,
         "repos": 37
       },
       {
         "name": "Other",
         "bytes": 47241,
-        "share": 1.3482009005129276,
+        "share": 1.3472419910811273,
         "repos": 0
       }
     ],
-    "total_bytes": 3504003,
+    "total_bytes": 3506497,
     "repo_count": 39
   },
   "public_repos": 40
