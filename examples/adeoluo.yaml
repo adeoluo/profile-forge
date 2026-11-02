@@ -210,7 +210,7 @@ flagships:
     result: "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d"
   - repo: ann-vector-search-library
     summary: An HNSW approximate nearest neighbor library with a Rust core
-    result: "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**"
+    result: "**Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD"
   - repo: rlhf-reward-model
     summary: A reward model with PPO and DPO policy optimization
     result: "A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study**"
@@ -221,8 +221,8 @@ flagships:
     summary: A safety gateway for LLM APIs, with a Go reverse proxy
     result: "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case"
   - repo: hybrid-rag
-    summary: A hybrid retrieval system with a neural dense retriever
-    result: "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale"
+    summary: A hybrid retrieval system evaluated on the BEIR benchmark
+    result: "Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents"
   - repo: react-agent
     summary: A ReAct reasoning-and-acting agent
     result: "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline"
@@ -232,9 +232,15 @@ flagships:
   - repo: multi-agent-orchestrator
     summary: A planner, workers, and a critic over a shared blackboard
     result: "**Durable execution** with resume, and a single-agent vs orchestrator comparison"
+  - repo: corpus-dedup-library
+    summary: Near-duplicate detection for training corpora, with a Rust core
+    result: "Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch**"
+  - repo: bpe-tokenizer-library
+    summary: A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token
+    result: "Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s)"
   - repo: vectordb-go
     summary: A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)
-    result: "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS"
+    result: "On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery"
 
 ecosystem:
   direction: LR
