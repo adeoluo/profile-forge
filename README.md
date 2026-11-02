@@ -107,13 +107,14 @@ Rendering microbenchmarks (`make bench`) on synthetic portfolios, covering
 
 | Benchmark | Time per op | Memory per op | Allocations |
 |---|--:|--:|--:|
-| Build, render, validate: 40 repositories | 0.79 ms | 1.26 MB | 4,641 |
-| Build, render, validate: 200 repositories | 7.75 ms | 4.87 MB | 17,740 |
-| Aggregate languages: 200 repositories | 97 us | 2.0 KB | 11 |
+| Build, render, validate: 40 repositories | 0.38 ms | 0.24 MB | 2,470 |
+| Build, render, validate: 200 repositories | 1.29 ms | 0.86 MB | 7,099 |
+| Aggregate languages: 200 repositories | 21 us | 2.0 KB | 11 |
 
-Rendering grows faster than linearly because category and flagship lookups are
-linear scans per repository. At profile sizes this is far below the network
-cost, so I kept the simpler code.
+Repository-to-category and flagship lookups go through maps built once per render, and the
+string replacers used for badges, Mermaid labels and dash cleanup are built once per process
+instead of on every call. Against the previous version that halved the time for 200
+repositories (2.50 ms to 1.29 ms) and cut memory per render by 82%, with byte-identical output.
 
 The stripped darwin/arm64 binary is 8.6 MB.
 

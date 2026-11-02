@@ -333,6 +333,39 @@ func (c *Config) Repos() []string {
 	return out
 }
 
+// Index maps repository names to their category and flagship entries, so
+// renderers that look up every repository do it in constant time. Build it once
+// per render; it does not follow later edits to the Config.
+type Index struct {
+	category map[string]*Category
+	flagship map[string]*Flagship
+}
+
+// Index builds the lookup maps. The first category or flagship listing a repo
+// wins, matching CategoryOf and FlagshipOf.
+func (c *Config) Index() Index {
+	ix := Index{category: map[string]*Category{}, flagship: map[string]*Flagship{}}
+	for i := range c.Category {
+		for _, r := range c.Category[i].Repos {
+			if _, seen := ix.category[r]; !seen {
+				ix.category[r] = &c.Category[i]
+			}
+		}
+	}
+	for i := range c.Flagships {
+		if _, seen := ix.flagship[c.Flagships[i].Repo]; !seen {
+			ix.flagship[c.Flagships[i].Repo] = &c.Flagships[i]
+		}
+	}
+	return ix
+}
+
+// CategoryOf returns the category that owns repo, or nil.
+func (ix Index) CategoryOf(repo string) *Category { return ix.category[repo] }
+
+// FlagshipOf returns the flagship entry for repo, or nil.
+func (ix Index) FlagshipOf(repo string) *Flagship { return ix.flagship[repo] }
+
 // CategoryOf returns the category that owns repo, or nil.
 func (c *Config) CategoryOf(repo string) *Category {
 	for i := range c.Category {

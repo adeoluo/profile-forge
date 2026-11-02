@@ -18,8 +18,10 @@ func nodeID(prefix, name string) string {
 
 // mermaidText escapes text for use inside a double-quoted mermaid label.
 func mermaidText(s string) string {
-	return strings.NewReplacer(`"`, "#quot;", "\n", " ").Replace(s)
+	return mermaidEscaper.Replace(s)
 }
+
+var mermaidEscaper = strings.NewReplacer(`"`, "#quot;", "\n", " ")
 
 func classDef(c config.Category) string {
 	return fmt.Sprintf("  classDef %s fill:%s,stroke:%s,color:%s;", nodeID("c", c.ID), c.Color, c.Stroke, c.Text)
@@ -44,10 +46,11 @@ func PathChart(c *config.Config) string {
 	b.WriteString(flowInit + "\n")
 	b.WriteString("flowchart TD\n")
 	fmt.Fprintf(&b, "  n_root([\"%s\"])\n", mermaidText(c.Path.Prompt))
+	ix := c.Index()
 	for _, cat := range c.Category {
 		var flags, others []string
 		for _, r := range cat.Repos {
-			if c.FlagshipOf(r) != nil {
+			if ix.FlagshipOf(r) != nil {
 				flags = append(flags, r)
 			} else {
 				others = append(others, r)
@@ -128,16 +131,17 @@ func EcosystemChart(c *config.Config) string {
 		}
 		fmt.Fprintf(&b, "  %s %s %s\n", nodeID("r", e.From), arrow, nodeID("r", e.To))
 	}
+	ix := c.Index()
 	members := map[string][]string{}
+	for _, r := range order {
+		if owner := ix.CategoryOf(r); owner != nil {
+			members[owner.ID] = append(members[owner.ID], nodeID("r", r))
+		}
+	}
 	var used []config.Category
 	for _, cat := range c.Category {
-		for _, r := range order {
-			if owner := c.CategoryOf(r); owner != nil && owner.ID == cat.ID {
-				if len(members[cat.ID]) == 0 {
-					used = append(used, cat)
-				}
-				members[cat.ID] = append(members[cat.ID], nodeID("r", r))
-			}
+		if len(members[cat.ID]) > 0 {
+			used = append(used, cat)
 		}
 	}
 	if len(used) > 0 {

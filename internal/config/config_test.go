@@ -50,6 +50,13 @@ func TestParseMinimalAppliesDefaults(t *testing.T) {
 	if c.FlagshipOf("alpha") == nil || c.FlagshipOf("beta") != nil {
 		t.Error("FlagshipOf")
 	}
+	ix := c.Index()
+	if ix.CategoryOf("beta") != c.CategoryOf("beta") || ix.CategoryOf("nope") != nil {
+		t.Error("Index.CategoryOf")
+	}
+	if ix.FlagshipOf("alpha") != c.FlagshipOf("alpha") || ix.FlagshipOf("beta") != nil {
+		t.Error("Index.FlagshipOf")
+	}
 }
 
 func TestParseRejectsInvalid(t *testing.T) {

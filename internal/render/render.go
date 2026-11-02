@@ -99,12 +99,14 @@ type View struct {
 	PublicRepos    int             `json:"public_repos"`
 }
 
+// badgeEscaper doubles the characters shields.io treats as separators.
+var badgeEscaper = strings.NewReplacer("-", "--", "_", "__")
+
 // StaticBadge builds a shields.io static badge URL. Only static badges are
 // used because dynamic endpoints are rate limited and render unreliably.
 func StaticBadge(label, message, color, style, logo string) string {
 	esc := func(s string) string {
-		s = strings.NewReplacer("-", "--", "_", "__").Replace(s)
-		return url.PathEscape(s)
+		return url.PathEscape(badgeEscaper.Replace(s))
 	}
 	color = strings.TrimPrefix(color, "#")
 	var path string
@@ -131,6 +133,7 @@ func StaticBadge(label, message, color, style, logo string) string {
 // Build assembles the view from config and fetched repositories. It returns
 // an error when the config references a repository that was not fetched.
 func Build(c *config.Config, repos []github.Repo) (*View, error) {
+	ix := c.Index()
 	byName := make(map[string]github.Repo, len(repos))
 	for _, r := range repos {
 		byName[r.Name] = r
@@ -205,7 +208,7 @@ func Build(c *config.Config, repos []github.Repo) (*View, error) {
 		if cat != nil {
 			rv.Category = cat.ID
 		}
-		if f := c.FlagshipOf(name); f != nil {
+		if f := ix.FlagshipOf(name); f != nil {
 			rv.Flagship = true
 			rv.Summary = strings.TrimSpace(f.Summary)
 			rv.Result = strings.TrimSpace(f.Result)
@@ -244,7 +247,7 @@ func Build(c *config.Config, repos []github.Repo) (*View, error) {
 		v.Categories = append(v.Categories, cv)
 	}
 	for _, f := range c.Flagships {
-		v.Flagships = append(v.Flagships, repoView(f.Repo, c.CategoryOf(f.Repo)))
+		v.Flagships = append(v.Flagships, repoView(f.Repo, ix.CategoryOf(f.Repo)))
 	}
 
 	// Releases cover every public repository with a release, not only the
@@ -261,7 +264,7 @@ func Build(c *config.Config, repos []github.Repo) (*View, error) {
 	}
 	sort.Strings(withRelease)
 	for _, name := range withRelease {
-		v.Releases = append(v.Releases, repoView(name, c.CategoryOf(name)))
+		v.Releases = append(v.Releases, repoView(name, ix.CategoryOf(name)))
 	}
 	v.PublicRepos = public
 

@@ -67,7 +67,15 @@ func FindDashes(s string) []DashHit {
 // (for example repository descriptions fetched from GitHub) so the generated
 // output stays clean. Spaced dashes become commas; unspaced ones hyphens.
 func ReplaceDashes(s string) string {
+	if !strings.ContainsAny(s, "\u2014\u2013&") {
+		return s // nothing to rewrite: skip the regexp and replacers
+	}
 	s = dashEntity.ReplaceAllString(s, "\u2014")
-	s = strings.NewReplacer(" \u2014 ", ", ", " \u2013 ", ", ").Replace(s)
-	return strings.NewReplacer("\u2014", "-", "\u2013", "-").Replace(s)
+	s = spacedDashes.Replace(s)
+	return bareDashes.Replace(s)
 }
+
+var (
+	spacedDashes = strings.NewReplacer(" \u2014 ", ", ", " \u2013 ", ", ")
+	bareDashes   = strings.NewReplacer("\u2014", "-", "\u2013", "-")
+)
