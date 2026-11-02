@@ -40,6 +40,12 @@ func (b BadgeView) Markdown() string {
 	return img
 }
 
+// StackView is one titled row of the stack section.
+type StackView struct {
+	Title  string      `json:"title"`
+	Badges []BadgeView `json:"badges"`
+}
+
 // RepoView is one repository as presented in the README and JSON.
 type RepoView struct {
 	Name          string     `json:"name"`
@@ -89,6 +95,7 @@ type View struct {
 	Languages      LanguageSummary `json:"languages"`
 	LanguagePie    string          `json:"-"`
 	Releases       []RepoView      `json:"-"`
+	Stack          []StackView     `json:"stack,omitempty"`
 	PublicRepos    int             `json:"public_repos"`
 }
 
@@ -158,6 +165,22 @@ func Build(c *config.Config, repos []github.Repo) (*View, error) {
 			alt = b.Label + ": " + b.Message
 		}
 		v.Badges = append(v.Badges, BadgeView{Alt: alt, URL: StaticBadge(b.Label, b.Message, b.Color, style, b.Logo)})
+	}
+
+	for _, g := range c.Stack {
+		row := StackView{Title: g.Title}
+		for _, b := range g.Items {
+			style := b.Style
+			if style == "" {
+				style = "flat-square"
+			}
+			alt := b.Message
+			if b.Label != "" {
+				alt = b.Label + ": " + b.Message
+			}
+			row.Badges = append(row.Badges, BadgeView{Alt: alt, URL: StaticBadge(b.Label, b.Message, b.Color, style, b.Logo)})
+		}
+		v.Stack = append(v.Stack, row)
 	}
 
 	repoView := func(name string, cat *config.Category) RepoView {
@@ -262,6 +285,9 @@ func Build(c *config.Config, repos []github.Repo) (*View, error) {
 	return v, nil
 }
 
+// inheritable lists sections a custom template may omit; the built-in definition is used.
+var inheritable = map[string]bool{"stack": true}
+
 // Renderer executes the README template.
 type Renderer struct {
 	tmpl *template.Template
@@ -274,8 +300,19 @@ func NewRenderer(src string) (*Renderer, error) {
 		return nil, fmt.Errorf("parse template: %w", err)
 	}
 	for _, s := range config.DefaultSections {
-		if t.Lookup(s) == nil {
+		if t.Lookup(s) != nil {
+			continue
+		}
+		if !inheritable[s] {
 			return nil, fmt.Errorf("template is missing section %q", s)
+		}
+		// Sections added after a custom template was written fall back to the built-in.
+		builtin, err := template.New("builtin").Funcs(funcs).Option("missingkey=error").Parse(DefaultTemplate())
+		if err != nil {
+			return nil, err
+		}
+		if _, err := t.AddParseTree(s, builtin.Lookup(s).Tree); err != nil {
+			return nil, err
 		}
 	}
 	return &Renderer{tmpl: t}, nil
@@ -335,6 +372,13 @@ var funcs = template.FuncMap{
 			parts[i] = b.Markdown()
 		}
 		return strings.Join(parts, "\n")
+	},
+	"inline": func(bs []BadgeView) string {
+		parts := make([]string, len(bs))
+		for i, b := range bs {
+			parts[i] = b.Markdown()
+		}
+		return strings.Join(parts, " ")
 	},
 	"links": func(ls []config.Link) string {
 		parts := make([]string, len(ls))
