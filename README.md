@@ -57,9 +57,15 @@ profile.
   <img src="docs/architecture/architecture.svg" alt="Architecture diagram" width="860">
 </p>
 
-The config is loaded and validated, the GitHub client fetches repository data
-through an on-disk cache, `render.Build` assembles the view model, a template
-renders each section, and the output is validated before it is written.
+<sub>Legend: amber = entry points and external systems, indigo = core logic, green = data and state, blue = validation and control, grey = observability and outputs.</sub>
+
+`cli.Run` loads `profile.yaml` (dash scan, strict YAML, defaults, validation),
+then the GitHub client fetches repositories, languages, and latest releases
+through an on-disk cache, using a token from the environment or `gh auth token`
+when one is available. `render.Build` assembles the view model and the mermaid
+charts, a template renders each section, and the Markdown is validated (dashes
+and mermaid syntax, optionally image links) before it is written or compared by
+`check`. The same view model can also be written as `portfolio.json`.
 
 | Package | Responsibility |
 |---|---|

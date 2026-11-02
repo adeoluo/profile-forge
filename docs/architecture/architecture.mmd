@@ -1,10 +1,57 @@
 flowchart LR
-    CFG[profile.yaml] --> LOAD[Config load and validate]
-    API[(GitHub REST API)] --> CLIENT[GitHub client]
-    CLIENT <--> CACHE[(Disk cache)]
-    LOAD --> BUILD[render.Build]
-    CLIENT --> BUILD
-    BUILD --> TMPL[Section templates]
-    TMPL --> CHECK[Output validation]
-    CHECK --> MD[README.md]
-    BUILD --> JSON[portfolio.json]
+    classDef edge     fill:#F59E0B,stroke:#1E293B,color:#1E293B,stroke-width:1px;
+    classDef core     fill:#6366F1,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef data     fill:#10B981,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef control  fill:#0EA5E9,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef obs      fill:#CBD5E1,stroke:#1E293B,color:#1E293B,stroke-width:1px;
+
+    User(["CLI user<br/>generate, check, init"]):::edge
+    Api(["GitHub REST API"]):::edge
+    Token(["Token source<br/>GITHUB_TOKEN, GH_TOKEN, gh auth token"]):::edge
+
+    subgraph Io["Interfaces and config (internal/cli, internal/config)"]
+        direction TB
+        Cli["cli.Run<br/>commands, flags, exit codes"]:::core
+        Config["config.Load<br/>strict YAML, defaults, Validate"]:::control
+        Dashes["Dash scan<br/>U+2014, U+2013, HTML entities"]:::control
+    end
+
+    subgraph Core["Core logic (internal/github, internal/render)"]
+        direction TB
+        Client["github.Client<br/>Link pagination, 8 workers, retries"]:::core
+        Build["render.Build<br/>view model, language summary"]:::core
+        Charts["Mermaid builders<br/>path, ecosystem, language pie"]:::core
+        Tmpl["Section templates<br/>Markdown in config order"]:::core
+    end
+
+    subgraph State["Data and state"]
+        direction TB
+        Yaml[("profile.yaml")]:::data
+        Cache[("Disk cache<br/>SHA-256 names, TTL, atomic writes")]:::data
+    end
+
+    subgraph Out["Validation and outputs (internal/validate)"]
+        direction TB
+        Validate["validate.Output<br/>dash scan, mermaid checks"]:::control
+        Links["CheckLinks<br/>optional image URL check"]:::control
+        Coverage["Coverage warnings<br/>uncategorized repositories"]:::obs
+        Readme["README.md<br/>written, or compared by check"]:::obs
+        Json["portfolio.json<br/>optional"]:::obs
+    end
+
+    User -->|flags| Cli
+    Cli -->|Load| Config
+    Config -.->|reads| Yaml
+    Config -.-> Dashes
+    Cli -->|FetchAll| Client
+    Client -.->|resolves| Token
+    Client -->|HTTPS GET| Api
+    Client -.->|get, put| Cache
+    Cli -->|config, repos| Build
+    Build --> Charts
+    Build -->|View| Tmpl
+    Build -->|View| Json
+    Tmpl -->|Markdown| Validate
+    Validate --> Readme
+    Validate -.-> Links
+    Cli -.-> Coverage
