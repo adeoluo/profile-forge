@@ -28,6 +28,32 @@ are checked against widely used reference libraries where it matters.
 
 ---
 
+## Stack
+
+Languages and tools used in these repositories. Libraries marked reference are what my implementations are validated against, not what they are built on.
+
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat-square) ![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&style=flat-square) ![Rust](https://img.shields.io/badge/Rust-B7410E?logo=rust&logoColor=white&style=flat-square) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square) ![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white&style=flat-square) ![SQL](https://img.shields.io/badge/SQL-003B57?logo=sqlite&logoColor=white&style=flat-square)
+
+**AI and machine learning**
+
+![OpenAI API](https://img.shields.io/badge/OpenAI%20API-412991?logo=openai&logoColor=white&style=flat-square) ![Anthropic API](https://img.shields.io/badge/Anthropic%20API-191919?logo=anthropic&logoColor=white&style=flat-square) ![Model Context Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-000000?style=flat-square) ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white&style=flat-square) ![PyTorch (reference)](https://img.shields.io/badge/PyTorch%20%28reference%29-EE4C2C?logo=pytorch&logoColor=white&style=flat-square) ![FAISS (reference)](https://img.shields.io/badge/FAISS%20%28reference%29-0467DF?logo=meta&logoColor=white&style=flat-square) ![hnswlib (reference)](https://img.shields.io/badge/hnswlib%20%28reference%29-555555?style=flat-square) ![SciPy (reference)](https://img.shields.io/badge/SciPy%20%28reference%29-8CAAE6?logo=scipy&logoColor=white&style=flat-square)
+
+**Systems and data**
+
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square) ![PyO3](https://img.shields.io/badge/PyO3-B7410E?logo=rust&logoColor=white&style=flat-square) ![maturin](https://img.shields.io/badge/maturin-B7410E?style=flat-square) ![rayon](https://img.shields.io/badge/rayon-B7410E?style=flat-square) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white&style=flat-square) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white&style=flat-square)
+
+**Quality**
+
+![uv](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=white&style=flat-square) ![Ruff](https://img.shields.io/badge/Ruff-D7FF64?logo=ruff&logoColor=white&style=flat-square) ![mypy strict](https://img.shields.io/badge/mypy%20strict-2A6DB0?style=flat-square) ![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white&style=flat-square) ![Cargo](https://img.shields.io/badge/Cargo-000000?logo=rust&logoColor=white&style=flat-square) ![Clippy](https://img.shields.io/badge/Clippy-B7410E?style=flat-square) ![Node.js](https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=white&style=flat-square) ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white&style=flat-square) ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white&style=flat-square) ![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?logo=precommit&logoColor=white&style=flat-square)
+
+**Delivery**
+
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=flat-square) ![CodeQL](https://img.shields.io/badge/CodeQL-2F363D?logo=github&logoColor=white&style=flat-square) ![Homebrew](https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew&logoColor=white&style=flat-square) ![git-cliff](https://img.shields.io/badge/git--cliff-555555?style=flat-square) ![Mermaid](https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid&logoColor=white&style=flat-square) ![vhs](https://img.shields.io/badge/vhs-6B50FF?style=flat-square)
+
+---
+
 ## Find your path
 
 Pick what you want to see. Colors group projects by the stage of the stack they live in, and the same colors are used in every diagram on this page. Flagships are in bold.
@@ -247,24 +273,24 @@ Bytes of code per language, summed across my public repositories with the GitHub
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
 | Python | 2.4 MiB | 68.7% | 35 |
-| Rust | 365.3 KiB | 10.1% | 4 |
+| Rust | 365.3 KiB | 10.0% | 4 |
 | TypeScript | 334.4 KiB | 9.2% | 4 |
-| Go | 252.9 KiB | 7.0% | 2 |
-| Shell | 71.3 KiB | 2.0% | 20 |
-| Other | 110.6 KiB | 3.0% |  |
+| Go | 252.9 KiB | 6.9% | 2 |
+| Shell | 75.6 KiB | 2.1% | 20 |
+| Other | 111.4 KiB | 3.1% |  |
 
 ```mermaid
 pie
   title Code by language (bytes)
-  "Python" : 2551076
+  "Python" : 2563884
   "Rust" : 374068
   "TypeScript" : 342399
   "Go" : 258975
-  "Shell" : 73015
-  "Other" : 113227
+  "Shell" : 77398
+  "Other" : 114025
 ```
 
-<sub>Counted 3.5 MiB across 39 repositories.</sub>
+<sub>Counted 3.6 MiB across 39 repositories.</sub>
 
 ---
 

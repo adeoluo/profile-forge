@@ -26,12 +26,18 @@
       "topics": [
         "agents",
         "ai-platform",
+        "anthropic",
         "durable-execution",
         "evaluation",
         "llm",
+        "mcp",
+        "mcp-server",
         "observability",
+        "openai",
         "python",
-        "rag"
+        "rag",
+        "server-sent-events",
+        "typescript"
       ],
       "stars": 0,
       "pushed_at": "2026-11-02",
@@ -99,8 +105,10 @@
         "approximate-nearest-neighbors",
         "from-scratch",
         "hnsw",
+        "pyo3",
         "python",
         "retrieval",
+        "rust",
         "similarity-search",
         "vector-database",
         "vector-search"
@@ -291,6 +299,7 @@
         "ann",
         "crash-recovery",
         "go",
+        "golang",
         "hnsw",
         "performance",
         "vector-database",
@@ -410,13 +419,17 @@
           "language": "Python",
           "topics": [
             "data-cleaning",
+            "data-deduplication",
             "dataset",
             "deduplication",
             "from-scratch",
             "lsh",
             "minhash",
+            "near-duplicate-detection",
             "nlp",
-            "python"
+            "pyo3",
+            "python",
+            "rust"
           ],
           "stars": 0,
           "pushed_at": "2026-11-02",
@@ -524,8 +537,10 @@
             "approximate-nearest-neighbors",
             "from-scratch",
             "hnsw",
+            "pyo3",
             "python",
             "retrieval",
+            "rust",
             "similarity-search",
             "vector-database",
             "vector-search"
@@ -841,12 +856,18 @@
           "topics": [
             "agents",
             "ai-platform",
+            "anthropic",
             "durable-execution",
             "evaluation",
             "llm",
+            "mcp",
+            "mcp-server",
             "observability",
+            "openai",
             "python",
-            "rag"
+            "rag",
+            "server-sent-events",
+            "typescript"
           ],
           "stars": 0,
           "pushed_at": "2026-11-02",
@@ -923,12 +944,15 @@
           "description": "A policy-based sandbox for running AI agent tool calls with declarative rules, resource limits, and a tamper-evident audit log.",
           "language": "Rust",
           "topics": [
+            "agent-security",
             "ai-agents",
+            "ai-safety",
             "cli",
             "llm",
             "process-isolation",
             "rust",
             "sandbox",
+            "sandboxing",
             "security"
           ],
           "stars": 0,
@@ -1067,9 +1091,11 @@
           "language": "TypeScript",
           "topics": [
             "ci",
+            "continuous-integration",
             "evaluation",
             "github-actions",
             "llm",
+            "llm-evaluation",
             "statistics",
             "typescript"
           ],
@@ -1099,6 +1125,7 @@
             "ann",
             "crash-recovery",
             "go",
+            "golang",
             "hnsw",
             "performance",
             "vector-database",
@@ -1119,9 +1146,12 @@
           "description": "Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning.",
           "language": "TypeScript",
           "topics": [
+            "ai-agents",
+            "claude",
             "evaluation",
             "llm",
             "mcp",
+            "mcp-server",
             "model-context-protocol",
             "retrieval",
             "tools",
@@ -1183,6 +1213,7 @@
             "cli",
             "generator",
             "github",
+            "github-profile-readme",
             "go",
             "mermaid",
             "profile-readme"
@@ -1200,9 +1231,12 @@
           "description": "Homebrew formulas for vectordb, agent-sandbox, and profile-forge.",
           "language": "Ruby",
           "topics": [
+            "ai-agents",
             "cli",
             "homebrew",
-            "homebrew-tap"
+            "homebrew-formula",
+            "homebrew-tap",
+            "vector-database"
           ],
           "stars": 0,
           "pushed_at": "2026-11-02",
@@ -1216,43 +1250,214 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 2551076,
-        "share": 68.71103976556525,
+        "bytes": 2563884,
+        "share": 68.72303658059012,
         "repos": 35
       },
       {
         "name": "Rust",
         "bytes": 374068,
-        "share": 10.07520012066495,
+        "share": 10.026619319605794,
         "repos": 4
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 9.222222820758681,
+        "share": 9.177754922671024,
         "repos": 4
       },
       {
         "name": "Go",
         "bytes": 258975,
-        "share": 6.975269072064987,
+        "share": 6.941635580415622,
         "repos": 2
       },
       {
         "name": "Shell",
-        "bytes": 73015,
-        "share": 1.9665962787791293,
+        "bytes": 77398,
+        "share": 2.074596816885832,
         "repos": 20
       },
       {
         "name": "Other",
-        "bytes": 113227,
-        "share": 3.0496719421670133,
+        "bytes": 114025,
+        "share": 3.05635677983161,
         "repos": 0
       }
     ],
-    "total_bytes": 3712760,
+    "total_bytes": 3730749,
     "repo_count": 39
   },
+  "stack": [
+    {
+      "title": "Languages",
+      "badges": [
+        {
+          "alt": "Python",
+          "url": "https://img.shields.io/badge/Python-3776AB?logo=python\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Go",
+          "url": "https://img.shields.io/badge/Go-00ADD8?logo=go\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Rust",
+          "url": "https://img.shields.io/badge/Rust-B7410E?logo=rust\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "TypeScript",
+          "url": "https://img.shields.io/badge/TypeScript-3178C6?logo=typescript\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Bash",
+          "url": "https://img.shields.io/badge/Bash-4EAA25?logo=gnubash\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "SQL",
+          "url": "https://img.shields.io/badge/SQL-003B57?logo=sqlite\u0026logoColor=white\u0026style=flat-square"
+        }
+      ]
+    },
+    {
+      "title": "AI and machine learning",
+      "badges": [
+        {
+          "alt": "OpenAI API",
+          "url": "https://img.shields.io/badge/OpenAI%20API-412991?logo=openai\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Anthropic API",
+          "url": "https://img.shields.io/badge/Anthropic%20API-191919?logo=anthropic\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Model Context Protocol",
+          "url": "https://img.shields.io/badge/Model%20Context%20Protocol-000000?style=flat-square"
+        },
+        {
+          "alt": "NumPy",
+          "url": "https://img.shields.io/badge/NumPy-013243?logo=numpy\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "PyTorch (reference)",
+          "url": "https://img.shields.io/badge/PyTorch%20%28reference%29-EE4C2C?logo=pytorch\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "FAISS (reference)",
+          "url": "https://img.shields.io/badge/FAISS%20%28reference%29-0467DF?logo=meta\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "hnswlib (reference)",
+          "url": "https://img.shields.io/badge/hnswlib%20%28reference%29-555555?style=flat-square"
+        },
+        {
+          "alt": "SciPy (reference)",
+          "url": "https://img.shields.io/badge/SciPy%20%28reference%29-8CAAE6?logo=scipy\u0026logoColor=white\u0026style=flat-square"
+        }
+      ]
+    },
+    {
+      "title": "Systems and data",
+      "badges": [
+        {
+          "alt": "SQLite",
+          "url": "https://img.shields.io/badge/SQLite-003B57?logo=sqlite\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "PyO3",
+          "url": "https://img.shields.io/badge/PyO3-B7410E?logo=rust\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "maturin",
+          "url": "https://img.shields.io/badge/maturin-B7410E?style=flat-square"
+        },
+        {
+          "alt": "rayon",
+          "url": "https://img.shields.io/badge/rayon-B7410E?style=flat-square"
+        },
+        {
+          "alt": "Prometheus",
+          "url": "https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Docker",
+          "url": "https://img.shields.io/badge/Docker-2496ED?logo=docker\u0026logoColor=white\u0026style=flat-square"
+        }
+      ]
+    },
+    {
+      "title": "Quality",
+      "badges": [
+        {
+          "alt": "uv",
+          "url": "https://img.shields.io/badge/uv-DE5FE9?logo=uv\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Ruff",
+          "url": "https://img.shields.io/badge/Ruff-D7FF64?logo=ruff\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "mypy strict",
+          "url": "https://img.shields.io/badge/mypy%20strict-2A6DB0?style=flat-square"
+        },
+        {
+          "alt": "pytest",
+          "url": "https://img.shields.io/badge/pytest-0A9EDC?logo=pytest\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Cargo",
+          "url": "https://img.shields.io/badge/Cargo-000000?logo=rust\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Clippy",
+          "url": "https://img.shields.io/badge/Clippy-B7410E?style=flat-square"
+        },
+        {
+          "alt": "Node.js",
+          "url": "https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Vitest",
+          "url": "https://img.shields.io/badge/Vitest-6E9F18?logo=vitest\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "ESLint",
+          "url": "https://img.shields.io/badge/ESLint-4B32C3?logo=eslint\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "pre-commit",
+          "url": "https://img.shields.io/badge/pre--commit-FAB040?logo=precommit\u0026logoColor=white\u0026style=flat-square"
+        }
+      ]
+    },
+    {
+      "title": "Delivery",
+      "badges": [
+        {
+          "alt": "GitHub Actions",
+          "url": "https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "CodeQL",
+          "url": "https://img.shields.io/badge/CodeQL-2F363D?logo=github\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "Homebrew",
+          "url": "https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "git-cliff",
+          "url": "https://img.shields.io/badge/git--cliff-555555?style=flat-square"
+        },
+        {
+          "alt": "Mermaid",
+          "url": "https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "vhs",
+          "url": "https://img.shields.io/badge/vhs-6B50FF?style=flat-square"
+        }
+      ]
+    }
+  ],
   "public_repos": 40
 }
