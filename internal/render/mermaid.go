@@ -47,7 +47,8 @@ func PathChart(c *config.Config) string {
 				others = append(others, r)
 			}
 		}
-		lines := []string{mermaidText(cat.Title)}
+		// Underlined so the category title reads as a heading above its repositories.
+		lines := []string{"<u>" + mermaidText(cat.Title) + "</u>"}
 		if len(flags) > 0 {
 			lines = append(lines, "<b>"+strings.Join(flags, "</b><br/><b>")+"</b>")
 		}
