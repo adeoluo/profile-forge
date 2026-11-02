@@ -7,7 +7,7 @@ Accepted.
 ## Context
 
 My writing style for public material excludes em dashes and en dashes. The
-generated README combines text I wrote (the config) with text fetched from
+generated README combines text from the config with text fetched from
 GitHub (repository descriptions), and the rule should hold for the output as
 a whole.
 

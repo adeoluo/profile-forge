@@ -33,7 +33,7 @@ CLI smoke test, and the cross-compile.
 
 ## Releases
 
-Releases are cut locally by the maintainer, so tags and release notes are authored by a person:
+Releases are cut locally:
 
 ```bash
 scripts/release.sh --dry-run   # show the inferred version and notes

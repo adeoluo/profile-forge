@@ -48,7 +48,7 @@ own output before writing it.
   `tar.gz` archives, and writes `checksums.txt`.
 
 The committed example [examples/adeoluo.README.md](examples/adeoluo.README.md)
-is generated from [examples/adeoluo.yaml](examples/adeoluo.yaml) for my own
+is generated from [examples/adeoluo.yaml](examples/adeoluo.yaml) for the adeoluo
 profile.
 
 ## Architecture
