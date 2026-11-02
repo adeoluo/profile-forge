@@ -65,8 +65,8 @@
       "flagship": true,
       "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
       "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
+      "latest_release": "v0.2.0",
+      "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0"
     },
     {
       "name": "evaluation-harness",
@@ -95,7 +95,7 @@
     {
       "name": "ann-vector-search-library",
       "url": "https://github.com/adeoluo/ann-vector-search-library",
-      "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib.",
+      "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Rust core used by default (SIMD f32, or f64 matching the Python reference exactly); matches hnswlib's recall on SIFT.",
       "language": "Python",
       "topics": [
         "approximate-nearest-neighbors",
@@ -114,9 +114,9 @@
       "category": "retr",
       "flagship": true,
       "summary": "An HNSW approximate nearest neighbor library with a Rust core",
-      "result": "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**",
-      "latest_release": "v0.2.0",
-      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
+      "result": "**Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD",
+      "latest_release": "v0.3.0",
+      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0"
     },
     {
       "name": "rlhf-reward-model",
@@ -193,7 +193,7 @@
     {
       "name": "hybrid-rag",
       "url": "https://github.com/adeoluo/hybrid-rag",
-      "description": "Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+      "description": "Hybrid retrieval from scratch: stemmed BM25 and TF-IDF over inverted indexes, reciprocal-rank fusion and reranking, evaluated on BEIR; 0.687 nDCG@10 on SciFact.",
       "language": "Python",
       "topics": [
         "bm25",
@@ -209,10 +209,10 @@
       "pushed_at": "2026-11-02",
       "category": "retr",
       "flagship": true,
-      "summary": "A hybrid retrieval system with a neural dense retriever",
-      "result": "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
+      "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
+      "result": "Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents",
+      "latest_release": "v0.2.0",
+      "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0"
     },
     {
       "name": "react-agent",
@@ -287,6 +287,60 @@
       "release_url": "https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0"
     },
     {
+      "name": "corpus-dedup-library",
+      "url": "https://github.com/adeoluo/corpus-dedup-library",
+      "description": "A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a bit-exact Rust core used by default, a Python reference, and a JSONL CLI; deduplicates 1.4 million C4 documents in 30 seconds.",
+      "language": "Python",
+      "topics": [
+        "data-cleaning",
+        "data-deduplication",
+        "dataset",
+        "deduplication",
+        "from-scratch",
+        "lsh",
+        "minhash",
+        "near-duplicate-detection",
+        "nlp",
+        "pyo3",
+        "python",
+        "rust"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "model",
+      "flagship": true,
+      "summary": "Near-duplicate detection for training corpora, with a Rust core",
+      "result": "Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch**",
+      "latest_release": "v0.3.0",
+      "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0"
+    },
+    {
+      "name": "bpe-tokenizer-library",
+      "url": "https://github.com/adeoluo/bpe-tokenizer-library",
+      "description": "A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a Rust core (PyO3) used by default that matches its Python reference token for token; lossless for any input and faster than tiktoken in batch.",
+      "language": "Rust",
+      "topics": [
+        "bpe",
+        "byte-pair-encoding",
+        "from-scratch",
+        "gpt-2",
+        "language-model",
+        "nlp",
+        "pyo3",
+        "python",
+        "rust",
+        "tokenizer"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "model",
+      "flagship": true,
+      "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
+      "result": "Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s)",
+      "latest_release": "v0.4.0",
+      "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0"
+    },
+    {
       "name": "vectordb-go",
       "url": "https://github.com/adeoluo/vectordb-go",
       "description": "A concurrent, persistent HNSW vector database server in Go: a checksummed write-ahead log, snapshot and replay crash recovery, an HTTP API, and benchmarks against hnswlib and FAISS.",
@@ -306,9 +360,9 @@
       "category": "sys",
       "flagship": true,
       "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
-      "result": "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS",
-      "latest_release": "v0.1.1",
-      "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
+      "result": "On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery",
+      "latest_release": "v0.2.0",
+      "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0"
     }
   ],
   "categories": [
@@ -341,8 +395,8 @@
           "flagship": true,
           "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
           "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0"
         },
         {
           "name": "cnn-from-scratch",
@@ -387,7 +441,7 @@
         {
           "name": "bpe-tokenizer-library",
           "url": "https://github.com/adeoluo/bpe-tokenizer-library",
-          "description": "A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a reference Python implementation and an optional Rust core (PyO3) that produces identical token ids; lossless for any input.",
+          "description": "A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a Rust core (PyO3) used by default that matches its Python reference token for token; lossless for any input and faster than tiktoken in batch.",
           "language": "Rust",
           "topics": [
             "bpe",
@@ -404,14 +458,16 @@
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "model",
-          "flagship": false,
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0"
+          "flagship": true,
+          "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
+          "result": "Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s)",
+          "latest_release": "v0.4.0",
+          "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0"
         },
         {
           "name": "corpus-dedup-library",
           "url": "https://github.com/adeoluo/corpus-dedup-library",
-          "description": "A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a Python reference, a bit-exact Rust core, and a JSONL CLI; perfect precision and recall on a labeled corpus while comparing a tiny fraction of document pairs.",
+          "description": "A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a bit-exact Rust core used by default, a Python reference, and a JSONL CLI; deduplicates 1.4 million C4 documents in 30 seconds.",
           "language": "Python",
           "topics": [
             "data-cleaning",
@@ -430,9 +486,11 @@
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "model",
-          "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.1.0"
+          "flagship": true,
+          "summary": "Near-duplicate detection for training corpora, with a Rust core",
+          "result": "Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch**",
+          "latest_release": "v0.3.0",
+          "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0"
         },
         {
           "name": "crf-sequence-labeler",
@@ -497,7 +555,7 @@
         {
           "name": "topic-model-lda",
           "url": "https://github.com/adeoluo/topic-model-lda",
-          "description": "Latent Dirichlet allocation from scratch: collapsed Gibbs sampling for topic discovery with UMass topic-coherence evaluation.",
+          "description": "Latent Dirichlet allocation from scratch: collapsed Gibbs sampling with a Rust sampler that reproduces the Python one exactly, and UMass topic-coherence evaluation; faster than gensim on C4.",
           "language": "Python",
           "topics": [
             "bayesian",
@@ -512,7 +570,9 @@
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.0"
         }
       ]
     },
@@ -527,7 +587,7 @@
         {
           "name": "ann-vector-search-library",
           "url": "https://github.com/adeoluo/ann-vector-search-library",
-          "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib.",
+          "description": "An approximate nearest neighbor search library implementing HNSW graphs, with a Rust core used by default (SIMD f32, or f64 matching the Python reference exactly); matches hnswlib's recall on SIFT.",
           "language": "Python",
           "topics": [
             "approximate-nearest-neighbors",
@@ -546,14 +606,14 @@
           "category": "retr",
           "flagship": true,
           "summary": "An HNSW approximate nearest neighbor library with a Rust core",
-          "result": "**Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster**",
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0"
+          "result": "**Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD",
+          "latest_release": "v0.3.0",
+          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0"
         },
         {
           "name": "hybrid-rag",
           "url": "https://github.com/adeoluo/hybrid-rag",
-          "description": "Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite.",
+          "description": "Hybrid retrieval from scratch: stemmed BM25 and TF-IDF over inverted indexes, reciprocal-rank fusion and reranking, evaluated on BEIR; 0.687 nDCG@10 on SciFact.",
           "language": "Python",
           "topics": [
             "bm25",
@@ -569,10 +629,10 @@
           "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": true,
-          "summary": "A hybrid retrieval system with a neural dense retriever",
-          "result": "A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
+          "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
+          "result": "Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents",
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0"
         },
         {
           "name": "graphrag",
@@ -1132,9 +1192,9 @@
           "category": "sys",
           "flagship": true,
           "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
-          "result": "A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS",
-          "latest_release": "v0.1.1",
-          "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1"
+          "result": "On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery",
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0"
         },
         {
           "name": "mcp-ml-tools",
@@ -1218,8 +1278,8 @@
           "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.3.1",
-          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.3.1"
+          "latest_release": "v0.3.2",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.3.2"
         },
         {
           "name": "homebrew-tap",
@@ -1246,42 +1306,42 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 2563884,
-        "share": 68.27785550963843,
+        "bytes": 2641487,
+        "share": 67.86092026694405,
         "repos": 35
       },
       {
         "name": "Rust",
-        "bytes": 374068,
-        "share": 9.961667865932869,
-        "repos": 4
+        "bytes": 403583,
+        "share": 10.368218274060816,
+        "repos": 5
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 9.118302329061958,
+        "share": 8.796375389498937,
         "repos": 4
       },
       {
         "name": "Go",
-        "bytes": 284945,
-        "share": 7.588265903681259,
+        "bytes": 290056,
+        "share": 7.451661540998962,
         "repos": 3
       },
       {
         "name": "Shell",
-        "bytes": 75482,
-        "share": 2.010133488714204,
-        "repos": 20
+        "bytes": 94256,
+        "share": 2.421476577655343,
+        "repos": 26
       },
       {
         "name": "Other",
-        "bytes": 114296,
-        "share": 3.043774902971286,
+        "bytes": 120720,
+        "share": 3.101347950841888,
         "repos": 0
       }
     ],
-    "total_bytes": 3755074,
+    "total_bytes": 3892501,
     "repo_count": 39
   },
   "stack": [

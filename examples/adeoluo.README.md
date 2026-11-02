@@ -18,8 +18,8 @@ recorded demos, with results checked against established reference libraries.
 ![validated vs: PyTorch | SciPy | FAISS | hnswlib](https://img.shields.io/badge/validated%20vs-PyTorch%20%7C%20SciPy%20%7C%20FAISS%20%7C%20hnswlib-8957e5?style=for-the-badge)
 
 ![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
-![flagships: 12](https://img.shields.io/badge/flagships-12-1f6feb?style=flat-square)
-![releases: 20](https://img.shields.io/badge/releases-20-1f6feb?style=flat-square)
+![flagships: 14](https://img.shields.io/badge/flagships-14-1f6feb?style=flat-square)
+![releases: 21](https://img.shields.io/badge/releases-21-1f6feb?style=flat-square)
 ![top language: Python 68%](https://img.shields.io/badge/top%20language-Python%2068%25-1f6feb?style=flat-square)
 
 [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
@@ -63,7 +63,7 @@ Pick what you want to see. Colors group projects by the stage of the stack they 
 flowchart TD
   n_root(["What do you want to explore?"])
   subgraph s_model["Modeling and training"]
-    n_model["• <b>transformer-from-scratch</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• bpe-tokenizer-library<br/>• corpus-dedup-library<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
+    n_model["• <b>transformer-from-scratch</b><br/>• <b>bpe-tokenizer-library</b><br/>• <b>corpus-dedup-library</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
   end
   n_root --> s_model
   subgraph s_retr["Retrieval and search"]
@@ -206,17 +206,19 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 | Project | What it is | Validation and results |
 |---|---|---|
 | [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | An integrated AI platform composed from nine of these libraries | OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
-| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
+| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | An HNSW approximate nearest neighbor library with a Rust core | **Matches hnswlib's recall** at matched parameters; the Rust core reproduces the Python index exactly and is **14 to 22x faster** |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0) | An HNSW approximate nearest neighbor library with a Rust core | **Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | A reward model with PPO and DPO policy optimization | A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study** |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | A schema-constrained decoder built on compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases |
 | [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | A safety gateway for LLM APIs, with a Go reverse proxy | Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case |
-| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | A hybrid retrieval system with a neural dense retriever | A full evaluation suite; the dense retriever ties on recall but ranks below strong lexical baselines at this scale |
+| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0) | A hybrid retrieval system evaluated on the BEIR benchmark | Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents |
 | [react-agent](https://github.com/adeoluo/react-agent)<br/>[![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | A ReAct reasoning-and-acting agent | **Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline |
 | [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | A content-addressed reproducibility and lineage system for ML | End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix** |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)<br/>[![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | A planner, workers, and a critic over a shared blackboard | **Durable execution** with resume, and a single-agent vs orchestrator comparison |
-| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | A checksummed write-ahead log, snapshot and replay crash recovery, and benchmarks against hnswlib and FAISS |
+| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library)<br/>[![corpus-dedup-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0) | Near-duplicate detection for training corpora, with a Rust core | Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch** |
+| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library)<br/>[![bpe-tokenizer-library v0.4.0](https://img.shields.io/badge/release-v0.4.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0) | A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token | Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s) |
+| [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.2.0](https://img.shields.io/badge/release-v0.2.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery |
 
 ---
 
@@ -229,19 +231,19 @@ Model internals, training loops, tokenization, data preparation, and classical N
 - **[transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)**: A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch; gradients verified against finite differences and attention demonstrated on a copy task. <sub>Python</sub>
 - [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch): A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in Python; gradients verified against finite differences and translation invariance demonstrated against a linear baseline. <sub>Python</sub>
 - [neural-word-embeddings](https://github.com/adeoluo/neural-word-embeddings): Skip-gram word embeddings with negative sampling from scratch: hand-derived gradients, a unigram negative-sampling table, and category-retrieval evaluation. <sub>Python</sub>
-- [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library): A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a reference Python implementation and an optional Rust core (PyO3) that produces identical token ids; lossless for any input. <sub>Rust</sub>
-- [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library): A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a Python reference, a bit-exact Rust core, and a JSONL CLI; perfect precision and recall on a labeled corpus while comparing a tiny fraction of document pairs. <sub>Python</sub>
+- **[bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library)**: A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a Rust core (PyO3) used by default that matches its Python reference token for token; lossless for any input and faster than tiktoken in batch. <sub>Rust</sub>
+- **[corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library)**: A corpus near-deduplication and quality-filtering library using MinHash and LSH, with a bit-exact Rust core used by default, a Python reference, and a JSONL CLI; deduplicates 1.4 million C4 documents in 30 seconds. <sub>Python</sub>
 - [crf-sequence-labeler](https://github.com/adeoluo/crf-sequence-labeler): A linear-chain conditional random field for sequence labeling from scratch: Viterbi decoding, forward-backward training with log-likelihood gradients, and span-level evaluation. <sub>Python</sub>
 - [dependency-parser](https://github.com/adeoluo/dependency-parser): An arc-standard transition-based dependency parser from scratch: a static oracle, an averaged structured perceptron policy, greedy decoding, and attachment-score evaluation. <sub>Python</sub>
 - [statistical-translation](https://github.com/adeoluo/statistical-translation): Statistical machine translation alignment from scratch: IBM Model 1 and Model 2 word alignment trained by expectation-maximization, with alignment-error-rate evaluation. <sub>Python</sub>
-- [topic-model-lda](https://github.com/adeoluo/topic-model-lda): Latent Dirichlet allocation from scratch: collapsed Gibbs sampling for topic discovery with UMass topic-coherence evaluation. <sub>Python</sub>
+- [topic-model-lda](https://github.com/adeoluo/topic-model-lda): Latent Dirichlet allocation from scratch: collapsed Gibbs sampling with a Rust sampler that reproduces the Python one exactly, and UMass topic-coherence evaluation; faster than gensim on C4. <sub>Python</sub>
 
 ### Retrieval and search ![green](https://img.shields.io/badge/green-dcfce7?style=flat-square)
 
 Approximate nearest neighbor search, hybrid and graph retrieval, and grounded generation.
 
-- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor search library implementing HNSW graphs, with a Python reference and an optional Rust core that reproduces it exactly; recall and distance-computation cost measured against exact search and hnswlib. <sub>Python</sub>
-- **[hybrid-rag](https://github.com/adeoluo/hybrid-rag)**: Hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite. <sub>Python</sub>
+- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor search library implementing HNSW graphs, with a Rust core used by default (SIMD f32, or f64 matching the Python reference exactly); matches hnswlib's recall on SIFT. <sub>Python</sub>
+- **[hybrid-rag](https://github.com/adeoluo/hybrid-rag)**: Hybrid retrieval from scratch: stemmed BM25 and TF-IDF over inverted indexes, reciprocal-rank fusion and reranking, evaluated on BEIR; 0.687 nDCG@10 on SciFact. <sub>Python</sub>
 - [graphrag](https://github.com/adeoluo/graphrag): GraphRAG from scratch: entity and relation extraction, knowledge-graph construction, and traversal-based multi-hop retrieval. <sub>Python</sub>
 - [agentic-rag](https://github.com/adeoluo/agentic-rag): Agentic retrieval from scratch: query decomposition, a self-querying retriever-agent, and iterative multi-hop retrieve-reason-retrieve. <sub>Python</sub>
 - [grounded-copilot](https://github.com/adeoluo/grounded-copilot): A retrieval-augmented copilot built from scratch: TF-IDF retrieval, inline citations, an abstention guardrail when retrieval is weak, and a sentence-level faithfulness check that verifies every claim traces to a cited source. <sub>Python</sub>
@@ -304,25 +306,25 @@ Bytes of code per language, summed across my public repositories with the GitHub
 
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
-| Python | 2.4 MiB | 68.3% | 35 |
-| Rust | 365.3 KiB | 10.0% | 4 |
-| TypeScript | 334.4 KiB | 9.1% | 4 |
-| Go | 278.3 KiB | 7.6% | 3 |
-| Shell | 73.7 KiB | 2.0% | 20 |
-| Other | 111.6 KiB | 3.0% |  |
+| Python | 2.5 MiB | 67.9% | 35 |
+| Rust | 394.1 KiB | 10.4% | 5 |
+| TypeScript | 334.4 KiB | 8.8% | 4 |
+| Go | 283.3 KiB | 7.5% | 3 |
+| Shell | 92.0 KiB | 2.4% | 26 |
+| Other | 117.9 KiB | 3.1% |  |
 
 ```mermaid
 pie
   title Code by language (bytes)
-  "Python" : 2563884
-  "Rust" : 374068
+  "Python" : 2641487
+  "Rust" : 403583
   "TypeScript" : 342399
-  "Go" : 284945
-  "Shell" : 75482
-  "Other" : 114296
+  "Go" : 290056
+  "Shell" : 94256
+  "Other" : 120720
 ```
 
-<sub>Counted 3.6 MiB across 39 repositories.</sub>
+<sub>Counted 3.7 MiB across 39 repositories.</sub>
 
 ---
 
@@ -335,23 +337,24 @@ Repositories with a tagged release. Badges link to the release page.
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
 | [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | Python |
 | [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.2.0) | Python |
-| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0) | Rust |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0) | Python |
+| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.4.0](https://img.shields.io/badge/release-v0.4.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0) | Rust |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library) | [![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Python |
-| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.1.0) | Python |
+| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0) | Python |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness) | [![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | Python |
-| [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0) | Python |
+| [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0) | Python |
 | [llm-eval-action](https://github.com/adeoluo/llm-eval-action) | [![llm-eval-action v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0) | TypeScript |
 | [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | Python |
 | [llm-observability](https://github.com/adeoluo/llm-observability) | [![llm-observability v0.2.0](https://img.shields.io/badge/release-v0.2.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0) | Python |
 | [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools) | [![mcp-ml-tools v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0) | TypeScript |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator) | [![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Python |
-| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.3.1](https://img.shields.io/badge/release-v0.3.1-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.3.1) | Go |
+| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.3.2](https://img.shields.io/badge/release-v0.3.2-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.3.2) | Go |
 | [react-agent](https://github.com/adeoluo/react-agent) | [![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | Python |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model) | [![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Python |
+| [topic-model-lda](https://github.com/adeoluo/topic-model-lda) | [![topic-model-lda v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.0) | Python |
 | [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Python |
-| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0) | Python |
-| [vectordb-go](https://github.com/adeoluo/vectordb-go) | [![vectordb-go v0.1.1](https://img.shields.io/badge/release-v0.1.1-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.1) | Go |
+| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0) | Python |
+| [vectordb-go](https://github.com/adeoluo/vectordb-go) | [![vectordb-go v0.2.0](https://img.shields.io/badge/release-v0.2.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0) | Go |
 
 ---
 
