@@ -1,10 +1,29 @@
-# profile-forge
+<h1 align="center">Profile Forge</h1>
 
-[![CI](https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/adeoluo/profile-forge/actions/workflows/codeql.yml/badge.svg)](https://github.com/adeoluo/profile-forge/actions/workflows/codeql.yml)
+<p align="center">
+  <em>A Go command-line tool that generates a GitHub profile README and a portfolio JSON document from live repository metadata and a small YAML config.</em>
+</p>
 
-A Go command-line tool that generates a GitHub profile README, and optionally a
-portfolio JSON document, from live repository metadata plus a small YAML config.
+<p align="center">
+  <a href="https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/adeoluo/profile-forge/releases"><img alt="Release" src="https://img.shields.io/github/v/release/adeoluo/profile-forge"></a>
+  <img alt="Go" src="https://img.shields.io/badge/go-1.26-00ADD8">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
+</p>
+
+---
+
+## Motivation
+
+A hand-written profile README drifts. Repositories get added, releases get cut,
+descriptions change, and the diagrams stop matching the list below them. I
+wanted the profile to be a build artifact: a reviewed config file is the source
+of truth, the tool pulls current facts from GitHub, and a check command fails
+when the committed README no longer matches what the config would produce.
+
+profile-forge is a Go command-line tool that generates a GitHub profile README,
+and optionally a portfolio JSON document, from live repository metadata plus
+a small YAML config.
 
 You describe the parts that only you know: your headline, how your repositories
 group into categories, which ones are flagships and what validates them, and how
@@ -32,43 +51,15 @@ The committed example [examples/adeoluo.README.md](examples/adeoluo.README.md)
 is generated from [examples/adeoluo.yaml](examples/adeoluo.yaml) for my own
 profile.
 
-## Contents
-
-- [Why](#why)
-- [Architecture](#architecture)
-- [Install](#install)
-- [Quickstart](#quickstart)
-- [Command reference](#command-reference)
-- [Config reference](#config-reference)
-- [What gets rendered](#what-gets-rendered)
-- [Design decisions](#design-decisions)
-- [Testing](#testing)
-- [Benchmarks](#benchmarks)
-- [Limitations](#limitations)
-- [Roadmap](#roadmap)
-
-## Why
-
-A hand-written profile README drifts. Repositories get added, releases get cut,
-descriptions change, and the diagrams stop matching the list below them. I
-wanted the profile to be a build artifact: a reviewed config file is the source
-of truth, the tool pulls current facts from GitHub, and a check command fails
-when the committed README no longer matches what the config would produce.
-
 ## Architecture
 
-```mermaid
-flowchart LR
-  CFG["profile.yaml"] --> LOAD["config.Load<br/>dash scan, strict decode, validate"]
-  API[("GitHub REST API")] --> CLIENT["github.Client<br/>pagination, worker pool, retries"]
-  CLIENT <--> CACHE[("on-disk cache<br/>one JSON file per URL, TTL")]
-  LOAD --> BUILD["render.Build<br/>repo existence, language aggregation,<br/>mermaid charts, badges"]
-  CLIENT --> BUILD
-  BUILD --> TMPL["text/template<br/>one named template per section"]
-  TMPL --> CHECK["validate.Output<br/>dashes, mermaid syntax,<br/>optional link check"]
-  CHECK --> MD["README.md"]
-  BUILD --> JSON["portfolio.json"]
-```
+<p align="center">
+  <img src="docs/architecture/architecture.svg" alt="Architecture diagram" width="860">
+</p>
+
+The config is loaded and validated, the GitHub client fetches repository data
+through an on-disk cache, `render.Build` assembles the view model, a template
+renders each section, and the output is validated before it is written.
 
 | Package | Responsibility |
 |---|---|
@@ -83,7 +74,46 @@ More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and the decision
 records in [docs/adr](docs/adr). The release process is in
 [docs/RELEASING.md](docs/RELEASING.md).
 
-## Install
+## Results
+
+### Benchmarks
+
+Measured on an Apple M1 laptop with Go 1.27.3, generating
+[examples/adeoluo.README.md](examples/adeoluo.README.md) (37 public
+repositories, 7 categories, 11 flagships, 20 image URLs). Times are the
+tool's own elapsed-time summary unless noted; three runs each.
+
+| Scenario | API requests | Cache hits | Time |
+|---|--:|--:|--:|
+| Cold cache, authenticated | 75 | 0 | 2.57 s, 4.62 s, 5.69 s |
+| Warm cache (6h TTL) | 0 | 75 | 59 ms, 76 ms, 85 ms |
+| `--offline` | 0 | 75 | 5 ms, 6 ms, 9 ms |
+| `check --offline --check-links` (20 shields.io URLs, 8 at a time) | 0 | 75 | 0.25 s, 0.31 s (process wall time) |
+
+The cold run is dominated by GitHub API latency: one listing request plus two
+requests per repository (languages, latest release) across 8 workers. The gap
+between the warm and offline rows is the `gh auth token` subprocess, which
+online runs use to find a token; with `GITHUB_TOKEN` set, a warm run took 5 ms.
+The cache for this profile is 616 KiB on disk.
+
+Rendering microbenchmarks (`make bench`) on synthetic portfolios, covering
+`Build`, template execution, and output validation:
+
+| Benchmark | Time per op | Memory per op | Allocations |
+|---|--:|--:|--:|
+| Build, render, validate: 40 repositories | 0.79 ms | 1.26 MB | 4,641 |
+| Build, render, validate: 200 repositories | 7.75 ms | 4.87 MB | 17,740 |
+| Aggregate languages: 200 repositories | 97 us | 2.0 KB | 11 |
+
+Rendering grows faster than linearly because category and flagship lookups are
+linear scans per repository. At profile sizes this is far below the network
+cost, so I kept the simpler code.
+
+The stripped darwin/arm64 binary is 8.6 MB.
+
+## Quickstart
+
+### Install
 
 From a release archive (macOS and Linux, arm64 and amd64):
 
@@ -110,7 +140,7 @@ git clone https://github.com/adeoluo/profile-forge && cd profile-forge
 make build   # writes bin/profile-forge
 ```
 
-## Quickstart
+### First run
 
 ```sh
 profile-forge init --out profile.yaml          # writes an example config for octocat
@@ -127,7 +157,9 @@ then the output of `gh auth token`. Without a token, GitHub allows 60 requests
 per hour, and a profile with 37 repositories needs 75 requests on a cold cache,
 so a token is recommended for anything beyond a small account.
 
-## Command reference
+## Usage
+
+### Command reference
 
 ```
 profile-forge generate --config profile.yaml --out README.md [--json portfolio.json]
@@ -158,7 +190,7 @@ hits, elapsed time) go to stderr; stdout carries only requested output.
 non-fork repository that is not placed in a category and not listed under
 `ignore`, so new repositories do not silently go missing from the profile.
 
-## Config reference
+### Config reference
 
 ```yaml
 user: octocat                       # GitHub login whose public repos are fetched
@@ -212,7 +244,7 @@ a repository listed in two categories, flagships outside every category,
 unknown sections, self edges, unknown edge styles, and edge labels containing
 quotes or pipes. All problems are reported together rather than one per run.
 
-## What gets rendered
+### What gets rendered
 
 Each section is a named template; `sections` picks which ones appear and in
 what order. Sections are separated by horizontal rules.
@@ -293,41 +325,6 @@ CI runs gofmt, go vet, staticcheck, `go test -race -coverprofile`, a build, a
 smoke test, and the full cross-compile with checksum verification on every
 push and pull request. CodeQL analyzes the Go code weekly and on every change.
 
-## Benchmarks
-
-Measured on an Apple M1 laptop with Go 1.27.3, generating
-[examples/adeoluo.README.md](examples/adeoluo.README.md) (37 public
-repositories, 7 categories, 11 flagships, 20 image URLs). Times are the
-tool's own elapsed-time summary unless noted; three runs each.
-
-| Scenario | API requests | Cache hits | Time |
-|---|--:|--:|--:|
-| Cold cache, authenticated | 75 | 0 | 2.57 s, 4.62 s, 5.69 s |
-| Warm cache (6h TTL) | 0 | 75 | 59 ms, 76 ms, 85 ms |
-| `--offline` | 0 | 75 | 5 ms, 6 ms, 9 ms |
-| `check --offline --check-links` (20 shields.io URLs, 8 at a time) | 0 | 75 | 0.25 s, 0.31 s (process wall time) |
-
-The cold run is dominated by GitHub API latency: one listing request plus two
-requests per repository (languages, latest release) across 8 workers. The gap
-between the warm and offline rows is the `gh auth token` subprocess, which
-online runs use to find a token; with `GITHUB_TOKEN` set, a warm run took 5 ms.
-The cache for this profile is 616 KiB on disk.
-
-Rendering microbenchmarks (`make bench`) on synthetic portfolios, covering
-`Build`, template execution, and output validation:
-
-| Benchmark | Time per op | Memory per op | Allocations |
-|---|--:|--:|--:|
-| Build, render, validate: 40 repositories | 0.79 ms | 1.26 MB | 4,641 |
-| Build, render, validate: 200 repositories | 7.75 ms | 4.87 MB | 17,740 |
-| Aggregate languages: 200 repositories | 97 us | 2.0 KB | 11 |
-
-Rendering grows faster than linearly because category and flagship lookups are
-linear scans per repository. At profile sizes this is far below the network
-cost, so I kept the simpler code.
-
-The stripped darwin/arm64 binary is 8.6 MB.
-
 ## Limitations
 
 - Only public repositories owned by `user` are fetched. Organization
@@ -357,4 +354,4 @@ The stripped darwin/arm64 binary is 8.6 MB.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Released under the [MIT License](LICENSE).

@@ -162,11 +162,11 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 
 Model internals, training loops, tokenization, data preparation, and classical NLP models.
 
-- **[transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)**: A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and attention demonstrated on a copy task. <sub>Python</sub>
-- [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch): A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and translation invariance demonstrated against a linear baseline. <sub>Python</sub>
+- **[transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)**: A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch; gradients verified against finite differences and attention demonstrated on a copy task. <sub>Python</sub>
+- [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch): A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch; gradients verified against finite differences and translation invariance demonstrated against a linear baseline. <sub>Python</sub>
 - [neural-word-embeddings](https://github.com/adeoluo/neural-word-embeddings): Skip-gram word embeddings with negative sampling from scratch: hand-derived gradients, a unigram negative-sampling table, and category-retrieval evaluation. <sub>Python</sub>
-- [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library): A byte-level byte-pair-encoding tokenizer built from scratch in pure Python, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput. <sub>Python</sub>
-- [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library): A corpus near-deduplication and quality-filtering library built from scratch in pure Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs. <sub>Python</sub>
+- [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library): A byte-level byte-pair-encoding tokenizer built from scratch, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput. <sub>Python</sub>
+- [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library): A corpus near-deduplication and quality-filtering library built from scratch using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs. <sub>Python</sub>
 - [crf-sequence-labeler](https://github.com/adeoluo/crf-sequence-labeler): A linear-chain conditional random field for sequence labeling from scratch: Viterbi decoding, forward-backward training with log-likelihood gradients, and span-level evaluation. <sub>Python</sub>
 - [dependency-parser](https://github.com/adeoluo/dependency-parser): An arc-standard transition-based dependency parser from scratch: a static oracle, an averaged structured perceptron policy, greedy decoding, and attachment-score evaluation. <sub>Python</sub>
 - [statistical-translation](https://github.com/adeoluo/statistical-translation): Statistical machine translation alignment from scratch: IBM Model 1 and Model 2 word alignment trained by expectation-maximization, with alignment-error-rate evaluation. <sub>Python</sub>
@@ -176,7 +176,7 @@ Model internals, training loops, tokenization, data preparation, and classical N
 
 Approximate nearest neighbor search, hybrid and graph retrieval, and grounded generation.
 
-- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor vector search library built from scratch in pure Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost. <sub>Python</sub>
+- **[ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)**: An approximate nearest neighbor vector search library built from scratch, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost. <sub>Python</sub>
 - **[hybrid-rag](https://github.com/adeoluo/hybrid-rag)**: Production hybrid retrieval from scratch: BM25 and a trained TF-IDF dense retriever, reciprocal-rank fusion, a reranker, and a retrieval evaluation suite. <sub>Python</sub>
 - [graphrag](https://github.com/adeoluo/graphrag): GraphRAG from scratch: entity and relation extraction, knowledge-graph construction, and traversal-based multi-hop retrieval. <sub>Python</sub>
 - [agentic-rag](https://github.com/adeoluo/agentic-rag): Agentic retrieval from scratch: query decomposition, a self-querying retriever-agent, and iterative multi-hop retrieve-reason-retrieve. <sub>Python</sub>
@@ -196,7 +196,7 @@ Reward modeling, RLHF, preference optimization, self-training, and prompt optimi
 The layer between models and users, covering safety, caching, failover, and structured output.
 
 - **[llm-gateway](https://github.com/adeoluo/llm-gateway)**: A safety proxy for language-model APIs built from scratch: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, with an adversarial suite measuring injection precision and recall and PII-redaction recall. <sub>Python</sub>
-- **[constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)**: A structured-generation library built from scratch in pure Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained). <sub>Python</sub>
+- **[constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)**: A structured-generation library built from scratch: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained). <sub>Python</sub>
 
 ### Agents ![magenta](https://img.shields.io/badge/magenta-fae8ff?style=flat-square)
 
