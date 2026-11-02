@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.3.0] 2026-11-02
+
+### Features
+
+- **render:** Underline category titles in the path chart (#7)
+
+### Documentation
+
+- Regenerate the example profile after the v0.2.1 release
+
 ## [0.2.1] 2026-11-02
 
 ### Bug fixes
