@@ -249,7 +249,7 @@ languages:
   include_archived: false
 path:
   prompt: What do you want to explore?
-  max_others: 3                     # non-flagship repos listed per category node
+  max_others: 3                     # non-flagship repos listed per category node, one per line
 ignore: [hello-worId]               # public repos deliberately left out of categories
 ```
 

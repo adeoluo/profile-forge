@@ -280,3 +280,25 @@ func TestStackSection(t *testing.T) {
 		t.Fatal("non-inheritable sections are still required")
 	}
 }
+
+func TestPathChartListsOneRepositoryPerLine(t *testing.T) {
+	c := &config.Config{
+		Path: config.PathChart{Prompt: "Explore", MaxOthers: 3},
+		Category: []config.Category{{
+			ID: "model", Title: "Models", Color: "#dbeafe",
+			Repos: []string{"alpha", "beta", "gamma", "delta", "epsilon"},
+		}},
+		Flagships: []config.Flagship{{Repo: "alpha", Result: "ok"}},
+	}
+	got := PathChart(c)
+	want := `n_model["Models<br/><b>alpha</b><br/>beta<br/>gamma<br/>delta<br/>+1 more"]`
+	if !strings.Contains(got, want) {
+		t.Fatalf("path chart node:\n%s\nwant it to contain:\n%s", got, want)
+	}
+	if strings.Contains(got, ", ") {
+		t.Fatalf("repository names must not be comma-joined:\n%s", got)
+	}
+	if !strings.HasPrefix(got, flowInit+"\nflowchart TD\n") {
+		t.Fatalf("path chart must start with the wrapping directive:\n%s", got)
+	}
+}
