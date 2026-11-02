@@ -1218,8 +1218,8 @@
           "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.3.0",
-          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.3.0"
+          "latest_release": "v0.3.1",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.3.1"
         },
         {
           "name": "homebrew-tap",
@@ -1247,41 +1247,41 @@
       {
         "name": "Python",
         "bytes": 2563884,
-        "share": 68.2895126907312,
+        "share": 68.27785550963843,
         "repos": 35
       },
       {
         "name": "Rust",
         "bytes": 374068,
-        "share": 9.963368636489186,
+        "share": 9.961667865932869,
         "repos": 4
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 9.119859110550115,
+        "share": 9.118302329061958,
         "repos": 4
       },
       {
         "name": "Go",
-        "bytes": 284304,
-        "share": 7.5724883091534725,
+        "bytes": 284945,
+        "share": 7.588265903681259,
         "repos": 3
       },
       {
         "name": "Shell",
         "bytes": 75482,
-        "share": 2.0104766818318507,
+        "share": 2.010133488714204,
         "repos": 20
       },
       {
         "name": "Other",
         "bytes": 114296,
-        "share": 3.04429457124418,
+        "share": 3.043774902971286,
         "repos": 0
       }
     ],
-    "total_bytes": 3754433,
+    "total_bytes": 3755074,
     "repo_count": 39
   },
   "stack": [
