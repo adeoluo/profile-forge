@@ -17,7 +17,7 @@
     {
       "name": "transformer-from-scratch",
       "url": "https://github.com/adeoluo/transformer-from-scratch",
-      "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and attention demonstrated on a copy task.",
+      "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch; gradients verified against finite differences and attention demonstrated on a copy task.",
       "language": "Python",
       "topics": [
         "attention",
@@ -65,7 +65,7 @@
     {
       "name": "ann-vector-search-library",
       "url": "https://github.com/adeoluo/ann-vector-search-library",
-      "description": "An approximate nearest neighbor vector search library built from scratch in pure Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+      "description": "An approximate nearest neighbor vector search library built from scratch, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
       "language": "Python",
       "topics": [
         "approximate-nearest-neighbors",
@@ -113,7 +113,7 @@
     {
       "name": "constrained-generation-library",
       "url": "https://github.com/adeoluo/constrained-generation-library",
-      "description": "A structured-generation library built from scratch in pure Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+      "description": "A structured-generation library built from scratch: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
       "language": "Python",
       "topics": [
         "constrained-decoding",
@@ -288,7 +288,7 @@
         {
           "name": "transformer-from-scratch",
           "url": "https://github.com/adeoluo/transformer-from-scratch",
-          "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and attention demonstrated on a copy task.",
+          "description": "A reverse-mode automatic differentiation engine and a decoder-only transformer language model, built from scratch; gradients verified against finite differences and attention demonstrated on a copy task.",
           "language": "Python",
           "topics": [
             "attention",
@@ -312,7 +312,7 @@
         {
           "name": "cnn-from-scratch",
           "url": "https://github.com/adeoluo/cnn-from-scratch",
-          "description": "A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in pure Python with no numerical libraries; gradients verified against finite differences and translation invariance demonstrated against a linear baseline.",
+          "description": "A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch; gradients verified against finite differences and translation invariance demonstrated against a linear baseline.",
           "language": "Python",
           "topics": [
             "autograd",
@@ -352,7 +352,7 @@
         {
           "name": "bpe-tokenizer-library",
           "url": "https://github.com/adeoluo/bpe-tokenizer-library",
-          "description": "A byte-level byte-pair-encoding tokenizer built from scratch in pure Python, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput.",
+          "description": "A byte-level byte-pair-encoding tokenizer built from scratch, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput.",
           "language": "Python",
           "topics": [
             "bpe",
@@ -372,7 +372,7 @@
         {
           "name": "corpus-dedup-library",
           "url": "https://github.com/adeoluo/corpus-dedup-library",
-          "description": "A corpus near-deduplication and quality-filtering library built from scratch in pure Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
+          "description": "A corpus near-deduplication and quality-filtering library built from scratch using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
           "language": "Python",
           "topics": [
             "data-cleaning",
@@ -482,7 +482,7 @@
         {
           "name": "ann-vector-search-library",
           "url": "https://github.com/adeoluo/ann-vector-search-library",
-          "description": "An approximate nearest neighbor vector search library built from scratch in pure Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+          "description": "An approximate nearest neighbor vector search library built from scratch, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
           "language": "Python",
           "topics": [
             "approximate-nearest-neighbors",
@@ -718,7 +718,7 @@
         {
           "name": "constrained-generation-library",
           "url": "https://github.com/adeoluo/constrained-generation-library",
-          "description": "A structured-generation library built from scratch in pure Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+          "description": "A structured-generation library built from scratch: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
           "language": "Python",
           "topics": [
             "constrained-decoding",

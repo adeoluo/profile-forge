@@ -1,0 +1,10 @@
+flowchart LR
+    CFG[profile.yaml] --> LOAD[Config load and validate]
+    API[(GitHub REST API)] --> CLIENT[GitHub client]
+    CLIENT <--> CACHE[(Disk cache)]
+    LOAD --> BUILD[render.Build]
+    CLIENT --> BUILD
+    BUILD --> TMPL[Section templates]
+    TMPL --> CHECK[Output validation]
+    CHECK --> MD[README.md]
+    BUILD --> JSON[portfolio.json]
