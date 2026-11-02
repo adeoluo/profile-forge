@@ -4,7 +4,11 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
-## [0.1.1] 2026-11-02
+## [0.2.0] 2026-11-02
+
+### Features
+
+- Stack section: titled rows of static badges (#3)
 
 ### Documentation
 
@@ -21,10 +25,6 @@ with `make cut-release`.
 ### Maintenance
 
 - Add release automation, AGENTS.md, llms.txt and contributor docs
-
-### Examples
-
-- Update adeoluo config and regenerate
-- Regenerate with new releases
+- Classify squash merges in the changelog by the commits they contain
 
 ## [0.1.0] 2026-11-02
