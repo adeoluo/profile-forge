@@ -2,11 +2,15 @@
   "user": "adeoluo",
   "name": "Adeolu Ogunnoiki",
   "headline": "AI and Machine Learning Engineer",
-  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them. Each project runs deterministically and offline, ships with green CI\nand measured benchmarks, and is checked against widely used reference libraries where it matters.",
+  "bio": "**I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**\n\nTransformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,\nand the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language\nthat fits each problem. Projects ship with green CI, versioned releases, and measured benchmarks, and\nare checked against widely used reference libraries where it matters.",
   "links": [
     {
       "label": "GitHub",
       "url": "https://github.com/adeoluo"
+    },
+    {
+      "label": "Homebrew tap",
+      "url": "https://github.com/adeoluo/homebrew-tap"
     },
     {
       "label": "profile-forge (generates this page)",
@@ -14,6 +18,30 @@
     }
   ],
   "flagships": [
+    {
+      "name": "agent-platform",
+      "url": "https://github.com/adeoluo/agent-platform",
+      "description": "An integrated AI platform: authenticated API, LLM gateway, tool-using agents, multi-agent jobs with durable crash recovery, tenant-isolated retrieval, tracing, and evaluation, composed from from-scratch libraries.",
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai-platform",
+        "durable-execution",
+        "evaluation",
+        "llm",
+        "observability",
+        "python",
+        "rag"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-02",
+      "category": "agent",
+      "flagship": true,
+      "summary": "An integrated AI platform composed from eight of these libraries",
+      "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0"
+    },
     {
       "name": "transformer-from-scratch",
       "url": "https://github.com/adeoluo/transformer-from-scratch",
@@ -34,7 +62,7 @@
       "category": "model",
       "flagship": true,
       "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
-      "result": "Gradients match **PyTorch to \u003c 1e-9**; learns real text to **3.64 bits/char** vs a 4.30 baseline; checkpointing",
+      "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
     },
@@ -65,7 +93,7 @@
     {
       "name": "ann-vector-search-library",
       "url": "https://github.com/adeoluo/ann-vector-search-library",
-      "description": "An approximate nearest neighbor vector search library built from scratch, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+      "description": "An approximate nearest neighbor vector search library built from scratch in Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
       "language": "Python",
       "topics": [
         "approximate-nearest-neighbors",
@@ -105,15 +133,15 @@
       "pushed_at": "2026-11-02",
       "category": "align",
       "flagship": true,
-      "summary": "Reward modeling with PPO",
-      "result": "A Bradley-Terry reward model, clipped PPO, and a **reward over-optimization (Goodhart) study**",
+      "summary": "Reward modeling with PPO and DPO",
+      "result": "PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
     },
     {
       "name": "constrained-generation-library",
       "url": "https://github.com/adeoluo/constrained-generation-library",
-      "description": "A structured-generation library built from scratch: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+      "description": "A structured-generation library built from scratch in Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
       "language": "Python",
       "topics": [
         "constrained-decoding",
@@ -177,7 +205,7 @@
       "pushed_at": "2026-11-02",
       "category": "retr",
       "flagship": true,
-      "summary": "Hybrid retrieval with a trained dense retriever",
+      "summary": "Hybrid retrieval with a neural dense retriever",
       "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
       "latest_release": "v0.1.0",
       "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
@@ -272,8 +300,10 @@
       "pushed_at": "2026-11-02",
       "category": "sys",
       "flagship": true,
-      "summary": "A persistent HNSW vector database server in Go",
-      "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS"
+      "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
+      "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0"
     }
   ],
   "categories": [
@@ -305,14 +335,14 @@
           "category": "model",
           "flagship": true,
           "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
-          "result": "Gradients match **PyTorch to \u003c 1e-9**; learns real text to **3.64 bits/char** vs a 4.30 baseline; checkpointing",
+          "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.1.0"
         },
         {
           "name": "cnn-from-scratch",
           "url": "https://github.com/adeoluo/cnn-from-scratch",
-          "description": "A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch; gradients verified against finite differences and translation invariance demonstrated against a linear baseline.",
+          "description": "A convolutional neural network and its explicit backpropagation (conv2d, pooling, dense), built from scratch in Python; gradients verified against finite differences and translation invariance demonstrated against a linear baseline.",
           "language": "Python",
           "topics": [
             "autograd",
@@ -325,7 +355,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
@@ -345,15 +375,15 @@
             "word2vec"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
         {
           "name": "bpe-tokenizer-library",
           "url": "https://github.com/adeoluo/bpe-tokenizer-library",
-          "description": "A byte-level byte-pair-encoding tokenizer built from scratch, implementing the GPT-2 algorithm: reversible byte-level encoding, regex pre-tokenization, and rank-based merges; lossless for any input and benchmarked on compression and throughput.",
-          "language": "Python",
+          "description": "A byte-level BPE tokenizer implementing the GPT-2 algorithm, with a reference Python implementation and an optional Rust core (PyO3) that produces identical token ids; lossless for any input.",
+          "language": "Rust",
           "topics": [
             "bpe",
             "byte-pair-encoding",
@@ -361,18 +391,22 @@
             "gpt-2",
             "language-model",
             "nlp",
+            "pyo3",
             "python",
+            "rust",
             "tokenizer"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.2.0"
         },
         {
           "name": "corpus-dedup-library",
           "url": "https://github.com/adeoluo/corpus-dedup-library",
-          "description": "A corpus near-deduplication and quality-filtering library built from scratch using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
+          "description": "A corpus near-deduplication and quality-filtering library built from scratch in Python using MinHash and LSH; perfect precision and recall on a labeled corpus while comparing a tiny fraction of all document pairs.",
           "language": "Python",
           "topics": [
             "data-cleaning",
@@ -385,7 +419,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
@@ -405,7 +439,7 @@
             "viterbi"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
@@ -425,7 +459,7 @@
             "transition-based"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
@@ -445,7 +479,7 @@
             "word-alignment"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         },
@@ -465,7 +499,7 @@
             "unsupervised-learning"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "model",
           "flagship": false
         }
@@ -482,7 +516,7 @@
         {
           "name": "ann-vector-search-library",
           "url": "https://github.com/adeoluo/ann-vector-search-library",
-          "description": "An approximate nearest neighbor vector search library built from scratch, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
+          "description": "An approximate nearest neighbor vector search library built from scratch in Python, implementing HNSW graphs; high recall at a fraction of a brute-force scan's distance computations, with measured recall and cost.",
           "language": "Python",
           "topics": [
             "approximate-nearest-neighbors",
@@ -522,7 +556,7 @@
           "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": true,
-          "summary": "Hybrid retrieval with a trained dense retriever",
+          "summary": "Hybrid retrieval with a neural dense retriever",
           "result": "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.1.0"
@@ -543,7 +577,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": false
         },
@@ -563,7 +597,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": false
         },
@@ -583,7 +617,7 @@
             "retrieval-augmented-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "retr",
           "flagship": false
         }
@@ -616,8 +650,8 @@
           "pushed_at": "2026-11-02",
           "category": "align",
           "flagship": true,
-          "summary": "Reward modeling with PPO",
-          "result": "A Bradley-Terry reward model, clipped PPO, and a **reward over-optimization (Goodhart) study**",
+          "summary": "Reward modeling with PPO and DPO",
+          "result": "PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0"
         },
@@ -637,7 +671,7 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "align",
           "flagship": false
         },
@@ -657,7 +691,7 @@
             "star"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "align",
           "flagship": false
         },
@@ -677,7 +711,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "align",
           "flagship": false
         }
@@ -718,7 +752,7 @@
         {
           "name": "constrained-generation-library",
           "url": "https://github.com/adeoluo/constrained-generation-library",
-          "description": "A structured-generation library built from scratch: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
+          "description": "A structured-generation library built from scratch in Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained).",
           "language": "Python",
           "topics": [
             "constrained-decoding",
@@ -815,9 +849,32 @@
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "agent",
-          "flagship": false,
+          "flagship": true,
+          "summary": "An integrated AI platform composed from eight of these libraries",
+          "result": "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.1.0"
+        },
+        {
+          "name": "agent-memory",
+          "url": "https://github.com/adeoluo/agent-memory",
+          "description": "Long-term memory for AI agents: episodic, semantic, and procedural memory in SQLite with hybrid retrieval, fact versioning, consolidation, and an MCP server",
+          "language": "Python",
+          "topics": [
+            "agents",
+            "llm",
+            "mcp",
+            "memory",
+            "python",
+            "retrieval",
+            "sqlite"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "agent",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0"
         },
         {
           "name": "nl-sql-analyst",
@@ -835,7 +892,7 @@
             "text-to-sql"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "agent",
           "flagship": false
         },
@@ -854,7 +911,7 @@
             "static-analysis"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "agent",
           "flagship": false
         },
@@ -862,10 +919,13 @@
           "name": "agent-sandbox",
           "url": "https://github.com/adeoluo/agent-sandbox",
           "description": "A policy-based sandbox for running AI agent tool calls with declarative rules, resource limits, and a tamper-evident audit log.",
+          "language": "Rust",
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "agent",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.0"
         }
       ]
     },
@@ -904,9 +964,10 @@
         {
           "name": "llm-observability",
           "url": "https://github.com/adeoluo/llm-observability",
-          "description": "An LLM observability and tracing platform from scratch: hierarchical spans, token, cost, and latency metrics, and trace analysis.",
+          "description": "LLM observability and tracing: a Python tracing library, collector, and JSON API with a TypeScript dashboard for traces, latency, tokens, and cost.",
           "language": "Python",
           "topics": [
+            "dashboard",
             "from-scratch",
             "llm",
             "llmops",
@@ -914,12 +975,15 @@
             "observability",
             "opentelemetry",
             "python",
-            "tracing"
+            "tracing",
+            "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "trust",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0"
         },
         {
           "name": "training-provenance",
@@ -961,7 +1025,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "trust",
           "flagship": false
         },
@@ -981,7 +1045,7 @@
             "red-teaming"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "trust",
           "flagship": false
         },
@@ -989,10 +1053,21 @@
           "name": "llm-eval-action",
           "url": "https://github.com/adeoluo/llm-eval-action",
           "description": "A GitHub Action that gates pull requests on statistically tested LLM evaluation regressions.",
+          "language": "TypeScript",
+          "topics": [
+            "ci",
+            "evaluation",
+            "github-actions",
+            "llm",
+            "statistics",
+            "typescript"
+          ],
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "trust",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0"
         }
       ]
     },
@@ -1022,8 +1097,31 @@
           "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": true,
-          "summary": "A persistent HNSW vector database server in Go",
-          "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS"
+          "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
+          "result": "Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.1.0"
+        },
+        {
+          "name": "mcp-ml-tools",
+          "url": "https://github.com/adeoluo/mcp-ml-tools",
+          "description": "Model Context Protocol server with machine learning engineering tools: BPE token counting and cost estimates, BM25 search, paired bootstrap and McNemar evaluation comparison, JSON Schema validation, and prompt-injection and PII scanning.",
+          "language": "TypeScript",
+          "topics": [
+            "evaluation",
+            "llm",
+            "mcp",
+            "model-context-protocol",
+            "retrieval",
+            "tools",
+            "typescript"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "sys",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0"
         },
         {
           "name": "sweep-orchestrator",
@@ -1041,7 +1139,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": false
         },
@@ -1061,7 +1159,7 @@
             "tpe"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-01",
+          "pushed_at": "2026-11-02",
           "category": "sys",
           "flagship": false
         },
@@ -1069,6 +1167,32 @@
           "name": "profile-forge",
           "url": "https://github.com/adeoluo/profile-forge",
           "description": "A Go CLI that generates a GitHub profile README and portfolio JSON from live repository metadata and a small YAML config.",
+          "language": "Go",
+          "topics": [
+            "cli",
+            "generator",
+            "github",
+            "go",
+            "mermaid",
+            "profile-readme"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-02",
+          "category": "sys",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.1.0"
+        },
+        {
+          "name": "homebrew-tap",
+          "url": "https://github.com/adeoluo/homebrew-tap",
+          "description": "Homebrew formulas for vectordb, agent-sandbox, and profile-forge.",
+          "language": "Ruby",
+          "topics": [
+            "cli",
+            "homebrew",
+            "homebrew-tap"
+          ],
           "stars": 0,
           "pushed_at": "2026-11-02",
           "category": "sys",
@@ -1081,31 +1205,43 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 2270511,
-        "share": 90.76198927890438,
-        "repos": 33
+        "bytes": 2481738,
+        "share": 70.82579552586,
+        "repos": 34
+      },
+      {
+        "name": "Rust",
+        "bytes": 337200,
+        "share": 9.623279432123773,
+        "repos": 2
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 323565,
+        "share": 9.234153052951154,
+        "repos": 3
       },
       {
         "name": "Go",
-        "bytes": 152196,
-        "share": 6.083921954261456,
-        "repos": 1
+        "bytes": 258975,
+        "share": 7.390832713328156,
+        "repos": 2
       },
       {
         "name": "Makefile",
-        "bytes": 48069,
-        "share": 1.9215225394845719,
-        "repos": 33
+        "bytes": 55284,
+        "share": 1.5777383752239937,
+        "repos": 37
       },
       {
-        "name": "Dockerfile",
-        "bytes": 30834,
-        "share": 1.2325662273495868,
-        "repos": 33
+        "name": "Other",
+        "bytes": 47241,
+        "share": 1.3482009005129276,
+        "repos": 0
       }
     ],
-    "total_bytes": 2501610,
-    "repo_count": 33
+    "total_bytes": 3504003,
+    "repo_count": 39
   },
-  "public_repos": 37
+  "public_repos": 40
 }

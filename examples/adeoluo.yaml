@@ -8,22 +8,25 @@ bio: |
   **I build AI and machine learning systems from the algorithm up, and validate them against established libraries.**
 
   Transformers and autodiff, vector search, alignment and post-training, retrieval, agents, evaluation,
-  and the infrastructure around them. Each project runs deterministically and offline, ships with green CI
-  and measured benchmarks, and is checked against widely used reference libraries where it matters.
+  and the infrastructure around them, written in Python, Go, Rust, and TypeScript, choosing the language
+  that fits each problem. Projects ship with green CI, versioned releases, and measured benchmarks, and
+  are checked against widely used reference libraries where it matters.
 
 links:
   - label: GitHub
     url: https://github.com/adeoluo
+  - label: Homebrew tap
+    url: https://github.com/adeoluo/homebrew-tap
   - label: profile-forge (generates this page)
     url: https://github.com/adeoluo/profile-forge
 
 badges:
   - label: languages
-    message: Python | Go
+    message: Python | Go | Rust | TypeScript
     color: "3776AB"
     logo: python
   - label: typed
-    message: mypy strict | go vet
+    message: mypy strict | go vet | clippy | tsc strict
     color: "2A6DB0"
   - label: validated vs
     message: PyTorch | scipy | FAISS | hnswlib
@@ -113,6 +116,7 @@ categories:
       - react-agent
       - multi-agent-orchestrator
       - agent-platform
+      - agent-memory
       - nl-sql-analyst
       - ai-code-reviewer
       - agent-sandbox
@@ -139,14 +143,19 @@ categories:
     description: Storage engines, experiment orchestration, hyperparameter search, and developer tools.
     repos:
       - vectordb-go
+      - mcp-ml-tools
       - sweep-orchestrator
       - hyperparameter-optimizer
       - profile-forge
+      - homebrew-tap
 
 flagships:
+  - repo: agent-platform
+    summary: An integrated AI platform composed from eight of these libraries
+    result: "Authenticated multi-tenant API, gateway, agents, retrieval, tracing, evaluation; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)"
   - repo: transformer-from-scratch
     summary: A decoder-only transformer and a reverse-mode autodiff engine
-    result: Gradients match **PyTorch to < 1e-9**; learns real text to **3.64 bits/char** vs a 4.30 baseline; checkpointing
+    result: "Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**"
   - repo: evaluation-harness
     summary: A model and agent evaluation framework
     result: "Statistics cross-checked against **scipy to machine precision**: bootstrap CIs, McNemar, Cohen's d"
@@ -154,8 +163,8 @@ flagships:
     summary: HNSW approximate nearest neighbor search
     result: "**Matches hnswlib's recall** at matched parameters; latency curves vs hnswlib and FAISS reported as measured"
   - repo: rlhf-reward-model
-    summary: Reward modeling with PPO
-    result: A Bradley-Terry reward model, clipped PPO, and a **reward over-optimization (Goodhart) study**
+    summary: Reward modeling with PPO and DPO
+    result: PPO vs DPO on the same preference task, and a **reward over-optimization (Goodhart) study**
   - repo: constrained-generation-library
     summary: Schema-constrained decoding via compiled automata
     result: "**240 of 240** outputs validate against the `jsonschema` reference; agree on 2,008 cases"
@@ -163,7 +172,7 @@ flagships:
     summary: "An LLM gateway: safety, caching, reliability"
     result: Retry and failover, **per-tenant isolation**, injection and PII detection, concurrency-tested
   - repo: hybrid-rag
-    summary: Hybrid retrieval with a trained dense retriever
+    summary: Hybrid retrieval with a neural dense retriever
     result: "Full evaluation suite; the dense retriever ties recall but ranks below strong lexical baselines at this scale"
   - repo: react-agent
     summary: A ReAct reasoning-and-acting agent
@@ -175,7 +184,7 @@ flagships:
     summary: Planner, worker, and critic over a shared blackboard
     result: "**Durable execution** with resume, and a single-agent vs orchestrator comparison"
   - repo: vectordb-go
-    summary: A persistent HNSW vector database server in Go
+    summary: A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)
     result: Checksummed write-ahead log, snapshot and replay crash recovery, benchmarked against hnswlib and FAISS
 
 ecosystem:
@@ -204,6 +213,8 @@ ecosystem:
     - {from: llm-observability, to: llm-gateway, label: traces, style: dotted}
     - {from: llm-observability, to: multi-agent-orchestrator, label: traces, style: dotted}
     - {from: training-provenance, to: transformer-from-scratch, label: reproduces, style: dotted}
+    - {from: agent-memory, to: agent-platform}
+    - {from: agent-sandbox, to: react-agent, label: guards tools, style: dotted}
 
 languages:
   top: 6
