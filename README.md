@@ -290,6 +290,12 @@ Validating a config and checking that a committed README is current.
   <img src="docs/demo/check.gif" alt="Validating a config and checking that a committed README is current" width="860">
 </p>
 
+Scaffolding a starter config, ready to edit and generate.
+
+<p align="center">
+  <img src="docs/demo/init.gif" alt="Scaffolding a starter config, ready to edit and generate" width="860">
+</p>
+
 ## Design decisions
 
 - **Static badges only.** Dynamic shields endpoints call the GitHub API from
