@@ -44,9 +44,10 @@ func Coverage(c *config.Config, repos []github.Repo) []string {
 	for _, r := range c.Ignore {
 		known[r] = true
 	}
+	ix := c.Index()
 	var out []string
 	for _, r := range repos {
-		if !r.Fork && !r.Archived && !known[r.Name] && c.CategoryOf(r.Name) == nil {
+		if !r.Fork && !r.Archived && !known[r.Name] && ix.CategoryOf(r.Name) == nil {
 			out = append(out, r.Name)
 		}
 	}
