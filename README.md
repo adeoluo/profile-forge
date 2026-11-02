@@ -280,6 +280,16 @@ repositories (description, language, topics, stars, last push date, release,
 flagship result), flagships, and the language summary. It is meant for a
 personal site or other tooling to consume.
 
+### Demos
+
+Recorded from real runs with [vhs](https://github.com/charmbracelet/vhs); each tape is in `docs/demo/`.
+
+Validating a config and checking that a committed README is current.
+
+<p align="center">
+  <img src="docs/demo/check.gif" alt="Validating a config and checking that a committed README is current" width="860">
+</p>
+
 ## Design decisions
 
 - **Static badges only.** Dynamic shields endpoints call the GitHub API from
