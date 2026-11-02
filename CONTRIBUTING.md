@@ -1,0 +1,32 @@
+# Contributing
+
+Thanks for taking a look. Issues and pull requests are welcome.
+
+## Setup
+
+Go 1.26 or newer and `make`.
+
+```sh
+make all      # gofmt check, go vet, race tests, build
+make lint     # adds staticcheck
+make bench    # rendering and aggregation benchmarks
+```
+
+## Guidelines
+
+- Keep the module to one dependency (`gopkg.in/yaml.v3`) unless a change
+  clearly needs another.
+- Add or update tests with every change. Rendering changes should update the
+  golden files with `go test ./internal/render -update`; review the diff
+  before committing.
+- Generated output must stay deterministic. Do not add timestamps or map
+  iteration order to rendered text.
+- No em dashes or en dashes in code, comments, docs, or output. The test
+  suite and the tool itself enforce this for generated Markdown.
+- Commit messages: imperative mood, a short subject, and a body that explains
+  why when it is not obvious.
+
+## Pull requests
+
+CI must pass: gofmt, go vet, staticcheck, race tests with coverage, build, a
+CLI smoke test, and the cross-compile.
