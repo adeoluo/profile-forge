@@ -214,7 +214,11 @@ links:                              # optional, https only
   - {label: GitHub, url: https://github.com/octocat}
 badges:                             # shields.io static badges
   - {label: built with, message: Go, color: "00ADD8", logo: go, style: for-the-badge}
-sections: [header, path, ecosystem, flagships, categories, languages, releases]
+stack:                              # optional rows of badges, one row per title
+  - title: Languages
+    items:
+      - {message: Go, color: "00ADD8", logo: go}
+sections: [header, stack, path, ecosystem, flagships, categories, languages, releases]
 intro:                              # optional prose above sections
   path: ...
   flagships: ...

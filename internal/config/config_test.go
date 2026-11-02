@@ -76,6 +76,8 @@ func TestParseRejectsInvalid(t *testing.T) {
 		{"bad edge style", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, style: wavy}\n", "style"},
 		{"pipe in label", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, label: \"a|b\"}\n", "quotes or pipes"},
 		{"badge missing color", base + "badges:\n  - {label: a, message: b}\n", "message and color"},
+		{"stack without items", base + "stack:\n  - {title: Languages}\n", "at least one item"},
+		{"stack item missing color", base + "stack:\n  - title: Languages\n    items:\n      - {message: Go}\n", "stack[0].items[0]: message and color"},
 		{"http link", base + "links:\n  - {label: x, url: \"http://x\"}\n", "https://"},
 		{"em dash", strings.Replace(base, "Test Person", "Test \u2014 Person", 1), "em dash (U+2014)"},
 		{"en dash", strings.Replace(base, "Test Person", "2020\u20132024", 1), "en dash (U+2013)"},

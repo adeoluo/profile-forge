@@ -14,25 +14,26 @@ import (
 
 // Section names accepted in the sections list, in their default order.
 var DefaultSections = []string{
-	"header", "path", "ecosystem", "flagships", "categories", "languages", "releases",
+	"header", "path", "ecosystem", "flagships", "categories", "languages", "releases", "stack",
 }
 
 // Config is the full profile description.
 type Config struct {
-	User      string     `yaml:"user" json:"user"`
-	Name      string     `yaml:"name" json:"name"`
-	Headline  string     `yaml:"headline" json:"headline"`
-	Bio       string     `yaml:"bio" json:"bio"`
-	Links     []Link     `yaml:"links" json:"links,omitempty"`
-	Badges    []Badge    `yaml:"badges" json:"badges,omitempty"`
-	Sections  []string   `yaml:"sections" json:"sections"`
-	Intro     Intro      `yaml:"intro" json:"intro"`
-	Footer    string     `yaml:"footer" json:"footer,omitempty"`
-	Category  []Category `yaml:"categories" json:"categories"`
-	Flagships []Flagship `yaml:"flagships" json:"flagships"`
-	Ecosystem Ecosystem  `yaml:"ecosystem" json:"ecosystem"`
-	Languages Languages  `yaml:"languages" json:"languages"`
-	Path      PathChart  `yaml:"path" json:"path"`
+	User      string       `yaml:"user" json:"user"`
+	Name      string       `yaml:"name" json:"name"`
+	Headline  string       `yaml:"headline" json:"headline"`
+	Bio       string       `yaml:"bio" json:"bio"`
+	Links     []Link       `yaml:"links" json:"links,omitempty"`
+	Badges    []Badge      `yaml:"badges" json:"badges,omitempty"`
+	Stack     []StackGroup `yaml:"stack" json:"stack,omitempty"`
+	Sections  []string     `yaml:"sections" json:"sections"`
+	Intro     Intro        `yaml:"intro" json:"intro"`
+	Footer    string       `yaml:"footer" json:"footer,omitempty"`
+	Category  []Category   `yaml:"categories" json:"categories"`
+	Flagships []Flagship   `yaml:"flagships" json:"flagships"`
+	Ecosystem Ecosystem    `yaml:"ecosystem" json:"ecosystem"`
+	Languages Languages    `yaml:"languages" json:"languages"`
+	Path      PathChart    `yaml:"path" json:"path"`
 	// Ignore lists public repositories that are intentionally left out of
 	// every category (for example the profile repository itself).
 	Ignore []string `yaml:"ignore" json:"ignore,omitempty"`
@@ -46,6 +47,7 @@ type Intro struct {
 	Categories string `yaml:"categories" json:"categories,omitempty"`
 	Languages  string `yaml:"languages" json:"languages,omitempty"`
 	Releases   string `yaml:"releases" json:"releases,omitempty"`
+	Stack      string `yaml:"stack" json:"stack,omitempty"`
 }
 
 // Link is a labeled URL shown in the header.
@@ -61,6 +63,13 @@ type Badge struct {
 	Color   string `yaml:"color" json:"color"`
 	Logo    string `yaml:"logo" json:"logo,omitempty"`
 	Style   string `yaml:"style" json:"style,omitempty"`
+}
+
+// StackGroup is one titled row of static badges in the stack section, for example
+// "Languages" or "Infrastructure". Items are badges whose label is usually empty.
+type StackGroup struct {
+	Title string  `yaml:"title" json:"title"`
+	Items []Badge `yaml:"items" json:"items"`
 }
 
 // Category groups repositories and owns a color used in every diagram.
@@ -204,6 +213,16 @@ func (c *Config) Validate() error {
 	for i, b := range c.Badges {
 		if b.Message == "" || b.Color == "" {
 			add("badges[%d]: message and color are required", i)
+		}
+	}
+	for i, g := range c.Stack {
+		if g.Title == "" || len(g.Items) == 0 {
+			add("stack[%d]: title and at least one item are required", i)
+		}
+		for j, b := range g.Items {
+			if b.Message == "" || b.Color == "" {
+				add("stack[%d].items[%d]: message and color are required", i, j)
+			}
 		}
 	}
 	for i, l := range c.Links {

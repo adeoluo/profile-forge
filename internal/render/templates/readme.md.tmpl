@@ -116,3 +116,17 @@
 {{- end}}
 {{- end}}
 {{- end}}
+
+{{define "stack" -}}
+{{if .Stack -}}
+## Stack
+{{with .Intro.Stack}}
+{{.}}
+{{end}}
+{{- range .Stack}}
+**{{.Title}}**
+
+{{inline .Badges}}
+{{end}}
+{{- end}}
+{{- end}}

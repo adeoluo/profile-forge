@@ -244,3 +244,39 @@ func TestHumanBytes(t *testing.T) {
 		}
 	}
 }
+
+func TestStackSection(t *testing.T) {
+	c := &config.Config{Stack: []config.StackGroup{
+		{Title: "Languages", Items: []config.Badge{{Message: "Go", Color: "00ADD8", Logo: "go"}, {Label: "py", Message: "3.12", Color: "3776AB"}}},
+	}}
+	v := &View{Stack: nil}
+	for _, g := range c.Stack {
+		row := StackView{Title: g.Title}
+		for _, b := range g.Items {
+			row.Badges = append(row.Badges, BadgeView{Alt: b.Message, URL: StaticBadge(b.Label, b.Message, b.Color, "flat-square", b.Logo)})
+		}
+		v.Stack = append(v.Stack, row)
+	}
+	custom := `{{define "header"}}H{{end}}{{define "path"}}{{end}}{{define "ecosystem"}}{{end}}` +
+		`{{define "flagships"}}{{end}}{{define "categories"}}{{end}}{{define "languages"}}{{end}}{{define "releases"}}{{end}}`
+	r, err := NewRenderer(custom)
+	if err != nil {
+		t.Fatalf("custom template without stack must inherit the built-in: %v", err)
+	}
+	out, err := r.Markdown(v, []string{"header", "stack"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, want := range []string{"## Stack", "**Languages**", "https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&style=flat-square", ") ![3.12]("} {
+		if !strings.Contains(out, want) {
+			t.Errorf("missing %q in:\n%s", want, out)
+		}
+	}
+	empty, err := r.Markdown(&View{}, []string{"header", "stack"})
+	if err != nil || strings.Contains(empty, "Stack") {
+		t.Fatalf("an empty stack renders nothing: %q %v", empty, err)
+	}
+	if _, err := NewRenderer(`{{define "stack"}}{{end}}`); err == nil {
+		t.Fatal("non-inheritable sections are still required")
+	}
+}
