@@ -9,8 +9,8 @@ bio: |
 
   My work covers the full stack of modern AI, from model internals and retrieval to agents and
   evaluation. I use whichever language fits the problem best, including Python, Go, Rust and
-  TypeScript. Every project ships with passing CI, versioned releases, measured benchmarks and
-  recorded demos, with results checked against established reference libraries.
+  TypeScript. Every project ships with passing CI, a versioned release, measured benchmarks and
+  recorded demos, and wherever an established library exists, results are checked against it.
 
 links:
   - label: Homebrew tap
@@ -49,6 +49,12 @@ stack:
       - {message: "FAISS (reference)", color: "0467DF", logo: meta}
       - {message: "hnswlib (reference)", color: "555555"}
       - {message: "SciPy (reference)", color: "8CAAE6", logo: scipy}
+      - {message: "tiktoken (reference)", color: "412991", logo: openai}
+      - {message: "gensim (reference)", color: "555555"}
+      - {message: "datasketch (reference)", color: "555555"}
+      - {message: "rank_bm25 (reference)", color: "555555"}
+      - {message: "NLTK (reference)", color: "154F5B"}
+      - {message: "jsonschema (reference)", color: "555555"}
   - title: Systems and data
     items:
       - {message: "SQLite", color: "003B57", logo: sqlite}
@@ -76,7 +82,7 @@ stack:
       - {message: "Homebrew", color: "FBB040", logo: homebrew}
       - {message: "git-cliff", color: "555555"}
       - {message: "Mermaid", color: "FF3670", logo: mermaid}
-      - {message: "vhs", color: "6B50FF"}
+      - {message: "VHS", color: "6B50FF"}
 
 sections: [header, stack, path, ecosystem, flagships, categories, languages, releases]
 
@@ -85,7 +91,7 @@ intro:
     Pick what you want to see. Colors group projects by the stage of the stack they live in,
     and the same colors are used in every diagram on this page. Flagships are in bold.
   ecosystem: >-
-    The flagships compose into one pipeline: data is tokenized and deduplicated, models are trained
+    The projects compose into one pipeline: data is tokenized and deduplicated, models are trained
     and aligned, results are retrieved and served, agents act on them, and everything is evaluated,
     traced, and reproducible. Dotted arrows are cross-cutting relationships. Colors match the legend.
   flagships: >-

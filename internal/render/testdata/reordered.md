@@ -50,7 +50,7 @@ pie
   "Other" : 1200
 ```
 
-<sub>Counted 15.9 KiB across 5 repositories.</sub>
+<sub>Counted 15.9 KiB across the 5 repositories that contain code.</sub>
 
 ---
 
