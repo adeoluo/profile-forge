@@ -2,7 +2,7 @@
   "user": "adeoluo",
   "name": "Adeolu Ogunnoiki",
   "headline": "AI and Machine Learning Engineer",
-  "bio": "**I build AI agents and products that are rigorously tested for correctness and safety.**\n\nMy work covers the full stack of modern AI, from model internals and retrieval to agents and\nevaluation. I use whichever language fits the problem best, including Python, Go, Rust and\nTypeScript. Every project ships with passing CI, versioned releases, measured benchmarks and\nrecorded demos, with results checked against established reference libraries.",
+  "bio": "**I build AI agents and products that are rigorously tested for correctness and safety.**\n\nMy work covers the full stack of modern AI, from model internals and retrieval to agents and\nevaluation. I use whichever language fits the problem best, including Python, Go, Rust and\nTypeScript. Every project ships with passing CI, a versioned release, measured benchmarks and\nrecorded demos, and wherever an established library exists, results are checked against it.",
   "links": [
     {
       "label": "Homebrew tap",
@@ -414,9 +414,11 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/cnn-from-scratch/releases/tag/v0.1.0"
         },
         {
           "name": "neural-word-embeddings",
@@ -434,9 +436,11 @@
             "word2vec"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/neural-word-embeddings/releases/tag/v0.1.0"
         },
         {
           "name": "bpe-tokenizer-library",
@@ -508,9 +512,11 @@
             "viterbi"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/crf-sequence-labeler/releases/tag/v0.1.0"
         },
         {
           "name": "dependency-parser",
@@ -528,9 +534,11 @@
             "transition-based"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/dependency-parser/releases/tag/v0.1.0"
         },
         {
           "name": "statistical-translation",
@@ -548,9 +556,11 @@
             "word-alignment"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "model",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/statistical-translation/releases/tag/v0.1.0"
         },
         {
           "name": "topic-model-lda",
@@ -650,9 +660,11 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "retr",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/graphrag/releases/tag/v0.1.0"
         },
         {
           "name": "agentic-rag",
@@ -670,9 +682,11 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "retr",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/agentic-rag/releases/tag/v0.1.0"
         },
         {
           "name": "grounded-copilot",
@@ -690,9 +704,11 @@
             "retrieval-augmented-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "retr",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/grounded-copilot/releases/tag/v0.1.0"
         }
       ]
     },
@@ -744,9 +760,11 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "align",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/preference-optimization/releases/tag/v0.1.0"
         },
         {
           "name": "self-improvement-loop",
@@ -764,9 +782,11 @@
             "star"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "align",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/self-improvement-loop/releases/tag/v0.1.0"
         },
         {
           "name": "prompt-optimizer",
@@ -784,9 +804,11 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "align",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/prompt-optimizer/releases/tag/v0.1.0"
         }
       ]
     },
@@ -971,9 +993,11 @@
             "text-to-sql"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "agent",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/nl-sql-analyst/releases/tag/v0.1.0"
         },
         {
           "name": "ai-code-reviewer",
@@ -990,9 +1014,11 @@
             "static-analysis"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "agent",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/ai-code-reviewer/releases/tag/v0.1.0"
         },
         {
           "name": "agent-sandbox",
@@ -1116,9 +1142,11 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "trust",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.0"
         },
         {
           "name": "red-teaming",
@@ -1136,9 +1164,11 @@
             "red-teaming"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "trust",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/red-teaming/releases/tag/v0.1.0"
         },
         {
           "name": "llm-eval-action",
@@ -1236,9 +1266,11 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "sys",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/sweep-orchestrator/releases/tag/v0.1.0"
         },
         {
           "name": "hyperparameter-optimizer",
@@ -1256,9 +1288,11 @@
             "tpe"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-03",
           "category": "sys",
-          "flagship": false
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/hyperparameter-optimizer/releases/tag/v0.1.0"
         },
         {
           "name": "profile-forge",
@@ -1307,41 +1341,41 @@
       {
         "name": "Python",
         "bytes": 2641487,
-        "share": 67.86092026694405,
+        "share": 67.14430058629223,
         "repos": 35
       },
       {
         "name": "Rust",
         "bytes": 403583,
-        "share": 10.368218274060816,
+        "share": 10.258728611391074,
         "repos": 5
       },
       {
         "name": "TypeScript",
         "bytes": 342399,
-        "share": 8.796375389498937,
+        "share": 8.703484581391418,
         "repos": 4
       },
       {
         "name": "Go",
         "bytes": 290056,
-        "share": 7.451661540998962,
+        "share": 7.3729710768433,
         "repos": 3
       },
       {
         "name": "Shell",
-        "bytes": 94256,
-        "share": 2.421476577655343,
-        "repos": 26
+        "bytes": 131804,
+        "share": 3.350342967607132,
+        "repos": 38
       },
       {
         "name": "Other",
-        "bytes": 120720,
-        "share": 3.101347950841888,
+        "bytes": 124716,
+        "share": 3.17017217647485,
         "repos": 0
       }
     ],
-    "total_bytes": 3892501,
+    "total_bytes": 3934045,
     "repo_count": 39
   },
   "stack": [
@@ -1408,6 +1442,30 @@
         {
           "alt": "SciPy (reference)",
           "url": "https://img.shields.io/badge/SciPy%20%28reference%29-8CAAE6?logo=scipy\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "tiktoken (reference)",
+          "url": "https://img.shields.io/badge/tiktoken%20%28reference%29-412991?logo=openai\u0026logoColor=white\u0026style=flat-square"
+        },
+        {
+          "alt": "gensim (reference)",
+          "url": "https://img.shields.io/badge/gensim%20%28reference%29-555555?style=flat-square"
+        },
+        {
+          "alt": "datasketch (reference)",
+          "url": "https://img.shields.io/badge/datasketch%20%28reference%29-555555?style=flat-square"
+        },
+        {
+          "alt": "rank_bm25 (reference)",
+          "url": "https://img.shields.io/badge/rank__bm25%20%28reference%29-555555?style=flat-square"
+        },
+        {
+          "alt": "NLTK (reference)",
+          "url": "https://img.shields.io/badge/NLTK%20%28reference%29-154F5B?style=flat-square"
+        },
+        {
+          "alt": "jsonschema (reference)",
+          "url": "https://img.shields.io/badge/jsonschema%20%28reference%29-555555?style=flat-square"
         }
       ]
     },
@@ -1509,8 +1567,8 @@
           "url": "https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid\u0026logoColor=white\u0026style=flat-square"
         },
         {
-          "alt": "vhs",
-          "url": "https://img.shields.io/badge/vhs-6B50FF?style=flat-square"
+          "alt": "VHS",
+          "url": "https://img.shields.io/badge/VHS-6B50FF?style=flat-square"
         }
       ]
     }

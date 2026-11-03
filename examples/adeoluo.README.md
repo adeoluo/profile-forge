@@ -10,8 +10,8 @@
 
 My work covers the full stack of modern AI, from model internals and retrieval to agents and
 evaluation. I use whichever language fits the problem best, including Python, Go, Rust and
-TypeScript. Every project ships with passing CI, versioned releases, measured benchmarks and
-recorded demos, with results checked against established reference libraries.
+TypeScript. Every project ships with passing CI, a versioned release, measured benchmarks and
+recorded demos, and wherever an established library exists, results are checked against it.
 
 ![languages: Python | Go | Rust | TypeScript](https://img.shields.io/badge/languages-Python%20%7C%20Go%20%7C%20Rust%20%7C%20TypeScript-3776AB?logo=python&logoColor=white&style=for-the-badge)
 ![typed: mypy strict | go vet | Clippy | tsc strict](https://img.shields.io/badge/typed-mypy%20strict%20%7C%20go%20vet%20%7C%20Clippy%20%7C%20tsc%20strict-2A6DB0?style=for-the-badge)
@@ -19,8 +19,8 @@ recorded demos, with results checked against established reference libraries.
 
 ![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
 ![flagships: 14](https://img.shields.io/badge/flagships-14-1f6feb?style=flat-square)
-![releases: 21](https://img.shields.io/badge/releases-21-1f6feb?style=flat-square)
-![top language: Python 68%](https://img.shields.io/badge/top%20language-Python%2068%25-1f6feb?style=flat-square)
+![releases: 38](https://img.shields.io/badge/releases-38-1f6feb?style=flat-square)
+![top language: Python 67%](https://img.shields.io/badge/top%20language-Python%2067%25-1f6feb?style=flat-square)
 
 [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
 
@@ -38,7 +38,7 @@ Languages and tools used in these repositories. Libraries marked reference are w
 
 **AI and machine learning**
 
-![OpenAI API](https://img.shields.io/badge/OpenAI%20API-412991?logo=openai&logoColor=white&style=flat-square) ![Anthropic API](https://img.shields.io/badge/Anthropic%20API-191919?logo=anthropic&logoColor=white&style=flat-square) ![Model Context Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-000000?style=flat-square) ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white&style=flat-square) ![PyTorch (reference)](https://img.shields.io/badge/PyTorch%20%28reference%29-EE4C2C?logo=pytorch&logoColor=white&style=flat-square) ![FAISS (reference)](https://img.shields.io/badge/FAISS%20%28reference%29-0467DF?logo=meta&logoColor=white&style=flat-square) ![hnswlib (reference)](https://img.shields.io/badge/hnswlib%20%28reference%29-555555?style=flat-square) ![SciPy (reference)](https://img.shields.io/badge/SciPy%20%28reference%29-8CAAE6?logo=scipy&logoColor=white&style=flat-square)
+![OpenAI API](https://img.shields.io/badge/OpenAI%20API-412991?logo=openai&logoColor=white&style=flat-square) ![Anthropic API](https://img.shields.io/badge/Anthropic%20API-191919?logo=anthropic&logoColor=white&style=flat-square) ![Model Context Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-000000?style=flat-square) ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white&style=flat-square) ![PyTorch (reference)](https://img.shields.io/badge/PyTorch%20%28reference%29-EE4C2C?logo=pytorch&logoColor=white&style=flat-square) ![FAISS (reference)](https://img.shields.io/badge/FAISS%20%28reference%29-0467DF?logo=meta&logoColor=white&style=flat-square) ![hnswlib (reference)](https://img.shields.io/badge/hnswlib%20%28reference%29-555555?style=flat-square) ![SciPy (reference)](https://img.shields.io/badge/SciPy%20%28reference%29-8CAAE6?logo=scipy&logoColor=white&style=flat-square) ![tiktoken (reference)](https://img.shields.io/badge/tiktoken%20%28reference%29-412991?logo=openai&logoColor=white&style=flat-square) ![gensim (reference)](https://img.shields.io/badge/gensim%20%28reference%29-555555?style=flat-square) ![datasketch (reference)](https://img.shields.io/badge/datasketch%20%28reference%29-555555?style=flat-square) ![rank_bm25 (reference)](https://img.shields.io/badge/rank__bm25%20%28reference%29-555555?style=flat-square) ![NLTK (reference)](https://img.shields.io/badge/NLTK%20%28reference%29-154F5B?style=flat-square) ![jsonschema (reference)](https://img.shields.io/badge/jsonschema%20%28reference%29-555555?style=flat-square)
 
 **Systems and data**
 
@@ -50,7 +50,7 @@ Languages and tools used in these repositories. Libraries marked reference are w
 
 **Delivery**
 
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=flat-square) ![CodeQL](https://img.shields.io/badge/CodeQL-2F363D?logo=github&logoColor=white&style=flat-square) ![Homebrew](https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew&logoColor=white&style=flat-square) ![git-cliff](https://img.shields.io/badge/git--cliff-555555?style=flat-square) ![Mermaid](https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid&logoColor=white&style=flat-square) ![vhs](https://img.shields.io/badge/vhs-6B50FF?style=flat-square)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=flat-square) ![CodeQL](https://img.shields.io/badge/CodeQL-2F363D?logo=github&logoColor=white&style=flat-square) ![Homebrew](https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew&logoColor=white&style=flat-square) ![git-cliff](https://img.shields.io/badge/git--cliff-555555?style=flat-square) ![Mermaid](https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid&logoColor=white&style=flat-square) ![VHS](https://img.shields.io/badge/VHS-6B50FF?style=flat-square)
 
 ---
 
@@ -133,7 +133,7 @@ flowchart TD
 
 ## How the projects connect
 
-The flagships compose into one pipeline: data is tokenized and deduplicated, models are trained and aligned, results are retrieved and served, agents act on them, and everything is evaluated, traced, and reproducible. Dotted arrows are cross-cutting relationships. Colors match the legend.
+The projects compose into one pipeline: data is tokenized and deduplicated, models are trained and aligned, results are retrieved and served, agents act on them, and everything is evaluated, traced, and reproducible. Dotted arrows are cross-cutting relationships. Colors match the legend.
 
 ```mermaid
 %%{init: {"flowchart": {"wrappingWidth": 320}}}%%
@@ -306,12 +306,12 @@ Bytes of code per language, summed across my public repositories with the GitHub
 
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
-| Python | 2.5 MiB | 67.9% | 35 |
-| Rust | 394.1 KiB | 10.4% | 5 |
-| TypeScript | 334.4 KiB | 8.8% | 4 |
-| Go | 283.3 KiB | 7.5% | 3 |
-| Shell | 92.0 KiB | 2.4% | 26 |
-| Other | 117.9 KiB | 3.1% |  |
+| Python | 2.5 MiB | 67.1% | 35 |
+| Rust | 394.1 KiB | 10.3% | 5 |
+| TypeScript | 334.4 KiB | 8.7% | 4 |
+| Go | 283.3 KiB | 7.4% | 3 |
+| Shell | 128.7 KiB | 3.4% | 38 |
+| Other | 121.8 KiB | 3.2% |  |
 
 ```mermaid
 pie
@@ -320,11 +320,11 @@ pie
   "Rust" : 403583
   "TypeScript" : 342399
   "Go" : 290056
-  "Shell" : 94256
-  "Other" : 120720
+  "Shell" : 131804
+  "Other" : 124716
 ```
 
-<sub>Counted 3.7 MiB across 39 repositories.</sub>
+<sub>Counted 3.8 MiB across the 39 repositories that contain code.</sub>
 
 ---
 
@@ -337,20 +337,37 @@ Repositories with a tagged release. Badges link to the release page.
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
 | [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | Python |
 | [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
+| [agentic-rag](https://github.com/adeoluo/agentic-rag) | [![agentic-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/agentic-rag/releases/tag/v0.1.0) | Python |
+| [ai-code-reviewer](https://github.com/adeoluo/ai-code-reviewer) | [![ai-code-reviewer v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/ai-code-reviewer/releases/tag/v0.1.0) | Python |
 | [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0) | Python |
 | [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.4.0](https://img.shields.io/badge/release-v0.4.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0) | Rust |
+| [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch) | [![cnn-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/cnn-from-scratch/releases/tag/v0.1.0) | Python |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library) | [![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Python |
 | [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0) | Python |
+| [crf-sequence-labeler](https://github.com/adeoluo/crf-sequence-labeler) | [![crf-sequence-labeler v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/crf-sequence-labeler/releases/tag/v0.1.0) | Python |
+| [dependency-parser](https://github.com/adeoluo/dependency-parser) | [![dependency-parser v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/dependency-parser/releases/tag/v0.1.0) | Python |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness) | [![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | Python |
+| [factuality-auditor](https://github.com/adeoluo/factuality-auditor) | [![factuality-auditor v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.0) | Python |
+| [graphrag](https://github.com/adeoluo/graphrag) | [![graphrag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/graphrag/releases/tag/v0.1.0) | Python |
+| [grounded-copilot](https://github.com/adeoluo/grounded-copilot) | [![grounded-copilot v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/grounded-copilot/releases/tag/v0.1.0) | Python |
 | [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0) | Python |
+| [hyperparameter-optimizer](https://github.com/adeoluo/hyperparameter-optimizer) | [![hyperparameter-optimizer v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/hyperparameter-optimizer/releases/tag/v0.1.0) | Python |
 | [llm-eval-action](https://github.com/adeoluo/llm-eval-action) | [![llm-eval-action v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0) | TypeScript |
 | [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | Python |
 | [llm-observability](https://github.com/adeoluo/llm-observability) | [![llm-observability v0.2.0](https://img.shields.io/badge/release-v0.2.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0) | Python |
 | [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools) | [![mcp-ml-tools v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0) | TypeScript |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator) | [![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Python |
+| [neural-word-embeddings](https://github.com/adeoluo/neural-word-embeddings) | [![neural-word-embeddings v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/neural-word-embeddings/releases/tag/v0.1.0) | Python |
+| [nl-sql-analyst](https://github.com/adeoluo/nl-sql-analyst) | [![nl-sql-analyst v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/nl-sql-analyst/releases/tag/v0.1.0) | Python |
+| [preference-optimization](https://github.com/adeoluo/preference-optimization) | [![preference-optimization v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/preference-optimization/releases/tag/v0.1.0) | Python |
 | [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.3.2](https://img.shields.io/badge/release-v0.3.2-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.3.2) | Go |
+| [prompt-optimizer](https://github.com/adeoluo/prompt-optimizer) | [![prompt-optimizer v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/prompt-optimizer/releases/tag/v0.1.0) | Python |
 | [react-agent](https://github.com/adeoluo/react-agent) | [![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | Python |
+| [red-teaming](https://github.com/adeoluo/red-teaming) | [![red-teaming v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/red-teaming/releases/tag/v0.1.0) | Python |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model) | [![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Python |
+| [self-improvement-loop](https://github.com/adeoluo/self-improvement-loop) | [![self-improvement-loop v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/self-improvement-loop/releases/tag/v0.1.0) | Python |
+| [statistical-translation](https://github.com/adeoluo/statistical-translation) | [![statistical-translation v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/statistical-translation/releases/tag/v0.1.0) | Python |
+| [sweep-orchestrator](https://github.com/adeoluo/sweep-orchestrator) | [![sweep-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/sweep-orchestrator/releases/tag/v0.1.0) | Python |
 | [topic-model-lda](https://github.com/adeoluo/topic-model-lda) | [![topic-model-lda v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.0) | Python |
 | [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Python |
 | [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0) | Python |
