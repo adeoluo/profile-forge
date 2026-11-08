@@ -4,7 +4,7 @@ Thanks for taking a look. Issues and pull requests are welcome.
 
 ## Setup
 
-Go 1.26 or newer and `make`.
+Go 1.27 or newer and `make`.
 
 ```sh
 make all      # gofmt check, go vet, race tests, build

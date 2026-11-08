@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/adeoluo/profile-forge/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/adeoluo/profile-forge/releases"><img alt="Release" src="https://img.shields.io/github/v/release/adeoluo/profile-forge"></a>
-  <img alt="Go" src="https://img.shields.io/badge/go-1.26-00ADD8">
+  <img alt="Go" src="https://img.shields.io/badge/go-1.27-00ADD8">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
 </p>
 
@@ -134,7 +134,7 @@ tar -xzf "profile-forge_${VERSION}_${OS}_${ARCH}.tar.gz"
 sudo install "profile-forge_${VERSION}_${OS}_${ARCH}/profile-forge" /usr/local/bin/
 ```
 
-With Go 1.26 or newer:
+With Go 1.27 or newer:
 
 ```sh
 go install github.com/adeoluo/profile-forge/cmd/profile-forge@latest
