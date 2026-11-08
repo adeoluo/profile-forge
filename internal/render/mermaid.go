@@ -44,14 +44,18 @@ const bullet = "\u2022 "
 func PathChart(c *config.Config) string {
 	var b strings.Builder
 	b.WriteString(flowInit + "\n")
+	grid := c.Path.Columns > 0
 	dir := c.Path.Direction
-	if dir == "" {
+	if dir == "" || grid {
 		dir = "TD"
 	}
 	fmt.Fprintf(&b, "flowchart %s\n", dir)
-	fmt.Fprintf(&b, "  n_root([\"%s\"])\n", mermaidText(c.Path.Prompt))
+	if !grid {
+		fmt.Fprintf(&b, "  n_root([\"%s\"])\n", mermaidText(c.Path.Prompt))
+	}
 	ix := c.Index()
-	for _, cat := range c.Category {
+	blocks := make([]string, len(c.Category))
+	for i, cat := range c.Category {
 		var flags, others []string
 		for _, r := range cat.Repos {
 			if ix.FlagshipOf(r) != nil {
@@ -76,18 +80,45 @@ func PathChart(c *config.Config) string {
 		if more > 0 {
 			lines = append(lines, fmt.Sprintf("+%d more", more))
 		}
-		fmt.Fprintf(&b, "  subgraph %s[\"%s\"]\n", nodeID("s", cat.ID), mermaidText(cat.Title))
-		fmt.Fprintf(&b, "    %s[\"%s\"]\n", nodeID("n", cat.ID), strings.Join(lines, "<br/>"))
-		b.WriteString("  end\n")
-		fmt.Fprintf(&b, "  n_root --> %s\n", nodeID("s", cat.ID))
+		var cb strings.Builder
+		fmt.Fprintf(&cb, "  subgraph %s[\"%s\"]\n", nodeID("s", cat.ID), mermaidText(cat.Title))
+		fmt.Fprintf(&cb, "    %s[\"%s\"]\n", nodeID("n", cat.ID), strings.Join(lines, "<br/>"))
+		cb.WriteString("  end\n")
+		if !grid {
+			fmt.Fprintf(&cb, "  n_root --> %s\n", nodeID("s", cat.ID))
+		}
+		blocks[i] = cb.String()
+	}
+	if grid {
+		// Mermaid lays out the boxes of one rank right to left in declaration order, so each
+		// row is declared in reverse; invisible links stack row r+1 under row r.
+		cols := c.Path.Columns
+		for row := 0; row < len(blocks); row += cols {
+			end := min(row+cols, len(blocks))
+			for i := end - 1; i >= row; i-- {
+				b.WriteString(blocks[i])
+			}
+		}
+		for i := 0; i+cols < len(c.Category); i++ {
+			fmt.Fprintf(&b, "  %s ~~~ %s\n", nodeID("s", c.Category[i].ID), nodeID("s", c.Category[i+cols].ID))
+		}
+	} else {
+		for _, blk := range blocks {
+			b.WriteString(blk)
+		}
 	}
 	b.WriteString("\n")
-	b.WriteString(rootClass + "\n")
+	if !grid {
+		b.WriteString(rootClass + "\n")
+	}
 	for _, cat := range c.Category {
 		fmt.Fprintf(&b, "  classDef %s fill:%s,stroke-width:0px,color:%s,text-align:left;\n",
 			nodeID("c", cat.ID), cat.Color, cat.Text)
 	}
-	b.WriteString("\n  class n_root c_root;\n")
+	b.WriteString("\n")
+	if !grid {
+		b.WriteString("  class n_root c_root;\n")
+	}
 	for _, cat := range c.Category {
 		fmt.Fprintf(&b, "  class %s %s;\n", nodeID("n", cat.ID), nodeID("c", cat.ID))
 		fmt.Fprintf(&b, "  style %s fill:%s,stroke:%s,color:%s\n", nodeID("s", cat.ID), cat.Color, cat.Stroke, cat.Text)

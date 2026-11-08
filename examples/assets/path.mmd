@@ -1,0 +1,64 @@
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
+flowchart TD
+  subgraph s_align["Alignment and post-training"]
+    n_align["• <b>rlhf-reward-model</b><br/>• preference-optimization<br/>• self-improvement-loop<br/>• prompt-optimizer"]
+  end
+  subgraph s_retr["Retrieval and search"]
+    n_retr["• <b>ann-vector-search-library</b><br/>• <b>hybrid-rag</b><br/>• graphrag<br/>• agentic-rag<br/>• grounded-copilot"]
+  end
+  subgraph s_model["Modeling and training"]
+    n_model["• <b>transformer-from-scratch</b><br/>• <b>bpe-tokenizer-library</b><br/>• <b>corpus-dedup-library</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
+  end
+  subgraph s_trust["Evaluation and trust"]
+    n_trust["• <b>evaluation-harness</b><br/>• <b>training-provenance</b><br/>• llm-observability<br/>• factuality-auditor<br/>• red-teaming<br/>• llm-eval-action"]
+  end
+  subgraph s_agent["Agents"]
+    n_agent["• <b>react-agent</b><br/>• <b>multi-agent-orchestrator</b><br/>• <b>agent-platform</b><br/>• agent-memory<br/>• nl-sql-analyst<br/>• ai-code-reviewer<br/>• agent-sandbox"]
+  end
+  subgraph s_serve["Serving and reliability"]
+    n_serve["• <b>llm-gateway</b><br/>• <b>constrained-generation-library</b><br/>• ml-graph-compiler"]
+  end
+  subgraph s_sys["Systems and tooling"]
+    n_sys["• <b>vectordb-go</b><br/>• mcp-ml-tools<br/>• sweep-orchestrator<br/>• hyperparameter-optimizer<br/>• profile-forge<br/>• homebrew-tap"]
+  end
+  subgraph s_applied["Ranking and applied ML"]
+    n_applied["• <b>learning-to-rank</b><br/>• ad-auction-lab<br/>• log-anomaly-detection"]
+  end
+  subgraph s_sec["AI security"]
+    n_sec["• <b>llm-vuln-scanner</b><br/>• <b>prompt-injection-detector</b><br/>• <b>mcp-security-scanner</b><br/>• llm-dlp-guard<br/>• model-supply-chain-scanner<br/>• adversarial-robustness-lab<br/>• privacy-attacks-lab<br/>• backdoor-defense-lab"]
+  end
+  s_model ~~~ s_serve
+  s_retr ~~~ s_agent
+  s_align ~~~ s_trust
+  s_serve ~~~ s_sec
+  s_agent ~~~ s_applied
+  s_trust ~~~ s_sys
+
+  classDef c_model fill:#dbeafe,stroke-width:0px,color:#0b1b3a,text-align:left;
+  classDef c_retr fill:#dcfce7,stroke-width:0px,color:#052e16,text-align:left;
+  classDef c_align fill:#ede9fe,stroke-width:0px,color:#1e1b4b,text-align:left;
+  classDef c_serve fill:#fef3c7,stroke-width:0px,color:#451a03,text-align:left;
+  classDef c_agent fill:#fae8ff,stroke-width:0px,color:#4a044e,text-align:left;
+  classDef c_trust fill:#fee2e2,stroke-width:0px,color:#450a0a,text-align:left;
+  classDef c_sec fill:#ffe4e6,stroke-width:0px,color:#4c0519,text-align:left;
+  classDef c_applied fill:#e0f2fe,stroke-width:0px,color:#082f49,text-align:left;
+  classDef c_sys fill:#ccfbf1,stroke-width:0px,color:#042f2e,text-align:left;
+
+  class n_model c_model;
+  style s_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a
+  class n_retr c_retr;
+  style s_retr fill:#dcfce7,stroke:#15803d,color:#052e16
+  class n_align c_align;
+  style s_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b
+  class n_serve c_serve;
+  style s_serve fill:#fef3c7,stroke:#b45309,color:#451a03
+  class n_agent c_agent;
+  style s_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e
+  class n_trust c_trust;
+  style s_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a
+  class n_sec c_sec;
+  style s_sec fill:#ffe4e6,stroke:#be123c,color:#4c0519
+  class n_applied c_applied;
+  style s_applied fill:#e0f2fe,stroke:#0369a1,color:#082f49
+  class n_sys c_sys;
+  style s_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e

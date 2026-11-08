@@ -319,3 +319,36 @@ func TestPathChartDirection(t *testing.T) {
 		t.Fatalf("path chart should honor the configured direction:\n%s", got)
 	}
 }
+
+func TestPathChartGrid(t *testing.T) {
+	cats := []config.Category{}
+	for _, id := range []string{"a", "b", "c", "d", "e"} {
+		cats = append(cats, config.Category{ID: id, Title: strings.ToUpper(id), Color: "#ffffff", Repos: []string{"r" + id}})
+	}
+	c := &config.Config{Path: config.PathChart{Prompt: "Explore", MaxOthers: 3, Direction: "LR", Columns: 2}, Category: cats}
+	got := PathChart(c)
+	if !strings.HasPrefix(got, flowInit+"\nflowchart TD\n") {
+		t.Fatalf("grid layout must be top-down:\n%s", got)
+	}
+	if strings.Contains(got, "n_root") {
+		t.Fatalf("grid layout must not have a root node:\n%s", got)
+	}
+	// Rows are declared in reverse so Mermaid shows them left to right in config order.
+	order := []string{"subgraph s_b", "subgraph s_a", "subgraph s_d", "subgraph s_c", "subgraph s_e"}
+	last := -1
+	for _, want := range order {
+		i := strings.Index(got, want)
+		if i <= last {
+			t.Fatalf("expected %q after position %d:\n%s", want, last, got)
+		}
+		last = i
+	}
+	for _, link := range []string{"s_a ~~~ s_c", "s_b ~~~ s_d", "s_c ~~~ s_e"} {
+		if !strings.Contains(got, link) {
+			t.Errorf("missing row link %q", link)
+		}
+	}
+	if strings.Contains(got, "s_d ~~~") {
+		t.Error("last row must not link further down")
+	}
+}

@@ -39,10 +39,12 @@ bench:
 
 # Regenerate the committed example from live GitHub data.
 example: build
-	./bin/$(BINARY) generate --config examples/adeoluo.yaml --out examples/adeoluo.README.md --json examples/adeoluo.portfolio.json
+	./bin/$(BINARY) generate --config examples/adeoluo.yaml --out examples/adeoluo.README.md --json examples/adeoluo.portfolio.json \
+		--diagrams-dir assets --mermaid-config examples/mermaid.config.json
 
 check-example: build
-	./bin/$(BINARY) check --config examples/adeoluo.yaml --readme examples/adeoluo.README.md
+	./bin/$(BINARY) check --config examples/adeoluo.yaml --readme examples/adeoluo.README.md \
+		--diagrams-dir assets --mermaid-config examples/mermaid.config.json
 
 # Cross-compile release archives and a sha256 checksum file.
 # Usage: make release VERSION=v0.1.0

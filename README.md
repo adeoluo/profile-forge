@@ -254,7 +254,8 @@ languages:
 path:
   prompt: What do you want to explore?
   max_others: 3                     # non-flagship repos listed per category node, one per line
-  direction: TD                     # TD (categories side by side) or LR (one column, for many categories)
+  direction: TD                     # TD (categories side by side) or LR (one column)
+  columns: 0                        # > 0: a grid of this many categories per row, without the root node
 ignore: [hello-worId]               # public repos deliberately left out of categories
 ```
 
