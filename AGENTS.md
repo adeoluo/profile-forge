@@ -13,6 +13,7 @@ A Go command-line tool that generates a GitHub profile README and a portfolio JS
 - `docs/`: documentation, architecture diagram source and render, design records
 - `examples/`: runnable examples and sample configuration
 - `internal/`: packages private to this module
+- `scripts/`: maintenance scripts (release, assets, data)
 
 Key modules:
 
