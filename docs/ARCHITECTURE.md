@@ -4,34 +4,9 @@ profile-forge is a single binary with one pipeline. Every command except
 `init` and `version` runs the same steps; `generate` writes the result,
 `check` compares it with a file on disk.
 
-```mermaid
-sequenceDiagram
-  participant CLI as cli.Run
-  participant CFG as config
-  participant GH as github.Client
-  participant C as Cache
-  participant API as GitHub API
-  participant R as render
-  participant V as validate
-
-  CLI->>CFG: Load(path)
-  CFG-->>CLI: Config (dash scan, strict YAML, Validate)
-  CLI->>GH: FetchAll(user)
-  GH->>C: Get(url)
-  alt fresh entry, or --offline
-    C-->>GH: cached response
-  else miss or expired
-    GH->>API: GET url (token, retries)
-    API-->>GH: 200 or 404, Link header
-    GH->>C: Put(entry)
-  end
-  GH-->>CLI: []Repo with languages and latest release
-  CLI->>R: Build(config, repos)
-  R-->>CLI: View (or missing repositories error)
-  CLI->>R: Markdown(view, sections)
-  CLI->>V: Output(markdown), optional CheckLinks
-  CLI-->>CLI: write README and JSON, or compare with --readme
-```
+<p align="center">
+  <img src="architecture/generate-sequence.svg" alt="Architecture diagram" width="860">
+</p>
 
 ## Stages
 
