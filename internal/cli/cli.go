@@ -10,7 +10,11 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"os/exec"
+	"path"
 	"path/filepath"
+	"sort"
+	"strings"
 	"time"
 
 	"github.com/adeoluo/profile-forge/internal/config"
@@ -36,6 +40,8 @@ type Env struct {
 	GHToken func() (string, error)
 	HTTP    *http.Client // used for link checks
 	Now     func() time.Time
+	// Mermaid runs a diagram renderer command (argv[0] plus arguments).
+	Mermaid func(ctx context.Context, argv []string) error
 }
 
 // DefaultEnv uses the real process environment.
@@ -47,7 +53,17 @@ func DefaultEnv() Env {
 		GHToken: github.GHAuthToken,
 		HTTP:    &http.Client{Timeout: 20 * time.Second},
 		Now:     time.Now,
+		Mermaid: runCommand,
 	}
+}
+
+// runCommand executes argv and folds its output into the error on failure.
+func runCommand(ctx context.Context, argv []string) error {
+	out, err := exec.CommandContext(ctx, argv[0], argv[1:]...).CombinedOutput()
+	if err != nil {
+		return fmt.Errorf("%s: %w: %s", strings.Join(argv, " "), err, strings.TrimSpace(string(out)))
+	}
+	return nil
 }
 
 const usage = `profile-forge generates a GitHub profile README from live repository metadata.
@@ -65,6 +81,10 @@ Shared flags for generate and check:
   --check-links       request every image URL and fail unless each returns HTTP 200
   --template FILE     use a custom text/template instead of the built-in one
   --api URL           GitHub API base URL (default https://api.github.com)
+  --diagrams-dir DIR  render the charts to SVG files in DIR (relative to the README) and embed
+                      them as images instead of mermaid blocks
+  --mermaid-config F  mermaid configuration file passed to the renderer (theme, palette)
+  --mermaid-cmd CMD   renderer command (default "npx -y @mermaid-js/mermaid-cli")
 
 Authentication: GITHUB_TOKEN or GH_TOKEN, else the output of "gh auth token", else anonymous.
 `
@@ -109,6 +129,9 @@ type common struct {
 	checkLinks bool
 	template   string
 	api        string
+	diagrams   string
+	mmdConfig  string
+	mmdCmd     string
 }
 
 func (c *common) register(fs *flag.FlagSet) {
@@ -119,6 +142,63 @@ func (c *common) register(fs *flag.FlagSet) {
 	fs.BoolVar(&c.checkLinks, "check-links", false, "verify every image URL returns HTTP 200")
 	fs.StringVar(&c.template, "template", "", "custom template file")
 	fs.StringVar(&c.api, "api", github.DefaultBaseURL, "GitHub API base URL")
+	fs.StringVar(&c.diagrams, "diagrams-dir", "", "render charts to SVG files in this directory, relative to the README")
+	fs.StringVar(&c.mmdConfig, "mermaid-config", "", "mermaid configuration file for rendered charts")
+	fs.StringVar(&c.mmdCmd, "mermaid-cmd", "npx -y @mermaid-js/mermaid-cli", "diagram renderer command")
+}
+
+// diagramSources returns the non-empty charts keyed by file stem.
+func diagramSources(v *render.View) map[string]string {
+	out := map[string]string{}
+	for name, src := range map[string]string{"path": v.PathChart, "ecosystem": v.EcosystemChart, "languages": v.LanguagePie} {
+		if src != "" {
+			out[name] = src
+		}
+	}
+	return out
+}
+
+// renderDiagrams writes each chart source next to the README and renders it to SVG.
+func renderDiagrams(ctx context.Context, c common, env Env, readme string, v *render.View) error {
+	dir := filepath.Join(filepath.Dir(readme), filepath.FromSlash(c.diagrams))
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return err
+	}
+	names := make([]string, 0, 3)
+	for name := range diagramSources(v) {
+		names = append(names, name)
+	}
+	sort.Strings(names)
+	for _, name := range names {
+		src := diagramSources(v)[name]
+		in, out := filepath.Join(dir, name+".mmd"), filepath.Join(dir, name+".svg")
+		if err := os.WriteFile(in, []byte(src+"\n"), 0o644); err != nil {
+			return fmt.Errorf("write %s: %w", in, err)
+		}
+		argv := append(strings.Fields(c.mmdCmd), "-q", "-i", in, "-o", out, "-b", "transparent")
+		if c.mmdConfig != "" {
+			argv = append(argv, "-c", c.mmdConfig)
+		}
+		if err := env.Mermaid(ctx, argv); err != nil {
+			return fmt.Errorf("render %s: %w", name, err)
+		}
+		fmt.Fprintf(env.Stderr, "rendered %s\n", out)
+	}
+	return nil
+}
+
+// staleDiagrams lists chart sources on disk that differ from what generate would write.
+func staleDiagrams(c common, readme string, v *render.View) []string {
+	dir := filepath.Join(filepath.Dir(readme), filepath.FromSlash(c.diagrams))
+	var stale []string
+	for name, src := range diagramSources(v) {
+		cur, err := os.ReadFile(filepath.Join(dir, name+".mmd"))
+		if err != nil || string(cur) != src+"\n" {
+			stale = append(stale, name)
+		}
+	}
+	sort.Strings(stale)
+	return stale
 }
 
 type result struct {
@@ -165,6 +245,15 @@ func pipeline(ctx context.Context, c common, env Env) (*result, error) {
 	if err != nil {
 		return nil, err
 	}
+	if c.diagrams != "" {
+		view.Images = map[string]string{}
+		for name, src := range diagramSources(view) {
+			if err := validate.Mermaid("```mermaid\n" + src + "\n```\n"); err != nil {
+				return nil, fmt.Errorf("%s chart: %w", name, err)
+			}
+			view.Images[name] = path.Join(filepath.ToSlash(c.diagrams), name+".svg")
+		}
+	}
 	md, err := r.Markdown(view, cfg.Sections)
 	if err != nil {
 		return nil, err
@@ -208,8 +297,16 @@ func runGenerate(ctx context.Context, args []string, env Env) error {
 	if err != nil {
 		return err
 	}
+	if c.diagrams != "" && *out == "-" {
+		return errors.New("--diagrams-dir needs --out to be a file, so the images can sit next to it")
+	}
 	if err := writeOut(*out, []byte(res.markdown), env.Stdout); err != nil {
 		return err
+	}
+	if c.diagrams != "" {
+		if err := renderDiagrams(ctx, c, env, *out, res.view); err != nil {
+			return err
+		}
 	}
 	if *jsonOut != "" {
 		b, err := render.JSON(res.view)
@@ -247,6 +344,11 @@ func runCheck(ctx context.Context, args []string, env Env) error {
 		}
 		if string(cur) != res.markdown {
 			return fmt.Errorf("%s is out of date: run profile-forge generate --config %s --out %s", *readme, c.config, *readme)
+		}
+		if c.diagrams != "" {
+			if stale := staleDiagrams(c, *readme, res.view); len(stale) > 0 {
+				return fmt.Errorf("chart sources out of date (%s): run profile-forge generate with --diagrams-dir %s", strings.Join(stale, ", "), c.diagrams)
+			}
 		}
 	}
 	summary(env, res)

@@ -296,3 +296,72 @@ func TestDefaultEnv(t *testing.T) {
 		t.Fatal("DefaultEnv incomplete")
 	}
 }
+
+func TestGenerateRenderedDiagrams(t *testing.T) {
+	h := newHarness(t)
+	var calls [][]string
+	h.env.Mermaid = func(_ context.Context, argv []string) error {
+		calls = append(calls, argv)
+		out := argv[len(argv)-1]
+		for i, a := range argv {
+			if a == "-o" {
+				out = argv[i+1]
+			}
+		}
+		return os.WriteFile(out, []byte("<svg/>"), 0o644)
+	}
+	flags := []string{"--diagrams-dir", "assets", "--mermaid-config", "theme.json", "--mermaid-cmd", "mmdc --quiet"}
+	args := append(append([]string{"generate"}, h.common()...), flags...)
+	if code := h.run(append(args, "--out", h.path("out/README.md"))...); code != 0 {
+		t.Fatalf("generate exit %d: %s", code, h.stderr.String())
+	}
+	md := h.read("out/README.md")
+	if strings.Contains(md, "```mermaid") {
+		t.Error("README still has mermaid blocks in image mode")
+	}
+	for _, want := range []string{`<img src="assets/path.svg"`, `<img src="assets/ecosystem.svg"`, `<img src="assets/languages.svg"`} {
+		if !strings.Contains(md, want) {
+			t.Errorf("README missing %s", want)
+		}
+	}
+	if len(calls) != 3 {
+		t.Fatalf("renderer called %d times, want 3", len(calls))
+	}
+	got := strings.Join(calls[0], " ")
+	for _, want := range []string{"mmdc --quiet -q -i", "ecosystem.mmd", "-b transparent", "-c theme.json"} {
+		if !strings.Contains(got, want) {
+			t.Errorf("renderer argv %q missing %q", got, want)
+		}
+	}
+	if !strings.HasPrefix(h.read("out/assets/path.mmd"), `%%{init:`) || h.read("out/assets/languages.svg") != "<svg/>" {
+		t.Error("chart sources or images not written next to the README")
+	}
+
+	check := append(append([]string{"check"}, h.common()...), flags...)
+	check = append(check, "--readme", h.path("out/README.md"))
+	if code := h.run(check...); code != 0 {
+		t.Fatalf("check exit %d: %s", code, h.stderr.String())
+	}
+	h.write("out/assets/path.mmd", "flowchart LR\n  a --> b\n")
+	if code := h.run(check...); code != 1 || !strings.Contains(h.stderr.String(), "chart sources out of date (path)") {
+		t.Fatalf("stale chart check exit %d: %s", code, h.stderr.String())
+	}
+}
+
+func TestRenderedDiagramFailures(t *testing.T) {
+	h := newHarness(t)
+	h.env.Mermaid = func(context.Context, []string) error { return errors.New("renderer missing") }
+	args := append(append([]string{"generate"}, h.common()...), "--diagrams-dir", "assets")
+	if code := h.run(append(args, "--out", "-")...); code != 1 || !strings.Contains(h.stderr.String(), "needs --out to be a file") {
+		t.Fatalf("stdout mode exit %d: %s", code, h.stderr.String())
+	}
+	if code := h.run(append(args, "--out", h.path("r/README.md"))...); code != 1 || !strings.Contains(h.stderr.String(), "render ecosystem: renderer missing") {
+		t.Fatalf("renderer failure exit %d: %s", code, h.stderr.String())
+	}
+	if err := runCommand(context.Background(), []string{"false"}); err == nil || !strings.Contains(err.Error(), "false") {
+		t.Fatalf("runCommand error = %v", err)
+	}
+	if err := runCommand(context.Background(), []string{"true"}); err != nil {
+		t.Fatalf("runCommand(true) = %v", err)
+	}
+}

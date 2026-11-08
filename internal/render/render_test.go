@@ -309,3 +309,13 @@ func TestPathChartListsOneRepositoryPerLine(t *testing.T) {
 		t.Fatalf("path chart must start with the wrapping directive:\n%s", got)
 	}
 }
+
+func TestPathChartDirection(t *testing.T) {
+	c := &config.Config{
+		Path:     config.PathChart{Prompt: "Explore", MaxOthers: 3, Direction: "LR"},
+		Category: []config.Category{{ID: "model", Title: "Models", Color: "#dbeafe", Repos: []string{"alpha"}}},
+	}
+	if got := PathChart(c); !strings.HasPrefix(got, flowInit+"\nflowchart LR\n") {
+		t.Fatalf("path chart should honor the configured direction:\n%s", got)
+	}
+}

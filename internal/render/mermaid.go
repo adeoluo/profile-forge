@@ -44,7 +44,11 @@ const bullet = "\u2022 "
 func PathChart(c *config.Config) string {
 	var b strings.Builder
 	b.WriteString(flowInit + "\n")
-	b.WriteString("flowchart TD\n")
+	dir := c.Path.Direction
+	if dir == "" {
+		dir = "TD"
+	}
+	fmt.Fprintf(&b, "flowchart %s\n", dir)
 	fmt.Fprintf(&b, "  n_root([\"%s\"])\n", mermaidText(c.Path.Prompt))
 	ix := c.Index()
 	for _, cat := range c.Category {

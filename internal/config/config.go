@@ -118,6 +118,9 @@ type Languages struct {
 type PathChart struct {
 	Prompt    string `yaml:"prompt" json:"prompt,omitempty"`
 	MaxOthers int    `yaml:"max_others" json:"max_others"`
+	// Direction is the flowchart direction; LR stacks the categories in one column,
+	// which stays readable when there are many of them.
+	Direction string `yaml:"direction" json:"direction,omitempty"`
 }
 
 // Load reads, decodes, defaults, and statically validates a config file.
@@ -162,6 +165,9 @@ func (c *Config) applyDefaults() {
 	}
 	if c.Ecosystem.Direction == "" {
 		c.Ecosystem.Direction = "LR"
+	}
+	if c.Path.Direction == "" {
+		c.Path.Direction = "TD"
 	}
 	for i := range c.Category {
 		cat := &c.Category[i]
@@ -284,6 +290,11 @@ func (c *Config) Validate() error {
 	case "LR", "RL", "TD", "TB", "BT":
 	default:
 		add("ecosystem.direction: %q must be one of LR, RL, TD, TB, BT", c.Ecosystem.Direction)
+	}
+	switch c.Path.Direction {
+	case "LR", "RL", "TD", "TB", "BT":
+	default:
+		add("path.direction: %q must be one of LR, RL, TD, TB, BT", c.Path.Direction)
 	}
 	for i, e := range c.Ecosystem.Edges {
 		if e.From == "" || e.To == "" {
