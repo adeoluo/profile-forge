@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Profile Forge"
+abstract: "A Go CLI that generates a GitHub profile README and portfolio JSON from live repository metadata and a small YAML config."
+authors:
+  - family-names: "Ogunnoiki"
+    given-names: "Adeolu"
+version: "0.3.2"
+date-released: "2026-11-02"
+license: MIT
+repository-code: "https://github.com/adeoluo/profile-forge"
+url: "https://github.com/adeoluo/profile-forge"
+keywords:
+  - "cli"
+  - "generator"
+  - "github"
+  - "go"
+  - "mermaid"
+  - "profile-readme"
+  - "github-profile-readme"
+  - "portfolio"
+  - "readme-generator"
