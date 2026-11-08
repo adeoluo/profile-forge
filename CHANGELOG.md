@@ -4,6 +4,12 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.5.0] 2026-11-08
+
+### Features
+
+- Grid layout for the path chart, and the example profile with AI security and applied ML categories rendered as images (#18)
+
 ## [0.4.0] 2026-11-08
 
 ### Features
