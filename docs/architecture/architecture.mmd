@@ -38,7 +38,8 @@ flowchart LR
         Json["portfolio.json<br/>optional"]:::obs
         Links["CheckLinks<br/>optional image check"]:::control
         Coverage["Coverage warnings<br/>uncategorized repos"]:::obs
-        Validate --> Readme ~~~ Json ~~~ Links ~~~ Coverage
+        Charts["Chart SVGs, optional<br/>mermaid-cli render"]:::obs
+        Validate --> Readme ~~~ Charts ~~~ Json ~~~ Links ~~~ Coverage
     end
 
     Interfaces -->|config| Core

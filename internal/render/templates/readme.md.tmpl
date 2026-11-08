@@ -25,9 +25,11 @@
 
 {{orDefault "Pick an area to explore. Colors group repositories by category, and the same colors are used in every diagram on this page." .Intro.Path}}
 
-```mermaid
+{{with index .Images "path"}}<p align="center">
+  <img src="{{.}}" alt="Find your path diagram">
+</p>{{else}}```mermaid
 {{.PathChart}}
-```
+```{{end}}
 
 **Legend**
 
@@ -44,9 +46,11 @@
 
 {{orDefault "Arrows show how the projects build on each other. Node colors match the legend above." .Intro.Ecosystem}}
 
-```mermaid
+{{with index .Images "ecosystem"}}<p align="center">
+  <img src="{{.}}" alt="How the projects connect diagram">
+</p>{{else}}```mermaid
 {{.EcosystemChart}}
-```
+```{{end}}
 {{- end}}
 {{- end}}
 
@@ -95,9 +99,11 @@
 | {{.Name}} | {{human .Bytes}} | {{pct .Share}} | {{if .Repos}}{{.Repos}}{{end}} |
 {{- end}}
 
-```mermaid
+{{with index .Images "languages"}}<p align="center">
+  <img src="{{.}}" alt="Code by language chart">
+</p>{{else}}```mermaid
 {{.LanguagePie}}
-```
+```{{end}}
 
 <sub>Counted {{human .Languages.TotalBytes}} across the {{.Languages.RepoCount}} repositories that contain code.</sub>
 {{- end}}

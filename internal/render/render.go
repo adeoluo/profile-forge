@@ -79,24 +79,27 @@ type CategoryView struct {
 
 // View is the data passed to the template and serialized as portfolio JSON.
 type View struct {
-	User           string          `json:"user"`
-	Name           string          `json:"name"`
-	Headline       string          `json:"headline"`
-	Bio            string          `json:"bio"`
-	Links          []config.Link   `json:"links,omitempty"`
-	Badges         []BadgeView     `json:"-"`
-	StatBadges     []BadgeView     `json:"-"`
-	Intro          config.Intro    `json:"-"`
-	Footer         string          `json:"-"`
-	PathChart      string          `json:"-"`
-	EcosystemChart string          `json:"-"`
-	Flagships      []RepoView      `json:"flagships"`
-	Categories     []CategoryView  `json:"categories"`
-	Languages      LanguageSummary `json:"languages"`
-	LanguagePie    string          `json:"-"`
-	Releases       []RepoView      `json:"-"`
-	Stack          []StackView     `json:"stack,omitempty"`
-	PublicRepos    int             `json:"public_repos"`
+	User           string        `json:"user"`
+	Name           string        `json:"name"`
+	Headline       string        `json:"headline"`
+	Bio            string        `json:"bio"`
+	Links          []config.Link `json:"links,omitempty"`
+	Badges         []BadgeView   `json:"-"`
+	StatBadges     []BadgeView   `json:"-"`
+	Intro          config.Intro  `json:"-"`
+	Footer         string        `json:"-"`
+	PathChart      string        `json:"-"`
+	EcosystemChart string        `json:"-"`
+	// Images maps a chart name (path, ecosystem, languages) to an SVG path relative to the
+	// README. When a chart has an image, the template embeds it instead of a mermaid block.
+	Images      map[string]string `json:"-"`
+	Flagships   []RepoView        `json:"flagships"`
+	Categories  []CategoryView    `json:"categories"`
+	Languages   LanguageSummary   `json:"languages"`
+	LanguagePie string            `json:"-"`
+	Releases    []RepoView        `json:"-"`
+	Stack       []StackView       `json:"stack,omitempty"`
+	PublicRepos int               `json:"public_repos"`
 }
 
 // badgeEscaper doubles the characters shields.io treats as separators.

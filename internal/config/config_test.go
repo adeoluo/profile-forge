@@ -37,7 +37,7 @@ func TestParseMinimalAppliesDefaults(t *testing.T) {
 	if got := strings.Join(c.Sections, ","); got != strings.Join(DefaultSections, ",") {
 		t.Errorf("sections = %s", got)
 	}
-	if c.Languages.Top != 8 || c.Path.MaxOthers != 3 || c.Ecosystem.Direction != "LR" {
+	if c.Languages.Top != 8 || c.Path.MaxOthers != 3 || c.Ecosystem.Direction != "LR" || c.Path.Direction != "TD" {
 		t.Errorf("defaults not applied: %+v %+v %q", c.Languages, c.Path, c.Ecosystem.Direction)
 	}
 	cat := c.Category[0]
@@ -79,6 +79,7 @@ func TestParseRejectsInvalid(t *testing.T) {
 		{"flagship without result", strings.Replace(base, "result: ok", `result: ""`, 1), "repo and result are required"},
 		{"flagship not categorized", strings.Replace(base, "repo: alpha", "repo: zeta", 1), "not in any category"},
 		{"bad direction", base + "ecosystem:\n  direction: XY\n", "direction"},
+		{"bad path direction", base + "path:\n  direction: XY\n", "path.direction"},
 		{"self edge", base + "ecosystem:\n  edges:\n    - {from: alpha, to: alpha}\n", "self edge"},
 		{"bad edge style", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, style: wavy}\n", "style"},
 		{"pipe in label", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, label: \"a|b\"}\n", "quotes or pipes"},

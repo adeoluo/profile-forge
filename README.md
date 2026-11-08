@@ -193,6 +193,9 @@ profile-forge version
 | `--check-links` | generate, check | false | Request every image URL; fail unless each returns HTTP 200 |
 | `--template` | generate, check | built in | Custom `text/template` file (must define every section) |
 | `--api` | generate, check | `https://api.github.com` | API base URL, for GitHub Enterprise Server or tests |
+| `--diagrams-dir` | generate, check | none | Render the path, ecosystem and language charts to SVG files in this directory (relative to the README) and embed them as images; `check` also fails if the chart sources there are stale |
+| `--mermaid-config` | generate, check | none | Mermaid configuration (theme, palette, shadows) passed to the renderer |
+| `--mermaid-cmd` | generate, check | `npx -y @mermaid-js/mermaid-cli` | Renderer command; receives `-q -i <chart>.mmd -o <chart>.svg -b transparent [-c config]` |
 | `--force` | init | false | Overwrite an existing config |
 
 Exit codes: `0` success, `1` validation or runtime error, `2` usage error.
@@ -251,6 +254,7 @@ languages:
 path:
   prompt: What do you want to explore?
   max_others: 3                     # non-flagship repos listed per category node, one per line
+  direction: TD                     # TD (categories side by side) or LR (one column, for many categories)
 ignore: [hello-worId]               # public repos deliberately left out of categories
 ```
 
@@ -273,8 +277,15 @@ what order. Sections are separated by horizontal rules.
 | `ecosystem` | Flowchart of configured edges; nodes colored by their category |
 | `flagships` | Table of project, summary (or GitHub description), and the result string; a release badge under the name when a release exists |
 | `categories` | Per category: swatch, description, and every repository with its GitHub description and primary language; flagships in bold |
-| `languages` | Table of bytes, share, and repository count per language, a mermaid pie chart, and the total |
+| `languages` | Table of bytes, share, and repository count per language, a pie chart, and the total |
 | `releases` | Every public repository with a release, with a static badge linking to the release page |
+
+By default the three charts are mermaid blocks, which GitHub draws in its own
+flat theme. With `--diagrams-dir assets --mermaid-config theme.json`, generate
+writes `assets/path.mmd`, `assets/ecosystem.mmd` and `assets/languages.mmd`,
+renders each to SVG with mermaid-cli and that config, and embeds the images, so
+the profile uses the same palette, shadows and fonts as the diagrams in the
+repositories it links to.
 
 The portfolio JSON contains the user, header text, categories with resolved
 repositories (description, language, topics, stars, last push date, release,
@@ -306,6 +317,11 @@ Scaffolding a starter config, ready to edit and generate.
 - **One color source.** Category colors drive the mermaid `classDef`
   statements in both diagrams and the legend swatches, so a color can never
   appear without an explanation.
+- **Rendered charts are optional.** Mermaid blocks keep the tool free of a
+  browser dependency; `--diagrams-dir` adds a rendering step for profiles that
+  want one visual style across every diagram. The chart sources are written
+  next to the images, and `check` compares them, so stale images are caught
+  without re-rendering. See [ADR 0005](docs/adr/0005-rendered-charts.md).
 - **Cache keyed by URL, not by repository.** The cache stores raw HTTP
   responses (status, body, `Link` header), including 404s for repositories
   without releases. Offline runs replay the exact pagination the online run
