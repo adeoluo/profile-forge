@@ -121,6 +121,9 @@ type PathChart struct {
 	// Direction is the flowchart direction; LR stacks the categories in one column,
 	// which stays readable when there are many of them.
 	Direction string `yaml:"direction" json:"direction,omitempty"`
+	// Columns, when positive, lays the categories out as a grid with this many per row and
+	// drops the root prompt node (the section intro carries the prompt).
+	Columns int `yaml:"columns" json:"columns,omitempty"`
 }
 
 // Load reads, decodes, defaults, and statically validates a config file.
@@ -290,6 +293,9 @@ func (c *Config) Validate() error {
 	case "LR", "RL", "TD", "TB", "BT":
 	default:
 		add("ecosystem.direction: %q must be one of LR, RL, TD, TB, BT", c.Ecosystem.Direction)
+	}
+	if c.Path.Columns < 0 {
+		add("path.columns: %d must be 0 (no grid) or positive", c.Path.Columns)
 	}
 	switch c.Path.Direction {
 	case "LR", "RL", "TD", "TB", "BT":

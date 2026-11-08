@@ -17,10 +17,10 @@ recorded demos, and wherever an established library exists, results are checked 
 ![typed: mypy strict | go vet | Clippy | tsc strict](https://img.shields.io/badge/typed-mypy%20strict%20%7C%20go%20vet%20%7C%20Clippy%20%7C%20tsc%20strict-2A6DB0?style=for-the-badge)
 ![validated vs: PyTorch | SciPy | FAISS | hnswlib](https://img.shields.io/badge/validated%20vs-PyTorch%20%7C%20SciPy%20%7C%20FAISS%20%7C%20hnswlib-8957e5?style=for-the-badge)
 
-![public repos: 40](https://img.shields.io/badge/public%20repos-40-1f6feb?style=flat-square)
-![flagships: 14](https://img.shields.io/badge/flagships-14-1f6feb?style=flat-square)
-![releases: 38](https://img.shields.io/badge/releases-38-1f6feb?style=flat-square)
-![top language: Python 67%](https://img.shields.io/badge/top%20language-Python%2067%25-1f6feb?style=flat-square)
+![public repos: 52](https://img.shields.io/badge/public%20repos-52-1f6feb?style=flat-square)
+![flagships: 18](https://img.shields.io/badge/flagships-18-1f6feb?style=flat-square)
+![releases: 50](https://img.shields.io/badge/releases-50-1f6feb?style=flat-square)
+![top language: Python 71%](https://img.shields.io/badge/top%20language-Python%2071%25-1f6feb?style=flat-square)
 
 [Homebrew tap](https://github.com/adeoluo/homebrew-tap) | [profile-forge (generates this page)](https://github.com/adeoluo/profile-forge)
 
@@ -56,66 +56,11 @@ Languages and tools used in these repositories. Libraries marked reference are w
 
 ## Find your path
 
-Pick what you want to see. Colors group projects by the stage of the stack they live in, and the same colors are used in every diagram on this page. Flagships are in bold.
+What do you want to explore? Colors group projects by the stage of the stack they live in, and the same colors are used in every diagram on this page. Flagships are in bold.
 
-```mermaid
-%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
-flowchart TD
-  n_root(["What do you want to explore?"])
-  subgraph s_model["Modeling and training"]
-    n_model["• <b>transformer-from-scratch</b><br/>• <b>bpe-tokenizer-library</b><br/>• <b>corpus-dedup-library</b><br/>• cnn-from-scratch<br/>• neural-word-embeddings<br/>• crf-sequence-labeler<br/>• dependency-parser<br/>• statistical-translation<br/>• topic-model-lda"]
-  end
-  n_root --> s_model
-  subgraph s_retr["Retrieval and search"]
-    n_retr["• <b>ann-vector-search-library</b><br/>• <b>hybrid-rag</b><br/>• graphrag<br/>• agentic-rag<br/>• grounded-copilot"]
-  end
-  n_root --> s_retr
-  subgraph s_align["Alignment and post-training"]
-    n_align["• <b>rlhf-reward-model</b><br/>• preference-optimization<br/>• self-improvement-loop<br/>• prompt-optimizer"]
-  end
-  n_root --> s_align
-  subgraph s_serve["Serving and reliability"]
-    n_serve["• <b>llm-gateway</b><br/>• <b>constrained-generation-library</b>"]
-  end
-  n_root --> s_serve
-  subgraph s_agent["Agents"]
-    n_agent["• <b>react-agent</b><br/>• <b>multi-agent-orchestrator</b><br/>• <b>agent-platform</b><br/>• agent-memory<br/>• nl-sql-analyst<br/>• ai-code-reviewer<br/>• agent-sandbox"]
-  end
-  n_root --> s_agent
-  subgraph s_trust["Evaluation and trust"]
-    n_trust["• <b>evaluation-harness</b><br/>• <b>training-provenance</b><br/>• llm-observability<br/>• factuality-auditor<br/>• red-teaming<br/>• llm-eval-action"]
-  end
-  n_root --> s_trust
-  subgraph s_sys["Systems and tooling"]
-    n_sys["• <b>vectordb-go</b><br/>• mcp-ml-tools<br/>• sweep-orchestrator<br/>• hyperparameter-optimizer<br/>• profile-forge<br/>• homebrew-tap"]
-  end
-  n_root --> s_sys
-
-  classDef c_root fill:#1f2937,stroke:#111827,color:#f9fafb;
-  classDef c_model fill:#dbeafe,stroke-width:0px,color:#0b1b3a,text-align:left;
-  classDef c_retr fill:#dcfce7,stroke-width:0px,color:#052e16,text-align:left;
-  classDef c_align fill:#ede9fe,stroke-width:0px,color:#1e1b4b,text-align:left;
-  classDef c_serve fill:#fef3c7,stroke-width:0px,color:#451a03,text-align:left;
-  classDef c_agent fill:#fae8ff,stroke-width:0px,color:#4a044e,text-align:left;
-  classDef c_trust fill:#fee2e2,stroke-width:0px,color:#450a0a,text-align:left;
-  classDef c_sys fill:#ccfbf1,stroke-width:0px,color:#042f2e,text-align:left;
-
-  class n_root c_root;
-  class n_model c_model;
-  style s_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a
-  class n_retr c_retr;
-  style s_retr fill:#dcfce7,stroke:#15803d,color:#052e16
-  class n_align c_align;
-  style s_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b
-  class n_serve c_serve;
-  style s_serve fill:#fef3c7,stroke:#b45309,color:#451a03
-  class n_agent c_agent;
-  style s_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e
-  class n_trust c_trust;
-  style s_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a
-  class n_sys c_sys;
-  style s_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e
-```
+<p align="center">
+  <img src="assets/path.svg" alt="Find your path diagram">
+</p>
 
 **Legend**
 
@@ -124,9 +69,11 @@ flowchart TD
 | ![blue](https://img.shields.io/badge/blue-dbeafe?style=flat-square) | Modeling and training | Model internals, training loops, tokenization, data preparation, and classical NLP models. | 9 |
 | ![green](https://img.shields.io/badge/green-dcfce7?style=flat-square) | Retrieval and search | Approximate nearest neighbor search, hybrid and graph retrieval, and grounded generation. | 5 |
 | ![purple](https://img.shields.io/badge/purple-ede9fe?style=flat-square) | Alignment and post-training | Reward modeling, RLHF, preference optimization, self-training, and prompt optimization. | 4 |
-| ![amber](https://img.shields.io/badge/amber-fef3c7?style=flat-square) | Serving and reliability | The layer between models and users, covering safety, caching, failover, and structured output. | 2 |
+| ![amber](https://img.shields.io/badge/amber-fef3c7?style=flat-square) | Serving and reliability | The layer between models and users, covering compiled inference, safety, caching, failover, and structured output. | 3 |
 | ![magenta](https://img.shields.io/badge/magenta-fae8ff?style=flat-square) | Agents | Tool-using agents, multi-agent orchestration, and language-model products built on them. | 7 |
 | ![red](https://img.shields.io/badge/red-fee2e2?style=flat-square) | Evaluation and trust | Evaluation statistics, tracing, factuality, red-teaming, and reproducible provenance. | 6 |
+| ![rose](https://img.shields.io/badge/rose-ffe4e6?style=flat-square) | AI security | Attacks on and defenses for models, LLM applications, agents, and the model supply chain, mapped to OWASP LLM Top 10 2026 and MITRE ATLAS. | 8 |
+| ![sky](https://img.shields.io/badge/sky-e0f2fe?style=flat-square) | Ranking and applied ML | Learning to rank, ads and auctions, and anomaly detection on public benchmark data at full scale. | 3 |
 | ![teal](https://img.shields.io/badge/teal-ccfbf1?style=flat-square) | Systems and tooling | Storage engines, experiment orchestration, hyperparameter search, and developer tools. | 6 |
 
 ---
@@ -135,67 +82,9 @@ flowchart TD
 
 The projects compose into one pipeline: data is tokenized and deduplicated, models are trained and aligned, results are retrieved and served, agents act on them, and everything is evaluated, traced, and reproducible. Dotted arrows are cross-cutting relationships. Colors match the legend.
 
-```mermaid
-%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
-flowchart LR
-  r_bpe_tokenizer_library["bpe-tokenizer-library"]
-  r_transformer_from_scratch["transformer-from-scratch"]
-  r_corpus_dedup_library["corpus-dedup-library"]
-  r_rlhf_reward_model["rlhf-reward-model"]
-  r_preference_optimization["preference-optimization"]
-  r_ann_vector_search_library["ann-vector-search-library"]
-  r_hybrid_rag["hybrid-rag"]
-  r_vectordb_go["vectordb-go"]
-  r_llm_gateway["llm-gateway"]
-  r_constrained_generation_library["constrained-generation-library"]
-  r_react_agent["react-agent"]
-  r_multi_agent_orchestrator["multi-agent-orchestrator"]
-  r_agent_platform["agent-platform"]
-  r_evaluation_harness["evaluation-harness"]
-  r_llm_observability["llm-observability"]
-  r_training_provenance["training-provenance"]
-  r_agent_memory["agent-memory"]
-  r_agent_sandbox["agent-sandbox"]
-  r_llm_eval_action["llm-eval-action"]
-
-  r_bpe_tokenizer_library --> r_transformer_from_scratch
-  r_corpus_dedup_library --> r_transformer_from_scratch
-  r_transformer_from_scratch --> r_rlhf_reward_model
-  r_rlhf_reward_model --> r_preference_optimization
-  r_ann_vector_search_library --> r_hybrid_rag
-  r_ann_vector_search_library -->|ported to Go| r_vectordb_go
-  r_hybrid_rag --> r_llm_gateway
-  r_constrained_generation_library --> r_llm_gateway
-  r_llm_gateway --> r_react_agent
-  r_hybrid_rag --> r_react_agent
-  r_react_agent --> r_multi_agent_orchestrator
-  r_multi_agent_orchestrator --> r_agent_platform
-  r_evaluation_harness -.->|scores| r_rlhf_reward_model
-  r_evaluation_harness -.->|scores| r_hybrid_rag
-  r_evaluation_harness -.->|scores| r_react_agent
-  r_llm_observability -.->|traces| r_llm_gateway
-  r_llm_observability -.->|traces| r_multi_agent_orchestrator
-  r_training_provenance -.->|reproduces| r_transformer_from_scratch
-  r_agent_memory --> r_agent_platform
-  r_agent_sandbox -.->|guards tools| r_react_agent
-  r_evaluation_harness -.->|gates PRs| r_llm_eval_action
-
-  classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
-  classDef c_retr fill:#dcfce7,stroke:#15803d,color:#052e16;
-  classDef c_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b;
-  classDef c_serve fill:#fef3c7,stroke:#b45309,color:#451a03;
-  classDef c_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e;
-  classDef c_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a;
-  classDef c_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e;
-
-  class r_bpe_tokenizer_library,r_transformer_from_scratch,r_corpus_dedup_library c_model;
-  class r_ann_vector_search_library,r_hybrid_rag c_retr;
-  class r_rlhf_reward_model,r_preference_optimization c_align;
-  class r_llm_gateway,r_constrained_generation_library c_serve;
-  class r_react_agent,r_multi_agent_orchestrator,r_agent_platform,r_agent_memory,r_agent_sandbox c_agent;
-  class r_evaluation_harness,r_llm_observability,r_training_provenance,r_llm_eval_action c_trust;
-  class r_vectordb_go c_sys;
-```
+<p align="center">
+  <img src="assets/ecosystem.svg" alt="How the projects connect diagram">
+</p>
 
 ---
 
@@ -206,19 +95,23 @@ Each flagship pairs an implementation with independent, reproducible evidence th
 | Project | What it is | Validation and results |
 |---|---|---|
 | [agent-platform](https://github.com/adeoluo/agent-platform)<br/>[![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | An integrated AI platform composed from nine of these libraries | OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI) |
-| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
+| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch)<br/>[![transformer-from-scratch v0.2.1](https://img.shields.io/badge/release-v0.2.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.1) | A decoder-only transformer and a reverse-mode autodiff engine | Matches **PyTorch to < 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported** |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness)<br/>[![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | A model and agent evaluation framework | Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0) | An HNSW approximate nearest neighbor library with a Rust core | **Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library)<br/>[![ann-vector-search-library v0.3.1](https://img.shields.io/badge/release-v0.3.1-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.1) | An HNSW approximate nearest neighbor library with a Rust core | **Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model)<br/>[![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | A reward model with PPO and DPO policy optimization | A head-to-head PPO vs DPO comparison on the same preference task, and a **reward over-optimization (Goodhart) study** |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)<br/>[![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | A schema-constrained decoder built on compiled automata | **240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases |
-| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | A safety gateway for LLM APIs, with a Go reverse proxy | Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case |
-| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0) | A hybrid retrieval system evaluated on the BEIR benchmark | Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents |
+| [llm-gateway](https://github.com/adeoluo/llm-gateway)<br/>[![llm-gateway v0.2.2](https://img.shields.io/badge/release-v0.2.2-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2) | A safety gateway for LLM APIs, with a Go reverse proxy | Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case |
+| [hybrid-rag](https://github.com/adeoluo/hybrid-rag)<br/>[![hybrid-rag v0.2.1](https://img.shields.io/badge/release-v0.2.1-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.1) | A hybrid retrieval system evaluated on the BEIR benchmark | Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents |
 | [react-agent](https://github.com/adeoluo/react-agent)<br/>[![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | A ReAct reasoning-and-acting agent | **Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline |
-| [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | A content-addressed reproducibility and lineage system for ML | End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix** |
+| [training-provenance](https://github.com/adeoluo/training-provenance)<br/>[![training-provenance v0.1.1](https://img.shields.io/badge/release-v0.1.1-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.1) | A content-addressed reproducibility and lineage system for ML | End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix** |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator)<br/>[![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | A planner, workers, and a critic over a shared blackboard | **Durable execution** with resume, and a single-agent vs orchestrator comparison |
-| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library)<br/>[![corpus-dedup-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0) | Near-duplicate detection for training corpora, with a Rust core | Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch** |
-| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library)<br/>[![bpe-tokenizer-library v0.4.0](https://img.shields.io/badge/release-v0.4.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0) | A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token | Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s) |
+| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library)<br/>[![corpus-dedup-library v0.3.1](https://img.shields.io/badge/release-v0.3.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.1) | Near-duplicate detection for training corpora, with a Rust core | Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch** |
+| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library)<br/>[![bpe-tokenizer-library v0.4.1](https://img.shields.io/badge/release-v0.4.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.1) | A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token | Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s) |
 | [vectordb-go](https://github.com/adeoluo/vectordb-go)<br/>[![vectordb-go v0.2.0](https://img.shields.io/badge/release-v0.2.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0) | A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`) | On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery |
+| [llm-vuln-scanner](https://github.com/adeoluo/llm-vuln-scanner)<br/>[![llm-vuln-scanner v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/llm-vuln-scanner/releases/tag/v0.1.0) | A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS | Scans **five current local models** (Qwen3.5 0.8B to 4B, Gemma 4 E2B, Granite 4.2 3B) with 540 attacks each, 42% to 50% succeeding; hardening the demo app cuts successful attacks **from 81 to 37 of 222**; compared with garak 0.17.1 on the same model |
+| [prompt-injection-detector](https://github.com/adeoluo/prompt-injection-detector)<br/>[![prompt-injection-detector v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/prompt-injection-detector/releases/tag/v0.1.0) | A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer | **AUROC 0.9996** and **99.5% of attacks caught at 1% FPR** on 91,089 held-out prompts in **27 microseconds** per prompt; the published protectai DeBERTa model catches 87.6% on the same split |
+| [mcp-security-scanner](https://github.com/adeoluo/mcp-security-scanner)<br/>[![mcp-security-scanner v0.1.1](https://img.shields.io/badge/release-v0.1.1-be123c?style=flat-square)](https://github.com/adeoluo/mcp-security-scanner/releases/tag/v0.1.1) | A static and live security scanner for Model Context Protocol servers, in Go | **Recall 1.00 at a 2% false positive rate** on 432 planted vulnerable servers, where Semgrep 1.184 finds 59% of command injection and none of the path traversal; the hard tier it misses is reported |
+| [learning-to-rank](https://github.com/adeoluo/learning-to-rank)<br/>[![learning-to-rank v0.1.0](https://img.shields.io/badge/release-v0.1.0-0369a1?style=flat-square)](https://github.com/adeoluo/learning-to-rank/releases/tag/v0.1.0) | LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank | **NDCG@10 0.503** over five folds of MSLR-WEB10K (1.2 million documents), against LightGBM 0.504 and XGBoost 0.506 with identical settings; 500 trees train in 68 s versus 82 s for XGBoost |
 
 ---
 
@@ -259,10 +152,11 @@ Reward modeling, RLHF, preference optimization, self-training, and prompt optimi
 
 ### Serving and reliability ![amber](https://img.shields.io/badge/amber-fef3c7?style=flat-square)
 
-The layer between models and users, covering safety, caching, failover, and structured output.
+The layer between models and users, covering compiled inference, safety, caching, failover, and structured output.
 
 - **[llm-gateway](https://github.com/adeoluo/llm-gateway)**: A safety gateway for language-model APIs: prompt-injection defense, PII redaction, output-policy enforcement, and a semantic cache, plus a Go reverse proxy with the same rules, measured on an adversarial suite. <sub>Python</sub>
 - **[constrained-generation-library](https://github.com/adeoluo/constrained-generation-library)**: A structured-generation library built from scratch in Python: compiles a JSON Schema into a finite automaton and masks a model's tokens so output is schema-valid by construction (100% valid JSON across any model versus 0% unconstrained). <sub>Python</sub>
+- [ml-graph-compiler](https://github.com/adeoluo/ml-graph-compiler): Deep learning graph compiler: ONNX import, SSA IR, fusion and layout passes, static memory planning, C code generation with clang and NEON, and MLIR export <sub>Python</sub>
 
 ### Agents ![magenta](https://img.shields.io/badge/magenta-fae8ff?style=flat-square)
 
@@ -287,6 +181,27 @@ Evaluation statistics, tracing, factuality, red-teaming, and reproducible proven
 - [red-teaming](https://github.com/adeoluo/red-teaming): An automated red-teaming engine from scratch: an evolutionary search for guardrail-evading prompts, attack-success measurement, and a hardened defense, over fully fictional restricted terms. <sub>Python</sub>
 - [llm-eval-action](https://github.com/adeoluo/llm-eval-action): A GitHub Action that gates pull requests on statistically tested LLM evaluation regressions. <sub>TypeScript</sub>
 
+### AI security ![rose](https://img.shields.io/badge/rose-ffe4e6?style=flat-square)
+
+Attacks on and defenses for models, LLM applications, agents, and the model supply chain, mapped to OWASP LLM Top 10 2026 and MITRE ATLAS.
+
+- **[llm-vuln-scanner](https://github.com/adeoluo/llm-vuln-scanner)**: Vulnerability scanner for LLM applications and agents: prompt injection, sensitive information disclosure, excessive agency, output handling and jailbreak probes with canary detectors, mapped to the OWASP Top 10 for LLM Applications 2026, the OWASP Agentic Top 10 2026 and MITRE ATLAS v2026.10, with SARIF reports and a GitHub Action <sub>Python</sub>
+- **[prompt-injection-detector](https://github.com/adeoluo/prompt-injection-detector)**: Prompt-injection and jailbreak classifier with a Rust n-gram core, a fine-tuned small transformer and a leakage-safe benchmark against a published detector <sub>Python</sub>
+- **[mcp-security-scanner](https://github.com/adeoluo/mcp-security-scanner)**: Go scanner for Model Context Protocol servers: taint analysis of server source, tool poisoning checks, live probing, rug pull pinning and SARIF output for CI <sub>Go</sub>
+- [llm-dlp-guard](https://github.com/adeoluo/llm-dlp-guard): Data loss prevention for LLM traffic: detects and reversibly redacts PII, secrets and credentials in prompts, responses and token streams, with a Rust core <sub>Python</sub>
+- [model-supply-chain-scanner](https://github.com/adeoluo/model-supply-chain-scanner): Static scanner for ML model files (pickle, PyTorch, joblib, NumPy, Keras, SavedModel, ONNX, GGUF, safetensors) that finds code execution and malformed structure before loading, with a Rust core, SARIF output and Python bindings <sub>Rust</sub>
+- [adversarial-robustness-lab](https://github.com/adeoluo/adversarial-robustness-lab): Evasion attacks (FGSM, PGD, C&W, APGD, Square, AutoAttack-style ensemble), adversarial training (PGD-AT, TRADES, FGSM-RS) and randomized smoothing certification on the full CIFAR-10 test set, checked against torchattacks 3.5.1 and mapped to MITRE ATLAS v2026.10 <sub>Python</sub>
+- [privacy-attacks-lab](https://github.com/adeoluo/privacy-attacks-lab): Membership inference attacks (LiRA, shadow models), DP-SGD with RDP and PRV accountants checked against Opacus, and canary extraction from a small language model <sub>Python</sub>
+- [backdoor-defense-lab](https://github.com/adeoluo/backdoor-defense-lab): Backdoor attacks (BadNets, Blend, WaNet, clean label, rare token) and defenses (spectral signatures, activation clustering, STRIP, Neural Cleanse, fine pruning, ONION) measured on CIFAR-10, GTSRB and SST-2 <sub>Python</sub>
+
+### Ranking and applied ML ![sky](https://img.shields.io/badge/sky-e0f2fe?style=flat-square)
+
+Learning to rank, ads and auctions, and anomaly detection on public benchmark data at full scale.
+
+- **[learning-to-rank](https://github.com/adeoluo/learning-to-rank)**: LambdaMART with a Rust histogram core, neural rankers, click models and unbiased learning to rank, compared with LightGBM and XGBoost on MSLR-WEB10K and Istella-S <sub>Python</sub>
+- [ad-auction-lab](https://github.com/adeoluo/ad-auction-lab): Ad auctions (GSP, VCG, first price), bid shading, budget pacing, hashed CTR models on Criteo and off-policy evaluation on the Open Bandit Dataset, with a Rust core <sub>Python</sub>
+- [log-anomaly-detection](https://github.com/adeoluo/log-anomaly-detection): Log parsing and anomaly detection on Loghub: a Rust Drain parser, six detectors from PCA to DeepLog and a transformer, streaming alerts and change-point regression detection. <sub>Python</sub>
+
 ### Systems and tooling ![teal](https://img.shields.io/badge/teal-ccfbf1?style=flat-square)
 
 Storage engines, experiment orchestration, hyperparameter search, and developer tools.
@@ -306,25 +221,18 @@ Bytes of code per language, summed across my public repositories with the GitHub
 
 | Language | Bytes | Share | Repos |
 |---|--:|--:|--:|
-| Python | 2.5 MiB | 67.1% | 35 |
-| Rust | 394.1 KiB | 10.3% | 5 |
-| TypeScript | 334.4 KiB | 8.7% | 4 |
-| Go | 283.3 KiB | 7.4% | 3 |
-| Shell | 128.7 KiB | 3.4% | 38 |
-| Other | 121.8 KiB | 3.2% |  |
+| Python | 5.7 MiB | 71.1% | 47 |
+| Rust | 958.0 KiB | 11.8% | 13 |
+| Go | 638.0 KiB | 7.8% | 4 |
+| TypeScript | 335.7 KiB | 4.1% | 4 |
+| Shell | 214.4 KiB | 2.6% | 50 |
+| Other | 210.6 KiB | 2.6% |  |
 
-```mermaid
-pie
-  title Code by language (bytes)
-  "Python" : 2641487
-  "Rust" : 403583
-  "TypeScript" : 342399
-  "Go" : 290056
-  "Shell" : 131804
-  "Other" : 124716
-```
+<p align="center">
+  <img src="assets/languages.svg" alt="Code by language chart">
+</p>
 
-<sub>Counted 3.8 MiB across the 39 repositories that contain code.</sub>
+<sub>Counted 8.0 MiB across the 51 repositories that contain code.</sub>
 
 ---
 
@@ -334,43 +242,55 @@ Repositories with a tagged release. Badges link to the release page.
 
 | Project | Latest release | Language |
 |---|---|---|
+| [ad-auction-lab](https://github.com/adeoluo/ad-auction-lab) | [![ad-auction-lab v0.1.0](https://img.shields.io/badge/release-v0.1.0-0369a1?style=flat-square)](https://github.com/adeoluo/ad-auction-lab/releases/tag/v0.1.0) | Python |
+| [adversarial-robustness-lab](https://github.com/adeoluo/adversarial-robustness-lab) | [![adversarial-robustness-lab v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/adversarial-robustness-lab/releases/tag/v0.1.0) | Python |
 | [agent-memory](https://github.com/adeoluo/agent-memory) | [![agent-memory v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0) | Python |
 | [agent-platform](https://github.com/adeoluo/agent-platform) | [![agent-platform v0.4.0](https://img.shields.io/badge/release-v0.4.0-a21caf?style=flat-square)](https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0) | Python |
-| [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.1](https://img.shields.io/badge/release-v0.1.1-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1) | Rust |
+| [agent-sandbox](https://github.com/adeoluo/agent-sandbox) | [![agent-sandbox v0.1.2](https://img.shields.io/badge/release-v0.1.2-a21caf?style=flat-square)](https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.2) | Rust |
 | [agentic-rag](https://github.com/adeoluo/agentic-rag) | [![agentic-rag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/agentic-rag/releases/tag/v0.1.0) | Python |
 | [ai-code-reviewer](https://github.com/adeoluo/ai-code-reviewer) | [![ai-code-reviewer v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/ai-code-reviewer/releases/tag/v0.1.0) | Python |
-| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0) | Python |
-| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.4.0](https://img.shields.io/badge/release-v0.4.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0) | Rust |
+| [ann-vector-search-library](https://github.com/adeoluo/ann-vector-search-library) | [![ann-vector-search-library v0.3.1](https://img.shields.io/badge/release-v0.3.1-15803d?style=flat-square)](https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.1) | Python |
+| [backdoor-defense-lab](https://github.com/adeoluo/backdoor-defense-lab) | [![backdoor-defense-lab v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/backdoor-defense-lab/releases/tag/v0.1.0) | Python |
+| [bpe-tokenizer-library](https://github.com/adeoluo/bpe-tokenizer-library) | [![bpe-tokenizer-library v0.4.1](https://img.shields.io/badge/release-v0.4.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.1) | Rust |
 | [cnn-from-scratch](https://github.com/adeoluo/cnn-from-scratch) | [![cnn-from-scratch v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/cnn-from-scratch/releases/tag/v0.1.0) | Python |
 | [constrained-generation-library](https://github.com/adeoluo/constrained-generation-library) | [![constrained-generation-library v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0) | Python |
-| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.3.0](https://img.shields.io/badge/release-v0.3.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0) | Python |
+| [corpus-dedup-library](https://github.com/adeoluo/corpus-dedup-library) | [![corpus-dedup-library v0.3.1](https://img.shields.io/badge/release-v0.3.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.1) | Python |
 | [crf-sequence-labeler](https://github.com/adeoluo/crf-sequence-labeler) | [![crf-sequence-labeler v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/crf-sequence-labeler/releases/tag/v0.1.0) | Python |
 | [dependency-parser](https://github.com/adeoluo/dependency-parser) | [![dependency-parser v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/dependency-parser/releases/tag/v0.1.0) | Python |
 | [evaluation-harness](https://github.com/adeoluo/evaluation-harness) | [![evaluation-harness v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0) | Python |
-| [factuality-auditor](https://github.com/adeoluo/factuality-auditor) | [![factuality-auditor v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.0) | Python |
+| [factuality-auditor](https://github.com/adeoluo/factuality-auditor) | [![factuality-auditor v0.1.1](https://img.shields.io/badge/release-v0.1.1-b91c1c?style=flat-square)](https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.1) | Python |
 | [graphrag](https://github.com/adeoluo/graphrag) | [![graphrag v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/graphrag/releases/tag/v0.1.0) | Python |
 | [grounded-copilot](https://github.com/adeoluo/grounded-copilot) | [![grounded-copilot v0.1.0](https://img.shields.io/badge/release-v0.1.0-15803d?style=flat-square)](https://github.com/adeoluo/grounded-copilot/releases/tag/v0.1.0) | Python |
-| [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.2.0](https://img.shields.io/badge/release-v0.2.0-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0) | Python |
+| [hybrid-rag](https://github.com/adeoluo/hybrid-rag) | [![hybrid-rag v0.2.1](https://img.shields.io/badge/release-v0.2.1-15803d?style=flat-square)](https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.1) | Python |
 | [hyperparameter-optimizer](https://github.com/adeoluo/hyperparameter-optimizer) | [![hyperparameter-optimizer v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/hyperparameter-optimizer/releases/tag/v0.1.0) | Python |
+| [learning-to-rank](https://github.com/adeoluo/learning-to-rank) | [![learning-to-rank v0.1.0](https://img.shields.io/badge/release-v0.1.0-0369a1?style=flat-square)](https://github.com/adeoluo/learning-to-rank/releases/tag/v0.1.0) | Python |
+| [llm-dlp-guard](https://github.com/adeoluo/llm-dlp-guard) | [![llm-dlp-guard v0.1.1](https://img.shields.io/badge/release-v0.1.1-be123c?style=flat-square)](https://github.com/adeoluo/llm-dlp-guard/releases/tag/v0.1.1) | Python |
 | [llm-eval-action](https://github.com/adeoluo/llm-eval-action) | [![llm-eval-action v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0) | TypeScript |
-| [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.2.0](https://img.shields.io/badge/release-v0.2.0-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0) | Python |
+| [llm-gateway](https://github.com/adeoluo/llm-gateway) | [![llm-gateway v0.2.2](https://img.shields.io/badge/release-v0.2.2-b45309?style=flat-square)](https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2) | Python |
 | [llm-observability](https://github.com/adeoluo/llm-observability) | [![llm-observability v0.2.0](https://img.shields.io/badge/release-v0.2.0-b91c1c?style=flat-square)](https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0) | Python |
-| [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools) | [![mcp-ml-tools v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0) | TypeScript |
+| [llm-vuln-scanner](https://github.com/adeoluo/llm-vuln-scanner) | [![llm-vuln-scanner v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/llm-vuln-scanner/releases/tag/v0.1.0) | Python |
+| [log-anomaly-detection](https://github.com/adeoluo/log-anomaly-detection) | [![log-anomaly-detection v0.1.0](https://img.shields.io/badge/release-v0.1.0-0369a1?style=flat-square)](https://github.com/adeoluo/log-anomaly-detection/releases/tag/v0.1.0) | Python |
+| [mcp-ml-tools](https://github.com/adeoluo/mcp-ml-tools) | [![mcp-ml-tools v0.2.1](https://img.shields.io/badge/release-v0.2.1-0f766e?style=flat-square)](https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.2.1) | TypeScript |
+| [mcp-security-scanner](https://github.com/adeoluo/mcp-security-scanner) | [![mcp-security-scanner v0.1.1](https://img.shields.io/badge/release-v0.1.1-be123c?style=flat-square)](https://github.com/adeoluo/mcp-security-scanner/releases/tag/v0.1.1) | Go |
+| [ml-graph-compiler](https://github.com/adeoluo/ml-graph-compiler) | [![ml-graph-compiler v0.1.0](https://img.shields.io/badge/release-v0.1.0-b45309?style=flat-square)](https://github.com/adeoluo/ml-graph-compiler/releases/tag/v0.1.0) | Python |
+| [model-supply-chain-scanner](https://github.com/adeoluo/model-supply-chain-scanner) | [![model-supply-chain-scanner v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/model-supply-chain-scanner/releases/tag/v0.1.0) | Rust |
 | [multi-agent-orchestrator](https://github.com/adeoluo/multi-agent-orchestrator) | [![multi-agent-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/multi-agent-orchestrator/releases/tag/v0.1.0) | Python |
 | [neural-word-embeddings](https://github.com/adeoluo/neural-word-embeddings) | [![neural-word-embeddings v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/neural-word-embeddings/releases/tag/v0.1.0) | Python |
 | [nl-sql-analyst](https://github.com/adeoluo/nl-sql-analyst) | [![nl-sql-analyst v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/nl-sql-analyst/releases/tag/v0.1.0) | Python |
 | [preference-optimization](https://github.com/adeoluo/preference-optimization) | [![preference-optimization v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/preference-optimization/releases/tag/v0.1.0) | Python |
-| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.3.2](https://img.shields.io/badge/release-v0.3.2-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.3.2) | Go |
+| [privacy-attacks-lab](https://github.com/adeoluo/privacy-attacks-lab) | [![privacy-attacks-lab v0.2.0](https://img.shields.io/badge/release-v0.2.0-be123c?style=flat-square)](https://github.com/adeoluo/privacy-attacks-lab/releases/tag/v0.2.0) | Python |
+| [profile-forge](https://github.com/adeoluo/profile-forge) | [![profile-forge v0.4.0](https://img.shields.io/badge/release-v0.4.0-0f766e?style=flat-square)](https://github.com/adeoluo/profile-forge/releases/tag/v0.4.0) | Go |
+| [prompt-injection-detector](https://github.com/adeoluo/prompt-injection-detector) | [![prompt-injection-detector v0.1.0](https://img.shields.io/badge/release-v0.1.0-be123c?style=flat-square)](https://github.com/adeoluo/prompt-injection-detector/releases/tag/v0.1.0) | Python |
 | [prompt-optimizer](https://github.com/adeoluo/prompt-optimizer) | [![prompt-optimizer v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/prompt-optimizer/releases/tag/v0.1.0) | Python |
 | [react-agent](https://github.com/adeoluo/react-agent) | [![react-agent v0.1.0](https://img.shields.io/badge/release-v0.1.0-a21caf?style=flat-square)](https://github.com/adeoluo/react-agent/releases/tag/v0.1.0) | Python |
-| [red-teaming](https://github.com/adeoluo/red-teaming) | [![red-teaming v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/red-teaming/releases/tag/v0.1.0) | Python |
+| [red-teaming](https://github.com/adeoluo/red-teaming) | [![red-teaming v0.1.1](https://img.shields.io/badge/release-v0.1.1-b91c1c?style=flat-square)](https://github.com/adeoluo/red-teaming/releases/tag/v0.1.1) | Python |
 | [rlhf-reward-model](https://github.com/adeoluo/rlhf-reward-model) | [![rlhf-reward-model v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/rlhf-reward-model/releases/tag/v0.1.0) | Python |
 | [self-improvement-loop](https://github.com/adeoluo/self-improvement-loop) | [![self-improvement-loop v0.1.0](https://img.shields.io/badge/release-v0.1.0-6d28d9?style=flat-square)](https://github.com/adeoluo/self-improvement-loop/releases/tag/v0.1.0) | Python |
 | [statistical-translation](https://github.com/adeoluo/statistical-translation) | [![statistical-translation v0.1.0](https://img.shields.io/badge/release-v0.1.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/statistical-translation/releases/tag/v0.1.0) | Python |
 | [sweep-orchestrator](https://github.com/adeoluo/sweep-orchestrator) | [![sweep-orchestrator v0.1.0](https://img.shields.io/badge/release-v0.1.0-0f766e?style=flat-square)](https://github.com/adeoluo/sweep-orchestrator/releases/tag/v0.1.0) | Python |
-| [topic-model-lda](https://github.com/adeoluo/topic-model-lda) | [![topic-model-lda v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.0) | Python |
-| [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.0](https://img.shields.io/badge/release-v0.1.0-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0) | Python |
-| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.2.0](https://img.shields.io/badge/release-v0.2.0-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0) | Python |
+| [topic-model-lda](https://github.com/adeoluo/topic-model-lda) | [![topic-model-lda v0.2.1](https://img.shields.io/badge/release-v0.2.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.1) | Python |
+| [training-provenance](https://github.com/adeoluo/training-provenance) | [![training-provenance v0.1.1](https://img.shields.io/badge/release-v0.1.1-b91c1c?style=flat-square)](https://github.com/adeoluo/training-provenance/releases/tag/v0.1.1) | Python |
+| [transformer-from-scratch](https://github.com/adeoluo/transformer-from-scratch) | [![transformer-from-scratch v0.2.1](https://img.shields.io/badge/release-v0.2.1-1d4ed8?style=flat-square)](https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.1) | Python |
 | [vectordb-go](https://github.com/adeoluo/vectordb-go) | [![vectordb-go v0.2.0](https://img.shields.io/badge/release-v0.2.0-0f766e?style=flat-square)](https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0) | Go |
 
 ---

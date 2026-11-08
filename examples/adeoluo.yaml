@@ -88,7 +88,7 @@ sections: [header, stack, path, ecosystem, flagships, categories, languages, rel
 
 intro:
   path: >-
-    Pick what you want to see. Colors group projects by the stage of the stack they live in,
+    What do you want to explore? Colors group projects by the stage of the stack they live in,
     and the same colors are used in every diagram on this page. Flagships are in bold.
   ecosystem: >-
     The projects compose into one pipeline: data is tokenized and deduplicated, models are trained
@@ -156,10 +156,11 @@ categories:
     color: "#fef3c7"
     stroke: "#b45309"
     text: "#451a03"
-    description: The layer between models and users, covering safety, caching, failover, and structured output.
+    description: The layer between models and users, covering compiled inference, safety, caching, failover, and structured output.
     repos:
       - llm-gateway
       - constrained-generation-library
+      - ml-graph-compiler
   - id: agent
     title: Agents
     color_name: magenta
@@ -189,6 +190,33 @@ categories:
       - factuality-auditor
       - red-teaming
       - llm-eval-action
+  - id: sec
+    title: AI security
+    color_name: rose
+    color: "#ffe4e6"
+    stroke: "#be123c"
+    text: "#4c0519"
+    description: Attacks on and defenses for models, LLM applications, agents, and the model supply chain, mapped to OWASP LLM Top 10 2026 and MITRE ATLAS.
+    repos:
+      - llm-vuln-scanner
+      - prompt-injection-detector
+      - mcp-security-scanner
+      - llm-dlp-guard
+      - model-supply-chain-scanner
+      - adversarial-robustness-lab
+      - privacy-attacks-lab
+      - backdoor-defense-lab
+  - id: applied
+    title: Ranking and applied ML
+    color_name: sky
+    color: "#e0f2fe"
+    stroke: "#0369a1"
+    text: "#082f49"
+    description: Learning to rank, ads and auctions, and anomaly detection on public benchmark data at full scale.
+    repos:
+      - learning-to-rank
+      - ad-auction-lab
+      - log-anomaly-detection
   - id: sys
     title: Systems and tooling
     color_name: teal
@@ -247,9 +275,21 @@ flagships:
   - repo: vectordb-go
     summary: A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)
     result: "On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery"
+  - repo: llm-vuln-scanner
+    summary: A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS
+    result: "Scans **five current local models** (Qwen3.5 0.8B to 4B, Gemma 4 E2B, Granite 4.2 3B) with 540 attacks each, 42% to 50% succeeding; hardening the demo app cuts successful attacks **from 81 to 37 of 222**; compared with garak 0.17.1 on the same model"
+  - repo: prompt-injection-detector
+    summary: A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer
+    result: "**AUROC 0.9996** and **99.5% of attacks caught at 1% FPR** on 91,089 held-out prompts in **27 microseconds** per prompt; the published protectai DeBERTa model catches 87.6% on the same split"
+  - repo: mcp-security-scanner
+    summary: A static and live security scanner for Model Context Protocol servers, in Go
+    result: "**Recall 1.00 at a 2% false positive rate** on 432 planted vulnerable servers, where Semgrep 1.184 finds 59% of command injection and none of the path traversal; the hard tier it misses is reported"
+  - repo: learning-to-rank
+    summary: LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank
+    result: "**NDCG@10 0.503** over five folds of MSLR-WEB10K (1.2 million documents), against LightGBM 0.504 and XGBoost 0.506 with identical settings; 500 trees train in 68 s versus 82 s for XGBoost"
 
 ecosystem:
-  direction: LR
+  direction: TB
   edges:
     - {from: bpe-tokenizer-library, to: transformer-from-scratch}
     - {from: corpus-dedup-library, to: transformer-from-scratch}
@@ -279,5 +319,6 @@ languages:
 path:
   prompt: What do you want to explore?
   max_others: 20
+  columns: 3
 
 ignore: [adeoluo]

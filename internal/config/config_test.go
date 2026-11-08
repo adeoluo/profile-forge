@@ -80,6 +80,7 @@ func TestParseRejectsInvalid(t *testing.T) {
 		{"flagship not categorized", strings.Replace(base, "repo: alpha", "repo: zeta", 1), "not in any category"},
 		{"bad direction", base + "ecosystem:\n  direction: XY\n", "direction"},
 		{"bad path direction", base + "path:\n  direction: XY\n", "path.direction"},
+		{"negative path columns", base + "path:\n  columns: -1\n", "path.columns"},
 		{"self edge", base + "ecosystem:\n  edges:\n    - {from: alpha, to: alpha}\n", "self edge"},
 		{"bad edge style", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, style: wavy}\n", "style"},
 		{"pipe in label", base + "ecosystem:\n  edges:\n    - {from: alpha, to: beta, label: \"a|b\"}\n", "quotes or pipes"},

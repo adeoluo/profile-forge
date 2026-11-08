@@ -26,17 +26,15 @@
         "durable-execution",
         "evaluation",
         "llm",
-        "mcp",
         "mcp-server",
         "observability",
         "openai",
         "python",
         "rag",
-        "server-sent-events",
         "typescript"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "agent",
       "flagship": true,
       "summary": "An integrated AI platform composed from nine of these libraries",
@@ -60,13 +58,13 @@
         "transformer"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "model",
       "flagship": true,
       "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
       "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
-      "latest_release": "v0.2.0",
-      "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0"
+      "latest_release": "v0.2.1",
+      "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.1"
     },
     {
       "name": "evaluation-harness",
@@ -84,7 +82,7 @@
         "statistics"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "trust",
       "flagship": true,
       "summary": "A model and agent evaluation framework",
@@ -110,13 +108,13 @@
         "vector-search"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "retr",
       "flagship": true,
       "summary": "An HNSW approximate nearest neighbor library with a Rust core",
       "result": "**Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD",
-      "latest_release": "v0.3.0",
-      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0"
+      "latest_release": "v0.3.1",
+      "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.1"
     },
     {
       "name": "rlhf-reward-model",
@@ -134,7 +132,7 @@
         "rlhf"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "align",
       "flagship": true,
       "summary": "A reward model with PPO and DPO policy optimization",
@@ -158,7 +156,7 @@
         "structured-generation"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "serve",
       "flagship": true,
       "summary": "A schema-constrained decoder built on compiled automata",
@@ -176,19 +174,21 @@
         "anthropic",
         "gateway",
         "llm",
+        "mitre-atlas",
+        "owasp-llm-top-10",
         "pii-redaction",
         "prompt-injection",
         "python",
         "security"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "serve",
       "flagship": true,
       "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
       "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
-      "latest_release": "v0.2.0",
-      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
+      "latest_release": "v0.2.2",
+      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2"
     },
     {
       "name": "hybrid-rag",
@@ -206,13 +206,13 @@
         "search"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "retr",
       "flagship": true,
       "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
       "result": "Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents",
-      "latest_release": "v0.2.0",
-      "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0"
+      "latest_release": "v0.2.1",
+      "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.1"
     },
     {
       "name": "react-agent",
@@ -230,7 +230,7 @@
         "tool-use"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "agent",
       "flagship": true,
       "summary": "A ReAct reasoning-and-acting agent",
@@ -248,19 +248,21 @@
         "data-integrity",
         "from-scratch",
         "lineage",
+        "mitre-atlas",
         "mlops",
+        "owasp-llm-top-10",
         "provenance",
         "python",
         "reproducibility"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "trust",
       "flagship": true,
       "summary": "A content-addressed reproducibility and lineage system for ML",
       "result": "End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix**",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
+      "latest_release": "v0.1.1",
+      "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.1"
     },
     {
       "name": "multi-agent-orchestrator",
@@ -278,7 +280,7 @@
         "python"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "agent",
       "flagship": true,
       "summary": "A planner, workers, and a critic over a shared blackboard",
@@ -306,13 +308,13 @@
         "rust"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "model",
       "flagship": true,
       "summary": "Near-duplicate detection for training corpora, with a Rust core",
       "result": "Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch**",
-      "latest_release": "v0.3.0",
-      "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0"
+      "latest_release": "v0.3.1",
+      "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.1"
     },
     {
       "name": "bpe-tokenizer-library",
@@ -332,13 +334,13 @@
         "tokenizer"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "model",
       "flagship": true,
       "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
       "result": "Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s)",
-      "latest_release": "v0.4.0",
-      "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0"
+      "latest_release": "v0.4.1",
+      "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.1"
     },
     {
       "name": "vectordb-go",
@@ -356,13 +358,115 @@
         "write-ahead-log"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-08",
       "category": "sys",
       "flagship": true,
       "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
       "result": "On **one million SIFT vectors**, NEON kernels answer **1.3 to 3.5x faster than hnswlib** at similar recall on ARM; checksummed write-ahead log and crash recovery",
       "latest_release": "v0.2.0",
       "release_url": "https://github.com/adeoluo/vectordb-go/releases/tag/v0.2.0"
+    },
+    {
+      "name": "llm-vuln-scanner",
+      "url": "https://github.com/adeoluo/llm-vuln-scanner",
+      "description": "Vulnerability scanner for LLM applications and agents: prompt injection, sensitive information disclosure, excessive agency, output handling and jailbreak probes with canary detectors, mapped to the OWASP Top 10 for LLM Applications 2026, the OWASP Agentic Top 10 2026 and MITRE ATLAS v2026.10, with SARIF reports and a GitHub Action",
+      "language": "Python",
+      "topics": [
+        "ai-security",
+        "github-actions",
+        "llm-security",
+        "mitre-atlas",
+        "owasp",
+        "owasp-llm-top-10",
+        "prompt-injection",
+        "red-teaming",
+        "rust",
+        "sarif"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-08",
+      "category": "sec",
+      "flagship": true,
+      "summary": "A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS",
+      "result": "Scans **five current local models** (Qwen3.5 0.8B to 4B, Gemma 4 E2B, Granite 4.2 3B) with 540 attacks each, 42% to 50% succeeding; hardening the demo app cuts successful attacks **from 81 to 37 of 222**; compared with garak 0.17.1 on the same model",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/llm-vuln-scanner/releases/tag/v0.1.0"
+    },
+    {
+      "name": "prompt-injection-detector",
+      "url": "https://github.com/adeoluo/prompt-injection-detector",
+      "description": "Prompt-injection and jailbreak classifier with a Rust n-gram core, a fine-tuned small transformer and a leakage-safe benchmark against a published detector",
+      "language": "Python",
+      "topics": [
+        "ai-safety",
+        "jailbreak-detection",
+        "llm-security",
+        "mitre-atlas",
+        "owasp-llm-top-10",
+        "prompt-injection",
+        "pyo3",
+        "rust",
+        "text-classification",
+        "transformers"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-08",
+      "category": "sec",
+      "flagship": true,
+      "summary": "A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer",
+      "result": "**AUROC 0.9996** and **99.5% of attacks caught at 1% FPR** on 91,089 held-out prompts in **27 microseconds** per prompt; the published protectai DeBERTa model catches 87.6% on the same split",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/prompt-injection-detector/releases/tag/v0.1.0"
+    },
+    {
+      "name": "mcp-security-scanner",
+      "url": "https://github.com/adeoluo/mcp-security-scanner",
+      "description": "Go scanner for Model Context Protocol servers: taint analysis of server source, tool poisoning checks, live probing, rug pull pinning and SARIF output for CI",
+      "language": "Go",
+      "topics": [
+        "golang",
+        "llm-security",
+        "mcp",
+        "mitre-atlas",
+        "model-context-protocol",
+        "owasp-llm-top-10",
+        "sarif",
+        "security",
+        "static-analysis",
+        "taint-analysis"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-08",
+      "category": "sec",
+      "flagship": true,
+      "summary": "A static and live security scanner for Model Context Protocol servers, in Go",
+      "result": "**Recall 1.00 at a 2% false positive rate** on 432 planted vulnerable servers, where Semgrep 1.184 finds 59% of command injection and none of the path traversal; the hard tier it misses is reported",
+      "latest_release": "v0.1.1",
+      "release_url": "https://github.com/adeoluo/mcp-security-scanner/releases/tag/v0.1.1"
+    },
+    {
+      "name": "learning-to-rank",
+      "url": "https://github.com/adeoluo/learning-to-rank",
+      "description": "LambdaMART with a Rust histogram core, neural rankers, click models and unbiased learning to rank, compared with LightGBM and XGBoost on MSLR-WEB10K and Istella-S",
+      "language": "Python",
+      "topics": [
+        "gradient-boosting",
+        "information-retrieval",
+        "lambdamart",
+        "learning-to-rank",
+        "pytorch",
+        "rust",
+        "search-ranking",
+        "unbiased-learning-to-rank"
+      ],
+      "stars": 0,
+      "pushed_at": "2026-11-08",
+      "category": "applied",
+      "flagship": true,
+      "summary": "LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank",
+      "result": "**NDCG@10 0.503** over five folds of MSLR-WEB10K (1.2 million documents), against LightGBM 0.504 and XGBoost 0.506 with identical settings; 500 trees train in 68 s versus 82 s for XGBoost",
+      "latest_release": "v0.1.0",
+      "release_url": "https://github.com/adeoluo/learning-to-rank/releases/tag/v0.1.0"
     }
   ],
   "categories": [
@@ -390,13 +494,13 @@
             "transformer"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": true,
           "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
           "result": "Matches **PyTorch to \u003c 1e-9**; **3.64 bits/char** on real text vs 4.30; a pre-registered 8-seed study whose induction hypothesis was **not supported**",
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/transformer-from-scratch/releases/tag/v0.2.1"
         },
         {
           "name": "cnn-from-scratch",
@@ -414,7 +518,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -436,7 +540,7 @@
             "word2vec"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -460,13 +564,13 @@
             "tokenizer"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": true,
           "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
           "result": "Trains a **50,257-token vocabulary on 100 MB of C4 in 6.7 seconds** and encodes **faster than tiktoken** in batch (68.5 vs 52.4 MB/s)",
-          "latest_release": "v0.4.0",
-          "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.0"
+          "latest_release": "v0.4.1",
+          "release_url": "https://github.com/adeoluo/bpe-tokenizer-library/releases/tag/v0.4.1"
         },
         {
           "name": "corpus-dedup-library",
@@ -488,13 +592,13 @@
             "rust"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": true,
           "summary": "Near-duplicate detection for training corpora, with a Rust core",
           "result": "Deduplicates **1.4 million C4 documents in 30 seconds**; exact mode reaches **precision 1.000** and runs **13.7x faster than datasketch**",
-          "latest_release": "v0.3.0",
-          "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.0"
+          "latest_release": "v0.3.1",
+          "release_url": "https://github.com/adeoluo/corpus-dedup-library/releases/tag/v0.3.1"
         },
         {
           "name": "crf-sequence-labeler",
@@ -512,7 +616,7 @@
             "viterbi"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -534,7 +638,7 @@
             "transition-based"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -556,7 +660,7 @@
             "word-alignment"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -578,11 +682,11 @@
             "unsupervised-learning"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "model",
           "flagship": false,
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/topic-model-lda/releases/tag/v0.2.1"
         }
       ]
     },
@@ -612,13 +716,13 @@
             "vector-search"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "retr",
           "flagship": true,
           "summary": "An HNSW approximate nearest neighbor library with a Rust core",
           "result": "**Matches hnswlib's recall** on 100,000 SIFT vectors, and the default Rust core answers **1.2 to 1.5x faster** on ARM, where hnswlib runs without SIMD",
-          "latest_release": "v0.3.0",
-          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.0"
+          "latest_release": "v0.3.1",
+          "release_url": "https://github.com/adeoluo/ann-vector-search-library/releases/tag/v0.3.1"
         },
         {
           "name": "hybrid-rag",
@@ -636,13 +740,13 @@
             "search"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "retr",
           "flagship": true,
           "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
           "result": "Stemmed BM25 scores **0.687 nDCG@10 on SciFact**, above the published BEIR baseline of 0.665, and answers **about 200x faster than rank_bm25** on 171,000 documents",
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/hybrid-rag/releases/tag/v0.2.1"
         },
         {
           "name": "graphrag",
@@ -660,7 +764,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "retr",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -682,7 +786,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "retr",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -704,7 +808,7 @@
             "retrieval-augmented-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "retr",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -736,7 +840,7 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "align",
           "flagship": true,
           "summary": "A reward model with PPO and DPO policy optimization",
@@ -760,7 +864,7 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -782,7 +886,7 @@
             "star"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -804,7 +908,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -818,7 +922,7 @@
       "color_name": "amber",
       "color": "#fef3c7",
       "stroke": "#b45309",
-      "description": "The layer between models and users, covering safety, caching, failover, and structured output.",
+      "description": "The layer between models and users, covering compiled inference, safety, caching, failover, and structured output.",
       "repos": [
         {
           "name": "llm-gateway",
@@ -830,19 +934,21 @@
             "anthropic",
             "gateway",
             "llm",
+            "mitre-atlas",
+            "owasp-llm-top-10",
             "pii-redaction",
             "prompt-injection",
             "python",
             "security"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "serve",
           "flagship": true,
           "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
           "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.0"
+          "latest_release": "v0.2.2",
+          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2"
         },
         {
           "name": "constrained-generation-library",
@@ -860,13 +966,35 @@
             "structured-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "serve",
           "flagship": true,
           "summary": "A schema-constrained decoder built on compiled automata",
           "result": "**240 of 240** outputs validate against the `jsonschema` reference; the two agree on 2,008 cases",
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/constrained-generation-library/releases/tag/v0.1.0"
+        },
+        {
+          "name": "ml-graph-compiler",
+          "url": "https://github.com/adeoluo/ml-graph-compiler",
+          "description": "Deep learning graph compiler: ONNX import, SSA IR, fusion and layout passes, static memory planning, C code generation with clang and NEON, and MLIR export",
+          "language": "Python",
+          "topics": [
+            "code-generation",
+            "compiler",
+            "deep-learning",
+            "graph-optimization",
+            "memory-planning",
+            "mlir",
+            "neon",
+            "onnx"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "serve",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/ml-graph-compiler/releases/tag/v0.1.0"
         }
       ]
     },
@@ -894,7 +1022,7 @@
             "tool-use"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": true,
           "summary": "A ReAct reasoning-and-acting agent",
@@ -918,7 +1046,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": true,
           "summary": "A planner, workers, and a critic over a shared blackboard",
@@ -938,17 +1066,15 @@
             "durable-execution",
             "evaluation",
             "llm",
-            "mcp",
             "mcp-server",
             "observability",
             "openai",
             "python",
             "rag",
-            "server-sent-events",
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": true,
           "summary": "An integrated AI platform composed from nine of these libraries",
@@ -963,15 +1089,18 @@
           "language": "Python",
           "topics": [
             "agents",
+            "ai-agents",
             "llm",
+            "long-term-memory",
             "mcp",
             "memory",
+            "model-context-protocol",
             "python",
             "retrieval",
             "sqlite"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -993,7 +1122,7 @@
             "text-to-sql"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1005,16 +1134,19 @@
           "description": "An automated code reviewer powered by a plugged-in language model (Claude in production, an offline provider in CI), evaluated on a labeled benchmark of bug-introducing diffs for real bug-catching precision and recall.",
           "language": "Python",
           "topics": [
+            "ai-code-review",
             "anthropic",
+            "claude",
             "code-review",
             "developer-tools",
             "evaluation",
             "llm",
+            "llm-evaluation",
             "python",
             "static-analysis"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1031,6 +1163,8 @@
             "ai-safety",
             "cli",
             "llm",
+            "mitre-atlas",
+            "owasp-llm-top-10",
             "process-isolation",
             "rust",
             "sandbox",
@@ -1038,11 +1172,11 @@
             "security"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "agent",
           "flagship": false,
-          "latest_release": "v0.1.1",
-          "release_url": "https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.1"
+          "latest_release": "v0.1.2",
+          "release_url": "https://github.com/adeoluo/agent-sandbox/releases/tag/v0.1.2"
         }
       ]
     },
@@ -1070,7 +1204,7 @@
             "statistics"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": true,
           "summary": "A model and agent evaluation framework",
@@ -1096,7 +1230,7 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": false,
           "latest_release": "v0.2.0",
@@ -1112,19 +1246,21 @@
             "data-integrity",
             "from-scratch",
             "lineage",
+            "mitre-atlas",
             "mlops",
+            "owasp-llm-top-10",
             "provenance",
             "python",
             "reproducibility"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": true,
           "summary": "A content-addressed reproducibility and lineage system for ML",
           "result": "End-to-end reproduction, crash recovery, and an exhaustive **tamper-detection matrix**",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/training-provenance/releases/tag/v0.1.1"
         },
         {
           "name": "factuality-auditor",
@@ -1139,14 +1275,16 @@
             "from-scratch",
             "hallucination-detection",
             "llm",
+            "mitre-atlas",
+            "owasp-llm-top-10",
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/factuality-auditor/releases/tag/v0.1.1"
         },
         {
           "name": "red-teaming",
@@ -1160,15 +1298,17 @@
             "guardrails",
             "jailbreak",
             "llm-security",
+            "mitre-atlas",
+            "owasp-llm-top-10",
             "python",
             "red-teaming"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/red-teaming/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/red-teaming/releases/tag/v0.1.1"
         },
         {
           "name": "llm-eval-action",
@@ -1186,11 +1326,297 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "trust",
           "flagship": false,
           "latest_release": "v0.1.0",
           "release_url": "https://github.com/adeoluo/llm-eval-action/releases/tag/v0.1.0"
+        }
+      ]
+    },
+    {
+      "id": "sec",
+      "title": "AI security",
+      "color_name": "rose",
+      "color": "#ffe4e6",
+      "stroke": "#be123c",
+      "description": "Attacks on and defenses for models, LLM applications, agents, and the model supply chain, mapped to OWASP LLM Top 10 2026 and MITRE ATLAS.",
+      "repos": [
+        {
+          "name": "llm-vuln-scanner",
+          "url": "https://github.com/adeoluo/llm-vuln-scanner",
+          "description": "Vulnerability scanner for LLM applications and agents: prompt injection, sensitive information disclosure, excessive agency, output handling and jailbreak probes with canary detectors, mapped to the OWASP Top 10 for LLM Applications 2026, the OWASP Agentic Top 10 2026 and MITRE ATLAS v2026.10, with SARIF reports and a GitHub Action",
+          "language": "Python",
+          "topics": [
+            "ai-security",
+            "github-actions",
+            "llm-security",
+            "mitre-atlas",
+            "owasp",
+            "owasp-llm-top-10",
+            "prompt-injection",
+            "red-teaming",
+            "rust",
+            "sarif"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": true,
+          "summary": "A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS",
+          "result": "Scans **five current local models** (Qwen3.5 0.8B to 4B, Gemma 4 E2B, Granite 4.2 3B) with 540 attacks each, 42% to 50% succeeding; hardening the demo app cuts successful attacks **from 81 to 37 of 222**; compared with garak 0.17.1 on the same model",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/llm-vuln-scanner/releases/tag/v0.1.0"
+        },
+        {
+          "name": "prompt-injection-detector",
+          "url": "https://github.com/adeoluo/prompt-injection-detector",
+          "description": "Prompt-injection and jailbreak classifier with a Rust n-gram core, a fine-tuned small transformer and a leakage-safe benchmark against a published detector",
+          "language": "Python",
+          "topics": [
+            "ai-safety",
+            "jailbreak-detection",
+            "llm-security",
+            "mitre-atlas",
+            "owasp-llm-top-10",
+            "prompt-injection",
+            "pyo3",
+            "rust",
+            "text-classification",
+            "transformers"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": true,
+          "summary": "A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer",
+          "result": "**AUROC 0.9996** and **99.5% of attacks caught at 1% FPR** on 91,089 held-out prompts in **27 microseconds** per prompt; the published protectai DeBERTa model catches 87.6% on the same split",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/prompt-injection-detector/releases/tag/v0.1.0"
+        },
+        {
+          "name": "mcp-security-scanner",
+          "url": "https://github.com/adeoluo/mcp-security-scanner",
+          "description": "Go scanner for Model Context Protocol servers: taint analysis of server source, tool poisoning checks, live probing, rug pull pinning and SARIF output for CI",
+          "language": "Go",
+          "topics": [
+            "golang",
+            "llm-security",
+            "mcp",
+            "mitre-atlas",
+            "model-context-protocol",
+            "owasp-llm-top-10",
+            "sarif",
+            "security",
+            "static-analysis",
+            "taint-analysis"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": true,
+          "summary": "A static and live security scanner for Model Context Protocol servers, in Go",
+          "result": "**Recall 1.00 at a 2% false positive rate** on 432 planted vulnerable servers, where Semgrep 1.184 finds 59% of command injection and none of the path traversal; the hard tier it misses is reported",
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/mcp-security-scanner/releases/tag/v0.1.1"
+        },
+        {
+          "name": "llm-dlp-guard",
+          "url": "https://github.com/adeoluo/llm-dlp-guard",
+          "description": "Data loss prevention for LLM traffic: detects and reversibly redacts PII, secrets and credentials in prompts, responses and token streams, with a Rust core",
+          "language": "Python",
+          "topics": [
+            "data-loss-prevention",
+            "llm-security",
+            "mitre-atlas",
+            "named-entity-recognition",
+            "owasp-llm-top-10",
+            "pii-detection",
+            "python",
+            "redaction",
+            "rust",
+            "secrets-detection"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": false,
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/llm-dlp-guard/releases/tag/v0.1.1"
+        },
+        {
+          "name": "model-supply-chain-scanner",
+          "url": "https://github.com/adeoluo/model-supply-chain-scanner",
+          "description": "Static scanner for ML model files (pickle, PyTorch, joblib, NumPy, Keras, SavedModel, ONNX, GGUF, safetensors) that finds code execution and malformed structure before loading, with a Rust core, SARIF output and Python bindings",
+          "language": "Rust",
+          "topics": [
+            "gguf",
+            "machine-learning-security",
+            "mitre-atlas",
+            "owasp-llm-top-10",
+            "pickle",
+            "pytorch",
+            "rust",
+            "safetensors",
+            "sarif",
+            "supply-chain-security"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/model-supply-chain-scanner/releases/tag/v0.1.0"
+        },
+        {
+          "name": "adversarial-robustness-lab",
+          "url": "https://github.com/adeoluo/adversarial-robustness-lab",
+          "description": "Evasion attacks (FGSM, PGD, C\u0026W, APGD, Square, AutoAttack-style ensemble), adversarial training (PGD-AT, TRADES, FGSM-RS) and randomized smoothing certification on the full CIFAR-10 test set, checked against torchattacks 3.5.1 and mapped to MITRE ATLAS v2026.10",
+          "language": "Python",
+          "topics": [
+            "adversarial-attacks",
+            "adversarial-robustness",
+            "adversarial-training",
+            "ai-security",
+            "autoattack",
+            "certified-robustness",
+            "cifar10",
+            "mitre-atlas",
+            "pytorch",
+            "randomized-smoothing"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/adversarial-robustness-lab/releases/tag/v0.1.0"
+        },
+        {
+          "name": "privacy-attacks-lab",
+          "url": "https://github.com/adeoluo/privacy-attacks-lab",
+          "description": "Membership inference attacks (LiRA, shadow models), DP-SGD with RDP and PRV accountants checked against Opacus, and canary extraction from a small language model",
+          "language": "Python",
+          "topics": [
+            "differential-privacy",
+            "dp-sgd",
+            "machine-learning-security",
+            "membership-inference",
+            "mitre-atlas",
+            "opacus",
+            "owasp-llm-top-10",
+            "privacy",
+            "pytorch",
+            "rust"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": false,
+          "latest_release": "v0.2.0",
+          "release_url": "https://github.com/adeoluo/privacy-attacks-lab/releases/tag/v0.2.0"
+        },
+        {
+          "name": "backdoor-defense-lab",
+          "url": "https://github.com/adeoluo/backdoor-defense-lab",
+          "description": "Backdoor attacks (BadNets, Blend, WaNet, clean label, rare token) and defenses (spectral signatures, activation clustering, STRIP, Neural Cleanse, fine pruning, ONION) measured on CIFAR-10, GTSRB and SST-2",
+          "language": "Python",
+          "topics": [
+            "adversarial-machine-learning",
+            "ai-security",
+            "backdoor-attacks",
+            "data-poisoning",
+            "machine-learning-security",
+            "mitre-atlas",
+            "neural-cleanse",
+            "owasp-llm-top-10",
+            "pytorch",
+            "trojan-detection"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "sec",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/backdoor-defense-lab/releases/tag/v0.1.0"
+        }
+      ]
+    },
+    {
+      "id": "applied",
+      "title": "Ranking and applied ML",
+      "color_name": "sky",
+      "color": "#e0f2fe",
+      "stroke": "#0369a1",
+      "description": "Learning to rank, ads and auctions, and anomaly detection on public benchmark data at full scale.",
+      "repos": [
+        {
+          "name": "learning-to-rank",
+          "url": "https://github.com/adeoluo/learning-to-rank",
+          "description": "LambdaMART with a Rust histogram core, neural rankers, click models and unbiased learning to rank, compared with LightGBM and XGBoost on MSLR-WEB10K and Istella-S",
+          "language": "Python",
+          "topics": [
+            "gradient-boosting",
+            "information-retrieval",
+            "lambdamart",
+            "learning-to-rank",
+            "pytorch",
+            "rust",
+            "search-ranking",
+            "unbiased-learning-to-rank"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "applied",
+          "flagship": true,
+          "summary": "LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank",
+          "result": "**NDCG@10 0.503** over five folds of MSLR-WEB10K (1.2 million documents), against LightGBM 0.504 and XGBoost 0.506 with identical settings; 500 trees train in 68 s versus 82 s for XGBoost",
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/learning-to-rank/releases/tag/v0.1.0"
+        },
+        {
+          "name": "ad-auction-lab",
+          "url": "https://github.com/adeoluo/ad-auction-lab",
+          "description": "Ad auctions (GSP, VCG, first price), bid shading, budget pacing, hashed CTR models on Criteo and off-policy evaluation on the Open Bandit Dataset, with a Rust core",
+          "language": "Python",
+          "topics": [
+            "ad-auctions",
+            "budget-pacing",
+            "criteo",
+            "ctr-prediction",
+            "factorization-machines",
+            "mechanism-design",
+            "off-policy-evaluation",
+            "rust"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "applied",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/ad-auction-lab/releases/tag/v0.1.0"
+        },
+        {
+          "name": "log-anomaly-detection",
+          "url": "https://github.com/adeoluo/log-anomaly-detection",
+          "description": "Log parsing and anomaly detection on Loghub: a Rust Drain parser, six detectors from PCA to DeepLog and a transformer, streaming alerts and change-point regression detection.",
+          "language": "Python",
+          "topics": [
+            "anomaly-detection",
+            "change-point-detection",
+            "deeplog",
+            "drain",
+            "log-analysis",
+            "log-parsing",
+            "loghub",
+            "rust"
+          ],
+          "stars": 0,
+          "pushed_at": "2026-11-08",
+          "category": "applied",
+          "flagship": false,
+          "latest_release": "v0.1.0",
+          "release_url": "https://github.com/adeoluo/log-anomaly-detection/releases/tag/v0.1.0"
         }
       ]
     },
@@ -1218,7 +1644,7 @@
             "write-ahead-log"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": true,
           "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
@@ -1244,11 +1670,11 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.1.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.2.1"
         },
         {
           "name": "sweep-orchestrator",
@@ -1266,7 +1692,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1288,7 +1714,7 @@
             "tpe"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-03",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1306,14 +1732,16 @@
             "github-profile-readme",
             "go",
             "mermaid",
-            "profile-readme"
+            "portfolio",
+            "profile-readme",
+            "readme-generator"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.3.2",
-          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.3.2"
+          "latest_release": "v0.4.0",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.4.0"
         },
         {
           "name": "homebrew-tap",
@@ -1323,13 +1751,15 @@
           "topics": [
             "ai-agents",
             "cli",
+            "developer-tools",
+            "go",
             "homebrew",
             "homebrew-formula",
             "homebrew-tap",
             "vector-database"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-02",
+          "pushed_at": "2026-11-08",
           "category": "sys",
           "flagship": false
         }
@@ -1340,43 +1770,43 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 2641487,
-        "share": 67.14430058629223,
-        "repos": 35
+        "bytes": 5932364,
+        "share": 71.08411603542245,
+        "repos": 47
       },
       {
         "name": "Rust",
-        "bytes": 403583,
-        "share": 10.258728611391074,
-        "repos": 5
-      },
-      {
-        "name": "TypeScript",
-        "bytes": 342399,
-        "share": 8.703484581391418,
-        "repos": 4
+        "bytes": 980948,
+        "share": 11.75413738211539,
+        "repos": 13
       },
       {
         "name": "Go",
-        "bytes": 290056,
-        "share": 7.3729710768433,
-        "repos": 3
+        "bytes": 653307,
+        "share": 7.828203157249578,
+        "repos": 4
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 343762,
+        "share": 4.1191029236521715,
+        "repos": 4
       },
       {
         "name": "Shell",
-        "bytes": 131804,
-        "share": 3.350342967607132,
-        "repos": 38
+        "bytes": 219530,
+        "share": 2.63050210561191,
+        "repos": 50
       },
       {
         "name": "Other",
-        "bytes": 124716,
-        "share": 3.17017217647485,
+        "bytes": 215644,
+        "share": 2.583938395948502,
         "repos": 0
       }
     ],
-    "total_bytes": 3934045,
-    "repo_count": 39
+    "total_bytes": 8345555,
+    "repo_count": 51
   },
   "stack": [
     {
@@ -1573,5 +2003,5 @@
       ]
     }
   ],
-  "public_repos": 40
+  "public_repos": 52
 }

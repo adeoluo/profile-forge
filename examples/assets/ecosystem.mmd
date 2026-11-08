@@ -1,0 +1,59 @@
+%%{init: {"flowchart": {"wrappingWidth": 320}}}%%
+flowchart TB
+  r_bpe_tokenizer_library["bpe-tokenizer-library"]
+  r_transformer_from_scratch["transformer-from-scratch"]
+  r_corpus_dedup_library["corpus-dedup-library"]
+  r_rlhf_reward_model["rlhf-reward-model"]
+  r_preference_optimization["preference-optimization"]
+  r_ann_vector_search_library["ann-vector-search-library"]
+  r_hybrid_rag["hybrid-rag"]
+  r_vectordb_go["vectordb-go"]
+  r_llm_gateway["llm-gateway"]
+  r_constrained_generation_library["constrained-generation-library"]
+  r_react_agent["react-agent"]
+  r_multi_agent_orchestrator["multi-agent-orchestrator"]
+  r_agent_platform["agent-platform"]
+  r_evaluation_harness["evaluation-harness"]
+  r_llm_observability["llm-observability"]
+  r_training_provenance["training-provenance"]
+  r_agent_memory["agent-memory"]
+  r_agent_sandbox["agent-sandbox"]
+  r_llm_eval_action["llm-eval-action"]
+
+  r_bpe_tokenizer_library --> r_transformer_from_scratch
+  r_corpus_dedup_library --> r_transformer_from_scratch
+  r_transformer_from_scratch --> r_rlhf_reward_model
+  r_rlhf_reward_model --> r_preference_optimization
+  r_ann_vector_search_library --> r_hybrid_rag
+  r_ann_vector_search_library -->|ported to Go| r_vectordb_go
+  r_hybrid_rag --> r_llm_gateway
+  r_constrained_generation_library --> r_llm_gateway
+  r_llm_gateway --> r_react_agent
+  r_hybrid_rag --> r_react_agent
+  r_react_agent --> r_multi_agent_orchestrator
+  r_multi_agent_orchestrator --> r_agent_platform
+  r_evaluation_harness -.->|scores| r_rlhf_reward_model
+  r_evaluation_harness -.->|scores| r_hybrid_rag
+  r_evaluation_harness -.->|scores| r_react_agent
+  r_llm_observability -.->|traces| r_llm_gateway
+  r_llm_observability -.->|traces| r_multi_agent_orchestrator
+  r_training_provenance -.->|reproduces| r_transformer_from_scratch
+  r_agent_memory --> r_agent_platform
+  r_agent_sandbox -.->|guards tools| r_react_agent
+  r_evaluation_harness -.->|gates PRs| r_llm_eval_action
+
+  classDef c_model fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a;
+  classDef c_retr fill:#dcfce7,stroke:#15803d,color:#052e16;
+  classDef c_align fill:#ede9fe,stroke:#6d28d9,color:#1e1b4b;
+  classDef c_serve fill:#fef3c7,stroke:#b45309,color:#451a03;
+  classDef c_agent fill:#fae8ff,stroke:#a21caf,color:#4a044e;
+  classDef c_trust fill:#fee2e2,stroke:#b91c1c,color:#450a0a;
+  classDef c_sys fill:#ccfbf1,stroke:#0f766e,color:#042f2e;
+
+  class r_bpe_tokenizer_library,r_transformer_from_scratch,r_corpus_dedup_library c_model;
+  class r_ann_vector_search_library,r_hybrid_rag c_retr;
+  class r_rlhf_reward_model,r_preference_optimization c_align;
+  class r_llm_gateway,r_constrained_generation_library c_serve;
+  class r_react_agent,r_multi_agent_orchestrator,r_agent_platform,r_agent_memory,r_agent_sandbox c_agent;
+  class r_evaluation_harness,r_llm_observability,r_training_provenance,r_llm_eval_action c_trust;
+  class r_vectordb_go c_sys;
