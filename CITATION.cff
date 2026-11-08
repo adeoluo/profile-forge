@@ -6,8 +6,8 @@ abstract: "A Go CLI that generates a GitHub profile README and portfolio JSON fr
 authors:
   - family-names: "Ogunnoiki"
     given-names: "Adeolu"
-version: "0.3.2"
-date-released: "2026-11-02"
+version: "0.4.0"
+date-released: "2026-11-08"
 license: MIT
 repository-code: "https://github.com/adeoluo/profile-forge"
 url: "https://github.com/adeoluo/profile-forge"

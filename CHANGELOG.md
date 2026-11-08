@@ -4,6 +4,24 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.4.0] 2026-11-08
+
+### Features
+
+- Render the profile charts to SVG in a shared mermaid theme, and a path chart direction option (#17)
+
+### Documentation
+
+- Profile flagships with the new benchmark results (#10)
+- Precise profile wording and reference libraries (#11)
+- Complete citation metadata and bump it on release (#14)
+- Render every architecture diagram in the house style (#16)
+
+### Maintenance
+
+- Latest toolchain and CI versions (#13)
+- Release script keeps hard-coded version strings in step (#15)
+
 ## [0.3.2] 2026-11-02
 
 ### Performance
