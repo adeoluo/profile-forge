@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [0.5.1] 2026-11-09
+
+### Bug fixes
+
+- Render charts on a white background so they stay readable in GitHub dark mode (#19)
+
+### Documentation
+
+- Diagrams on white in the shared theme, make diagram for every diagram, and a self-contained Definition of Done (#20)
+
 ## [0.5.0] 2026-11-08
 
 ### Features
