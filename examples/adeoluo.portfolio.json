@@ -34,13 +34,13 @@
         "typescript"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "agent",
       "flagship": true,
       "summary": "An integrated AI platform composed from nine of these libraries",
       "result": "OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-      "latest_release": "v0.4.0",
-      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
+      "latest_release": "v0.4.1",
+      "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.1"
     },
     {
       "name": "transformer-from-scratch",
@@ -58,7 +58,7 @@
         "transformer"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "model",
       "flagship": true,
       "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
@@ -82,13 +82,13 @@
         "statistics"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "trust",
       "flagship": true,
       "summary": "A model and agent evaluation framework",
       "result": "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
+      "latest_release": "v0.1.1",
+      "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.1"
     },
     {
       "name": "ann-vector-search-library",
@@ -108,7 +108,7 @@
         "vector-search"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "retr",
       "flagship": true,
       "summary": "An HNSW approximate nearest neighbor library with a Rust core",
@@ -132,7 +132,7 @@
         "rlhf"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "align",
       "flagship": true,
       "summary": "A reward model with PPO and DPO policy optimization",
@@ -156,7 +156,7 @@
         "structured-generation"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "serve",
       "flagship": true,
       "summary": "A schema-constrained decoder built on compiled automata",
@@ -182,13 +182,13 @@
         "security"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "serve",
       "flagship": true,
       "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
       "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
-      "latest_release": "v0.2.2",
-      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2"
+      "latest_release": "v0.2.3",
+      "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.3"
     },
     {
       "name": "hybrid-rag",
@@ -206,7 +206,7 @@
         "search"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "retr",
       "flagship": true,
       "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
@@ -230,13 +230,13 @@
         "tool-use"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "agent",
       "flagship": true,
       "summary": "A ReAct reasoning-and-acting agent",
       "result": "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline",
-      "latest_release": "v0.1.0",
-      "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.0"
+      "latest_release": "v0.1.1",
+      "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.1"
     },
     {
       "name": "training-provenance",
@@ -256,7 +256,7 @@
         "reproducibility"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "trust",
       "flagship": true,
       "summary": "A content-addressed reproducibility and lineage system for ML",
@@ -280,7 +280,7 @@
         "python"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "agent",
       "flagship": true,
       "summary": "A planner, workers, and a critic over a shared blackboard",
@@ -308,7 +308,7 @@
         "rust"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "model",
       "flagship": true,
       "summary": "Near-duplicate detection for training corpora, with a Rust core",
@@ -334,7 +334,7 @@
         "tokenizer"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "model",
       "flagship": true,
       "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
@@ -358,7 +358,7 @@
         "write-ahead-log"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "sys",
       "flagship": true,
       "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
@@ -384,7 +384,7 @@
         "sarif"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "sec",
       "flagship": true,
       "summary": "A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS",
@@ -410,7 +410,7 @@
         "transformers"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "sec",
       "flagship": true,
       "summary": "A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer",
@@ -436,7 +436,7 @@
         "taint-analysis"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "sec",
       "flagship": true,
       "summary": "A static and live security scanner for Model Context Protocol servers, in Go",
@@ -460,7 +460,7 @@
         "unbiased-learning-to-rank"
       ],
       "stars": 0,
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-09",
       "category": "applied",
       "flagship": true,
       "summary": "LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank",
@@ -494,7 +494,7 @@
             "transformer"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": true,
           "summary": "A decoder-only transformer and a reverse-mode autodiff engine",
@@ -518,7 +518,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -540,7 +540,7 @@
             "word2vec"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -564,7 +564,7 @@
             "tokenizer"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": true,
           "summary": "A byte-level BPE tokenizer with a Rust core that matches its Python reference token for token",
@@ -592,7 +592,7 @@
             "rust"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": true,
           "summary": "Near-duplicate detection for training corpora, with a Rust core",
@@ -616,7 +616,7 @@
             "viterbi"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -638,7 +638,7 @@
             "transition-based"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -660,7 +660,7 @@
             "word-alignment"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -682,7 +682,7 @@
             "unsupervised-learning"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "model",
           "flagship": false,
           "latest_release": "v0.2.1",
@@ -716,7 +716,7 @@
             "vector-search"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "retr",
           "flagship": true,
           "summary": "An HNSW approximate nearest neighbor library with a Rust core",
@@ -740,7 +740,7 @@
             "search"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "retr",
           "flagship": true,
           "summary": "A hybrid retrieval system evaluated on the BEIR benchmark",
@@ -764,7 +764,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "retr",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -786,7 +786,7 @@
             "retrieval"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "retr",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -808,11 +808,11 @@
             "retrieval-augmented-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "retr",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/grounded-copilot/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/grounded-copilot/releases/tag/v0.1.1"
         }
       ]
     },
@@ -840,7 +840,7 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "align",
           "flagship": true,
           "summary": "A reward model with PPO and DPO policy optimization",
@@ -864,7 +864,7 @@
             "rlhf"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -886,7 +886,7 @@
             "star"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -908,7 +908,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "align",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -942,13 +942,13 @@
             "security"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "serve",
           "flagship": true,
           "summary": "A safety gateway for LLM APIs, with a Go reverse proxy",
           "result": "Retry and failover, **per-tenant isolation**, and injection and PII defenses; the Go proxy matches the Python rules on every parity case",
-          "latest_release": "v0.2.2",
-          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.2"
+          "latest_release": "v0.2.3",
+          "release_url": "https://github.com/adeoluo/llm-gateway/releases/tag/v0.2.3"
         },
         {
           "name": "constrained-generation-library",
@@ -966,7 +966,7 @@
             "structured-generation"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "serve",
           "flagship": true,
           "summary": "A schema-constrained decoder built on compiled automata",
@@ -990,7 +990,7 @@
             "onnx"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "serve",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1022,13 +1022,13 @@
             "tool-use"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": true,
           "summary": "A ReAct reasoning-and-acting agent",
           "result": "**Adversarial** tool-use robustness, recovery, and a benchmark against a single-shot baseline",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/react-agent/releases/tag/v0.1.1"
         },
         {
           "name": "multi-agent-orchestrator",
@@ -1046,7 +1046,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": true,
           "summary": "A planner, workers, and a critic over a shared blackboard",
@@ -1074,13 +1074,13 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": true,
           "summary": "An integrated AI platform composed from nine of these libraries",
           "result": "OpenAI and Anthropic failover, streamed agent steps, an MCP server, and per-tenant memory; a worker **killed mid-job resumes without re-running steps** (SIGKILL test in CI)",
-          "latest_release": "v0.4.0",
-          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.0"
+          "latest_release": "v0.4.1",
+          "release_url": "https://github.com/adeoluo/agent-platform/releases/tag/v0.4.1"
         },
         {
           "name": "agent-memory",
@@ -1100,11 +1100,11 @@
             "sqlite"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/agent-memory/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/agent-memory/releases/tag/v0.1.1"
         },
         {
           "name": "nl-sql-analyst",
@@ -1122,11 +1122,11 @@
             "text-to-sql"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/nl-sql-analyst/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/nl-sql-analyst/releases/tag/v0.1.1"
         },
         {
           "name": "ai-code-reviewer",
@@ -1146,11 +1146,11 @@
             "static-analysis"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": false,
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/ai-code-reviewer/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/ai-code-reviewer/releases/tag/v0.1.1"
         },
         {
           "name": "agent-sandbox",
@@ -1172,7 +1172,7 @@
             "security"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "agent",
           "flagship": false,
           "latest_release": "v0.1.2",
@@ -1204,13 +1204,13 @@
             "statistics"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": true,
           "summary": "A model and agent evaluation framework",
           "result": "Statistics cross-checked against **SciPy to machine precision**: bootstrap CIs, McNemar, and Cohen's d",
-          "latest_release": "v0.1.0",
-          "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.0"
+          "latest_release": "v0.1.1",
+          "release_url": "https://github.com/adeoluo/evaluation-harness/releases/tag/v0.1.1"
         },
         {
           "name": "llm-observability",
@@ -1230,11 +1230,11 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": false,
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/llm-observability/releases/tag/v0.2.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/llm-observability/releases/tag/v0.2.1"
         },
         {
           "name": "training-provenance",
@@ -1254,7 +1254,7 @@
             "reproducibility"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": true,
           "summary": "A content-addressed reproducibility and lineage system for ML",
@@ -1280,7 +1280,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": false,
           "latest_release": "v0.1.1",
@@ -1304,7 +1304,7 @@
             "red-teaming"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": false,
           "latest_release": "v0.1.1",
@@ -1326,7 +1326,7 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "trust",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1360,7 +1360,7 @@
             "sarif"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": true,
           "summary": "A vulnerability scanner for LLM applications and agents, mapped to OWASP LLM Top 10 2026, OWASP Agentic Top 10 2026, and MITRE ATLAS",
@@ -1386,7 +1386,7 @@
             "transformers"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": true,
           "summary": "A prompt-injection detector trained on 13 public datasets, with a Rust n-gram scorer",
@@ -1412,7 +1412,7 @@
             "taint-analysis"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": true,
           "summary": "A static and live security scanner for Model Context Protocol servers, in Go",
@@ -1438,7 +1438,7 @@
             "secrets-detection"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": false,
           "latest_release": "v0.1.1",
@@ -1462,7 +1462,7 @@
             "supply-chain-security"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1486,7 +1486,7 @@
             "randomized-smoothing"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1510,11 +1510,11 @@
             "rust"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": false,
-          "latest_release": "v0.2.0",
-          "release_url": "https://github.com/adeoluo/privacy-attacks-lab/releases/tag/v0.2.0"
+          "latest_release": "v0.2.1",
+          "release_url": "https://github.com/adeoluo/privacy-attacks-lab/releases/tag/v0.2.1"
         },
         {
           "name": "backdoor-defense-lab",
@@ -1534,7 +1534,7 @@
             "trojan-detection"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sec",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1566,7 +1566,7 @@
             "unbiased-learning-to-rank"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "applied",
           "flagship": true,
           "summary": "LambdaMART with a Rust histogram core, neural rankers, and unbiased learning to rank",
@@ -1590,7 +1590,7 @@
             "rust"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "applied",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1612,7 +1612,7 @@
             "rust"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "applied",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1644,7 +1644,7 @@
             "write-ahead-log"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": true,
           "summary": "A persistent HNSW vector database server in Go (`brew install adeoluo/tap/vectordb`)",
@@ -1670,11 +1670,11 @@
             "typescript"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.2.1",
-          "release_url": "https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.2.1"
+          "latest_release": "v0.2.2",
+          "release_url": "https://github.com/adeoluo/mcp-ml-tools/releases/tag/v0.2.2"
         },
         {
           "name": "sweep-orchestrator",
@@ -1692,7 +1692,7 @@
             "python"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1714,7 +1714,7 @@
             "tpe"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": false,
           "latest_release": "v0.1.0",
@@ -1737,11 +1737,11 @@
             "readme-generator"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": false,
-          "latest_release": "v0.4.0",
-          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.4.0"
+          "latest_release": "v0.5.1",
+          "release_url": "https://github.com/adeoluo/profile-forge/releases/tag/v0.5.1"
         },
         {
           "name": "homebrew-tap",
@@ -1759,7 +1759,7 @@
             "vector-database"
           ],
           "stars": 0,
-          "pushed_at": "2026-11-08",
+          "pushed_at": "2026-11-09",
           "category": "sys",
           "flagship": false
         }
@@ -1770,43 +1770,43 @@
     "rows": [
       {
         "name": "Python",
-        "bytes": 5932364,
-        "share": 71.08411603542245,
+        "bytes": 5958965,
+        "share": 71.06150702319344,
         "repos": 47
       },
       {
         "name": "Rust",
         "bytes": 980948,
-        "share": 11.75413738211539,
+        "share": 11.697944725533304,
         "repos": 13
       },
       {
         "name": "Go",
-        "bytes": 653307,
-        "share": 7.828203157249578,
+        "bytes": 655896,
+        "share": 7.821653292221802,
         "repos": 4
       },
       {
         "name": "TypeScript",
-        "bytes": 343762,
-        "share": 4.1191029236521715,
+        "bytes": 343843,
+        "share": 4.100376786803733,
         "repos": 4
       },
       {
         "name": "Shell",
         "bytes": 219530,
-        "share": 2.63050210561191,
+        "share": 2.6179265420759577,
         "repos": 50
       },
       {
         "name": "Other",
-        "bytes": 215644,
-        "share": 2.583938395948502,
+        "bytes": 226462,
+        "share": 2.7005916301717554,
         "repos": 0
       }
     ],
-    "total_bytes": 8345555,
-    "repo_count": 51
+    "total_bytes": 8385644,
+    "repo_count": 52
   },
   "stack": [
     {
