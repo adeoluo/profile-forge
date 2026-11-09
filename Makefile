@@ -5,7 +5,7 @@ LDFLAGS  := -s -w -buildid= -X $(PKG)/internal/cli.Version=$(VERSION)
 PLATFORMS := darwin/arm64 darwin/amd64 linux/amd64 linux/arm64
 DIST     := dist
 
-.PHONY: all build test race cover vet fmt fmt-check lint bench example check-example release verify-release clean changelog cut-release
+.PHONY: all build test race cover vet fmt fmt-check lint bench example check-example release verify-release clean changelog cut-release diagram
 
 all: fmt-check vet race build
 
@@ -76,3 +76,8 @@ changelog: ## Regenerate CHANGELOG.md from Conventional Commits (git-cliff)
 
 cut-release: ## Cut a release locally: version bump, changelog, tag, GitHub release (RELEASE_VERSION=vX.Y.Z optional)
 	scripts/release.sh $(RELEASE_VERSION)
+
+diagram: ## Render every diagram in docs/architecture to SVG (house theme, white background)
+	@for f in docs/architecture/*.mmd; do \
+		npx -y @mermaid-js/mermaid-cli -q -i "$$f" -o "$${f%.mmd}.svg" -c mermaid.config.json -b white || exit 1; \
+	done
