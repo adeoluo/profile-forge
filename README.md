@@ -195,7 +195,7 @@ profile-forge version
 | `--api` | generate, check | `https://api.github.com` | API base URL, for GitHub Enterprise Server or tests |
 | `--diagrams-dir` | generate, check | none | Render the path, ecosystem and language charts to SVG files in this directory (relative to the README) and embed them as images; `check` also fails if the chart sources there are stale |
 | `--mermaid-config` | generate, check | none | Mermaid configuration (theme, palette, shadows) passed to the renderer |
-| `--mermaid-cmd` | generate, check | `npx -y @mermaid-js/mermaid-cli` | Renderer command; receives `-q -i <chart>.mmd -o <chart>.svg -b transparent [-c config]` |
+| `--mermaid-cmd` | generate, check | `npx -y @mermaid-js/mermaid-cli` | Renderer command; receives `-q -i <chart>.mmd -o <chart>.svg -b white [-c config]` |
 | `--force` | init | false | Overwrite an existing config |
 
 Exit codes: `0` success, `1` validation or runtime error, `2` usage error.
