@@ -23,6 +23,10 @@ diagrams looked different.
   `<img src="DIR/<chart>.svg">` instead of the block.
 - Without the flag, output is unchanged: mermaid blocks, no external
   dependency.
+- Charts render on a white background. GitHub shows images as they are in both
+  themes, and with a transparent background the text drawn outside boxes (the
+  pie title and legend, sequence messages, edge lines) becomes dark on a dark
+  page. A white card reads the same in light and dark mode.
 - The chart sources are still validated with the same syntax checks as inline
   blocks before anything is rendered.
 - `check --diagrams-dir DIR --readme README.md` compares the README and the

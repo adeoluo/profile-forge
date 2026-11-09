@@ -328,7 +328,7 @@ func TestGenerateRenderedDiagrams(t *testing.T) {
 		t.Fatalf("renderer called %d times, want 3", len(calls))
 	}
 	got := strings.Join(calls[0], " ")
-	for _, want := range []string{"mmdc --quiet -q -i", "ecosystem.mmd", "-b transparent", "-c theme.json"} {
+	for _, want := range []string{"mmdc --quiet -q -i", "ecosystem.mmd", "-b white", "-c theme.json"} {
 		if !strings.Contains(got, want) {
 			t.Errorf("renderer argv %q missing %q", got, want)
 		}

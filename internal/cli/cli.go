@@ -175,7 +175,9 @@ func renderDiagrams(ctx context.Context, c common, env Env, readme string, v *re
 		if err := os.WriteFile(in, []byte(src+"\n"), 0o644); err != nil {
 			return fmt.Errorf("write %s: %w", in, err)
 		}
-		argv := append(strings.Fields(c.mmdCmd), "-q", "-i", in, "-o", out, "-b", "transparent")
+		// A white card keeps text drawn outside boxes (titles, legends, messages) readable in
+		// GitHub's dark theme, where a transparent background puts dark text on a dark page.
+		argv := append(strings.Fields(c.mmdCmd), "-q", "-i", in, "-o", out, "-b", "white")
 		if c.mmdConfig != "" {
 			argv = append(argv, "-c", c.mmdConfig)
 		}
